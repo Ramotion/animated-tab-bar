@@ -1,3 +1,2 @@
-animated-tab-bar
-================
+
 ## RAMAnimatedTabBarController
