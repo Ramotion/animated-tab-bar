@@ -1,7 +1,8 @@
 # RAMAnimatedTabBarController
 
-UITabBarController with animated items.
+RAMAnimatedTabBarController is a Swift module for adding animation to tabbar items. It has pre-set of animations which we prepare for you, and ability to use any custom animation you want. With this module you can make your tabbar alive like our [shot on dribble](https://dribbble.com/shots/1766396-Animated-Tab-Bar-Icons?list=searches&tag=ramotion&offset=...):
 
+![Animation](Screenshots/tab-bar-icons-iphone-ramotion-animation-interface-design.gif)
 ![Animation](Screenshots/RAMAnimatedTabBarDemo.gif)
 
 ## Requirements
