@@ -95,21 +95,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
-                            <outlet property="animation" destination="HW2-9n-e5d" id="OjF-Eu-clI"/>
+                            <outlet property="animation" destination="SMy-mk-LC7" id="MkP-KN-27u"/>
                         </connections>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Cn-qd-9Vu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="HW2-9n-e5d" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarDemo" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.95686274510000002" green="0.01366194926" blue="0.95444649280000005" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                            <real key="value" value="0.40000000000000002"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
+                <customObject id="SMy-mk-LC7" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarDemo" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1349" y="1228"/>
         </scene>
