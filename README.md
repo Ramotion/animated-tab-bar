@@ -23,8 +23,8 @@ Just add RAMAnimatedTabBarController folder to your project.
 
 4. Add animation for each TabBarItems : 
    * drag and drop NSObject to item UIViewController 
-   * set the class of the NSObject to <ANIMATION_CLASS> 
-   * connect outlet animation in RAMAnimatedTabBarItem with <ANIMATION_CLASS>
+   * set the class of the NSObject to ANIMATION_CLASS
+   * connect outlet animation in RAMAnimatedTabBarItem with ANIMATION_CLASS
    [video for step 4](http://vimeo.com/112390386)
    			
    			
