@@ -39,6 +39,33 @@ Just add RAMAnimatedTabBarController folder to your project.
 * RAMFlipBottomTransitionItemAniamtions
 * RAMFrameItemAnimation
 
+## Add custom animation
+1. Create new class and inherit RAMItemAnimation class
+	
+	``` swift
+	    class NewAnimation : RAMItemAnimation
+  ```
+2. Override methods: 
+  ``` swift
+    // method call when Tab Bar Item is selected
+    override func playAnimation(icon : UIImageView, textLable : UILabel) {
+      // add animation
+    }
+  ```  
+  ``` swift
+    // method call when Tab Bar Item is deselected
+    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
+      // add animation
+    }
+  ```    
+  ``` swift
+    // method call when TabBarController did load
+    override func selectedState(icon : UIImageView, textLable : UILabel) {
+      // set selected state  
+    }
+  ```
+
+
 
 ##About us
 
