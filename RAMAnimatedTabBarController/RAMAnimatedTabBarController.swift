@@ -222,7 +222,7 @@ class RAMAnimatedTabBarController: UITabBarController {
             var animationItem : RAMAnimatedTabBarItem = items[currentIndex]
             var icon = iconsView[currentIndex].icon
             var textLable = iconsView[currentIndex].textLable
-            animationItem.playAnimation(icon, textLable: textLable)
+            animationItem.playAnimation(icon, textLabel: textLable)
             
             let deselelectIcon = iconsView[selectedIndex].icon
             let deselelectTextLable = iconsView[selectedIndex].textLable
