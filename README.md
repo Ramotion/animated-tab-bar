@@ -40,7 +40,7 @@ Just add RAMAnimatedTabBarController folder to your project.
 * RAMFrameItemAnimation
 
 ## Add custom animation
-1. Create new class and inherit RAMItemAnimation class
+1. Create new class and inherit RAMItemAnimation class:
 	
 	``` swift
 	    class NewAnimation : RAMItemAnimation
@@ -67,8 +67,35 @@ Just add RAMAnimatedTabBarController folder to your project.
     }
   ```
 
+3. Example :
 
+``` swift
+class RAMBounceAnimation : RAMItemAnimation {
+    
+    override func playAnimation(icon : UIImageView, textLable : UILabel) {
+        playBounceAnimation(icon)
+        textLable.textColor = textSelectedColor
+    }
+    
+    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
+        textLable.textColor = defaultTextColor
+    }
+    
+    override func selectedState(icon : UIImageView, textLable : UILabel) {
+        textLable.textColor = textSelectedColor
+    }
 
+    func playBounceAnimation(icon : UIImageView) {
+      
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
+        bounceAnimation.duration = NSTimeInterval(duration)
+        bounceAnimation.calculationMode = kCAAnimationCubic
+        
+        icon.layer.addAnimation(bounceAnimation, forKey: "bounceAnimation")
+    }
+}
+```
 ##About us
 
 [Ramotion](http://Ramotion.com) is an iPhone app design and development company. We are ready for new interesting iOS App Development projects.
