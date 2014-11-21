@@ -42,8 +42,8 @@ Just add RAMAnimatedTabBarController folder to your project.
 ## Add custom animation
 1. Create new class and inherit RAMItemAnimation class:
 	
-	``` swift
-	    class NewAnimation : RAMItemAnimation
+  ``` swift
+     class NewAnimation : RAMItemAnimation
   ```
 2. Override methods: 
 
