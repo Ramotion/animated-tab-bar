@@ -46,6 +46,8 @@ Just add RAMAnimatedTabBarController folder to your project.
 	    class NewAnimation : RAMItemAnimation
   ```
 2. Override methods: 
+
+
   ``` swift
     // method call when Tab Bar Item is selected
     override func playAnimation(icon : UIImageView, textLable : UILabel) {
