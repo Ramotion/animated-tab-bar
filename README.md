@@ -12,24 +12,26 @@ RAMAnimatedTabBarController is a Swift module for adding animation to tabbar ite
 
 ## Installation
 
-Just add RAMAnimatedTabBarController folder to your project.
+Just add the RAMAnimatedTabBarController folder to your project.
 
 ## Usage
 
-1. Set the class of the UITabBarController to RAMAnimatedTabBarController in your Storyboard or nib.
+1. Create a new UITabBarController in your storyboard or nib.
 
-2. For each UITabBarItems set the class  RAMAnimatedTabBarItem in your Storyboard or nib.
+2. Set the class of the UITabBarController to RAMAnimatedTabBarController in your Storyboard or nib.
 
-3. Add custom image icon for each TabBarItems
+3. For each UITabBarItem, set the class to RAMAnimatedTabBarItem.
 
-4. Add animation for each TabBarItems : 
-   * drag and drop NSObject to item UIViewController 
-   * set the class of the NSObject to ANIMATION_CLASS
-   * connect outlet animation in RAMAnimatedTabBarItem with ANIMATION_CLASS
-   [video for step 4](http://vimeo.com/112390386)
+4. Add a custom image icon for each RAMAnimatedTabBarItem
+
+5. Add animation for each RAMAnimatedTabBarItem : 
+   * drag and drop an NSObject item into your ViewController 
+   * set its class to ANIMATION_CLASS (where ANIMATION_CLASS is the class name of the animation you want to use)
+   * connect the outlet animation in RAMAnimatedTabBarItem to your ANIMATION_CLASS
+   [Demonstration video for step 5](http://vimeo.com/112390386)
    			
    			
-## Animation Classes
+## Included Animations
 
 * RAMBounceAnimation
 * RAMLeftRotationAnimation
@@ -40,13 +42,13 @@ Just add RAMAnimatedTabBarController folder to your project.
 * RAMFlipBottomTransitionItemAniamtions
 * RAMFrameItemAnimation
 
-## Add custom animation
-1. Create new class and inherit RAMItemAnimation class:
+## Creating Custom Animations
+1. Create a new class which inherits from RAMItemAnimation:
 	
   ``` swift
      class NewAnimation : RAMItemAnimation
   ```
-2. Override methods: 
+2. Implement the methods in RAMItemAnimationProtocol: 
 
 
   ``` swift
@@ -68,7 +70,7 @@ Just add RAMAnimatedTabBarController folder to your project.
     }
   ```
 
-3. Example :
+3. Example:
 
 ``` swift
 class RAMBounceAnimation : RAMItemAnimation {
@@ -97,8 +99,8 @@ class RAMBounceAnimation : RAMItemAnimation {
     }
 }
 ```
-##About us
+## About Us
 
-[Ramotion](http://Ramotion.com) is an iPhone app design and development company. We are ready for new interesting iOS App Development projects.
+[Ramotion](http://Ramotion.com) is an iPhone app design and development company. We are ready for new interesting iOS app development projects.
 
 Follow us on [twitter](http://twitter.com/ramotion).
