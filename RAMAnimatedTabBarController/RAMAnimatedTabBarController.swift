@@ -25,19 +25,19 @@ import UIKit
 class RAMAnimatedTabBarItem: UITabBarItem {
     
     @IBOutlet weak var animation: RAMItemAnimation!
-    @IBInspectable var textCololr: UIColor = UIColor.blackColor()
+    @IBInspectable var textColor: UIColor = UIColor.blackColor()
     
-    func playAnimation(icon: UIImageView, textLable: UILabel) {
+    func playAnimation(icon: UIImageView, textLabel: UILabel) {
         
         assert(animation != nil, "add animation in UITabBarItem")
         if animation != nil {
-            animation.playAnimation(icon, textLable: textLable)
+            animation.playAnimation(icon, textLable: textLabel)
         }
     }
     
     func deselectAnimation(icon: UIImageView, textLable: UILabel) {
         if animation != nil {
-            animation.deselectAnimation(icon, textLable: textLable, defaultTextColor: textCololr)
+            animation.deselectAnimation(icon, textLable: textLable, defaultTextColor: textColor)
         }
     }
     
@@ -86,7 +86,7 @@ class RAMAnimatedTabBarController: UITabBarController {
                 var textLable = UILabel()
                 textLable.text = item.title
                 textLable.backgroundColor = UIColor.clearColor()
-                textLable.textColor = item.textCololr
+                textLable.textColor = item.textColor
                 textLable.font = UIFont.systemFontOfSize(10)
                 textLable.textAlignment = NSTextAlignment.Center
                 textLable.setTranslatesAutoresizingMaskIntoConstraints(false)
