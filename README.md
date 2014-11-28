@@ -104,6 +104,6 @@ class RAMBounceAnimation : RAMItemAnimation {
 ```
 ## About Us
 
-[Ramotion](http://ramotion.com?utm_source=github&utm_medium=special&utm_campaign=00_swiftmodules_animatedtb) is an iPhone app design and development company. We are ready for new interesting iOS app development projects.
+[Ramotion](http://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) is an iPhone app design and development company. We are ready for new interesting iOS app development projects.
 
 Follow us on [twitter](http://twitter.com/ramotion).
