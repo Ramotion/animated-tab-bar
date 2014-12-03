@@ -20,6 +20,7 @@
 		CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A8421A1C8DD3002D8931 /* RAMRotationAnimation.swift */; };
 		CE90A8461A1CB1E0002D8931 /* ToolsAnimation.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE90A8451A1CB1E0002D8931 /* ToolsAnimation.plist */; };
 		CE90A8791A1CE200002D8931 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A8781A1CE200002D8931 /* RAMBounceAnimation.swift */; };
+		F3E056BE1A2DD57600F33DDA /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E056BD1A2DD57600F33DDA /* RAMFumeAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		CE90A8421A1C8DD3002D8931 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
 		CE90A8451A1CB1E0002D8931 /* ToolsAnimation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolsAnimation.plist; sourceTree = "<group>"; };
 		CE90A8781A1CE200002D8931 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
+		F3E056BD1A2DD57600F33DDA /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		CE4146981A1B944D0037F03C /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				F3E056BC1A2DD37700F33DDA /* FumeAnimation */,
 				CE90A8771A1CE171002D8931 /* BounceAnimation */,
 				CE90A8411A1C8D69002D8931 /* RotationAnimation */,
 				CE4146991A1B944D0037F03C /* FrameAnimation */,
@@ -188,6 +191,14 @@
 				CE90A8781A1CE200002D8931 /* RAMBounceAnimation.swift */,
 			);
 			path = BounceAnimation;
+			sourceTree = "<group>";
+		};
+		F3E056BC1A2DD37700F33DDA /* FumeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F3E056BD1A2DD57600F33DDA /* RAMFumeAnimation.swift */,
+			);
+			path = FumeAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				CE90A8401A1C7C14002D8931 /* RAMAnimatedTabBarController.swift in Sources */,
 				CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */,
 				CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */,
+				F3E056BE1A2DD57600F33DDA /* RAMFumeAnimation.swift in Sources */,
 				CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimation.swift in Sources */,
 				CE4146A01A1B944D0037F03C /* RAMItemAnimationProtocol.swift in Sources */,
 				CE4146781A1B923D0037F03C /* AppDelegate.swift in Sources */,
@@ -425,10 +437,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RAMAnimatedTabBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -437,10 +451,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RAMAnimatedTabBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -5,6 +5,57 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="Y99-CA-jqU">
+            <objects>
+                <viewController id="wJE-Q4-t8C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n1y-U7-ZG1"/>
+                        <viewControllerLayoutGuide type="bottom" id="ccN-XV-rhh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PmG-Vl-9D1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FumeAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxN-OP-GHb">
+                                <rect key="frame" x="146" y="150" width="348" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="348" id="7vr-pR-SXo"/>
+                                    <constraint firstAttribute="height" constant="71" id="mCo-IA-Ilv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="UxN-OP-GHb" secondAttribute="centerX" constant="-20" id="1l9-FQ-w0o"/>
+                            <constraint firstAttribute="centerY" secondItem="UxN-OP-GHb" secondAttribute="centerY" constant="114" id="5ae-83-gzq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="drop" id="tS2-0E-St8" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarDemo" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="Lky-Hp-l9U" id="r67-ap-cxK"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zW4-Q6-RN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Lky-Hp-l9U" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarDemo" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                            <real key="value" value="0.40000000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1349" y="-239"/>
+        </scene>
         <!--Item1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -121,10 +172,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="eCt-4k-9Vu" kind="relationship" relationship="viewControllers" id="WZh-Xs-WLh"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="d4b-9o-ai8"/>
                         <segue destination="DFF-lT-Wr8" kind="relationship" relationship="viewControllers" id="ege-ES-0le"/>
                         <segue destination="Zsy-o9-m6D" kind="relationship" relationship="viewControllers" id="rtT-KT-B5t"/>
-                        <segue destination="eCt-4k-9Vu" kind="relationship" relationship="viewControllers" id="WZh-Xs-WLh"/>
+                        <segue destination="wJE-Q4-t8C" kind="relationship" relationship="viewControllers" id="j33-EU-Pj8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEF-4x-wpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,6 +294,7 @@
     <resources>
         <image name="Settings" width="30" height="30"/>
         <image name="Tools_00028" width="30" height="30"/>
+        <image name="drop" width="24" height="24"/>
         <image name="icon_pin" width="30" height="30"/>
         <image name="icon_user" width="30" height="30"/>
     </resources>
