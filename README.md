@@ -44,6 +44,7 @@ Just add the RAMAnimatedTabBarController folder to your project.
 * RAMFlipTopTransitionItemAniamtions
 * RAMFlipBottomTransitionItemAniamtions
 * RAMFrameItemAnimation
+* RAMFumeAnimation
 
 ## Creating Custom Animations
 1. Create a new class which inherits from RAMItemAnimation:
