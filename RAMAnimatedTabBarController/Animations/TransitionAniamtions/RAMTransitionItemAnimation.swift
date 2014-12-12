@@ -23,83 +23,83 @@
 import UIKit
 
 class RAMTransitionItemAniamtions : RAMItemAnimation {
-    
+
     var transitionOptions : UIViewAnimationOptions!
     @IBInspectable var iconSelectedColor: UIColor!
-    
+
     override init() {
         super.init()
-        
+
         transitionOptions = UIViewAnimationOptions.TransitionNone
     }
-    
-    override func playAnimation(icon : UIImageView, textLable : UILabel) {
-        
-        selectedColor(icon, textLable: textLable)
+
+    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+
+        selectedColor(icon, textLabel: textLabel)
 
         UIView.transitionWithView(icon, duration: NSTimeInterval(duration), options: transitionOptions, animations: {
             }, completion: { finished in
         })
     }
-    
-    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
-        
+
+    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+
         var renderImage = icon.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         icon.image = renderImage;
-        textLable.textColor = defaultTextColor
+        textLabel.textColor = defaultTextColor
     }
-    
-    override func selectedState(icon : UIImageView, textLable : UILabel) {
-        
-        selectedColor(icon, textLable: textLable)
+
+    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+
+        selectedColor(icon, textLabel: textLabel)
     }
-    
-    
-    func selectedColor(icon : UIImageView, textLable : UILabel) {
-        
+
+
+    func selectedColor(icon : UIImageView, textLabel : UILabel) {
+
         if iconSelectedColor != nil {
             var renderImage = icon.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             icon.image = renderImage;
             icon.tintColor = iconSelectedColor
         }
-        
-        textLable.textColor = textSelectedColor
+
+        textLabel.textColor = textSelectedColor
     }
 }
 
 class RAMFlipLeftTransitionItemAniamtions : RAMTransitionItemAniamtions {
-    
+
     override init() {
         super.init()
-        
+
         transitionOptions = UIViewAnimationOptions.TransitionFlipFromLeft
     }
 }
 
 
 class RAMFlipRightTransitionItemAniamtions : RAMTransitionItemAniamtions {
-    
+
     override init() {
         super.init()
-        
+
         transitionOptions = UIViewAnimationOptions.TransitionFlipFromRight
     }
 }
 
 class RAMFlipTopTransitionItemAniamtions : RAMTransitionItemAniamtions {
-    
+
     override init() {
         super.init()
-        
+
         transitionOptions = UIViewAnimationOptions.TransitionFlipFromTop
     }
 }
 
 class RAMFlipBottomTransitionItemAniamtions : RAMTransitionItemAniamtions {
-    
+
     override init() {
         super.init()
-        
+
         transitionOptions = UIViewAnimationOptions.TransitionFlipFromBottom
     }
 }
