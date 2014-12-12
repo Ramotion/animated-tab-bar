@@ -24,55 +24,55 @@ import UIKit
 import QuartzCore
 
 class RAMFrameItemAnimation: RAMItemAnimation {
-    
+
     var animationImages : Array<CGImage> = Array()
-   
+
     var selectedImage : UIImage!
-    
+
     @IBInspectable var isDeselectAnimation: Bool = true
     @IBInspectable var imagesPath: String!
-    
+
     override func awakeFromNib() {
-        
+
         let path = NSBundle.mainBundle().pathForResource(imagesPath, ofType:"plist")
-        
+
         let dict : NSDictionary = NSDictionary(contentsOfFile: path!)!
-        
+
         let animationImagesName = dict["images"] as Array<String>
         createImagesArray(animationImagesName)
-        
+
         // selected image
         var selectedImageName = animationImagesName[animationImagesName.endIndex - 1]
         selectedImage = UIImage(named: selectedImageName)
     }
-    
-    
+
+
     func createImagesArray(imageNames : Array<String>) {
         for name : String in imageNames {
             let image = UIImage(named: name)?.CGImage
             animationImages.append(image!)
         }
     }
-    
-    override func playAnimation(icon : UIImageView, textLable : UILabel) {
-        
+
+    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+
         playFrameAnimation(icon, images:animationImages)
-        textLable.textColor = textSelectedColor
+        textLabel.textColor = textSelectedColor
     }
-    
-    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
+
+    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
         if isDeselectAnimation {
             playFrameAnimation(icon, images:animationImages.reverse())
-        } 
-        
-        textLable.textColor = defaultTextColor
+        }
+
+        textLabel.textColor = defaultTextColor
     }
-    
-    override func selectedState(icon : UIImageView, textLable : UILabel) {
+
+    override func selectedState(icon : UIImageView, textLabel : UILabel) {
         icon.image = selectedImage
-        textLable.textColor = textSelectedColor
+        textLabel.textColor = textSelectedColor
     }
-    
+
     func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
         var frameAnimation = CAKeyframeAnimation(keyPath: "contents")
         frameAnimation.calculationMode = kCAAnimationDiscrete

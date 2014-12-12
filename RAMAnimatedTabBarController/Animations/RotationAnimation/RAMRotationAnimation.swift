@@ -29,41 +29,41 @@ enum RAMRotationDirection {
 }
 
 class RAMRotationAnimation : RAMItemAnimation {
-    
+
     var direction : RAMRotationDirection!
-    
-    override func playAnimation(icon : UIImageView, textLable : UILabel) {
+
+    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playRoatationAnimation(icon)
-        textLable.textColor = textSelectedColor
+        textLabel.textColor = textSelectedColor
     }
-    
-    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
-        textLable.textColor = defaultTextColor
+
+    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+        textLabel.textColor = defaultTextColor
     }
-    
-    override func selectedState(icon : UIImageView, textLable : UILabel) {
-        textLable.textColor = textSelectedColor
+
+    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+        textLabel.textColor = textSelectedColor
     }
-    
+
     func playRoatationAnimation(icon : UIImageView) {
-        
+
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
-        
+
         var toValue = CGFloat(M_PI * 2.0)
         if direction == RAMRotationDirection.Left {
             toValue = toValue * -1.0
         }
-        
+
         rotateAnimation.toValue = toValue
         rotateAnimation.duration = NSTimeInterval(duration)
-        
+
         icon.layer.addAnimation(rotateAnimation, forKey: "rotation360")
     }
 }
 
 class RAMLeftRotationAnimation : RAMRotationAnimation {
-    
+
     override init() {
         super.init()
         direction = RAMRotationDirection.Left
@@ -72,7 +72,7 @@ class RAMLeftRotationAnimation : RAMRotationAnimation {
 
 
 class RAMRightRotationAnimation : RAMRotationAnimation {
-    
+
     override init() {
         super.init()
         direction = RAMRotationDirection.Right
