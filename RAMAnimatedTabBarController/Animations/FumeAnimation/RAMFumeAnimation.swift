@@ -30,12 +30,20 @@ class RAMFumeAnimation : RAMItemAnimation {
         playMoveIconAnimation(icon, values:[icon.center.y, icon.center.y + 4.0])
         playLabelAnimation(textLabel)
         textLabel.textColor = textSelectedColor
+      
+        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
+        icon.image = renderImage
+        icon.tintColor = textSelectedColor
     }
 
     override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
         playMoveIconAnimation(icon, values:[icon.center.y + 4.0, icon.center.y])
         playDeselectLabelAnimation(textLabel)
         textLabel.textColor = defaultTextColor
+      
+        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
+        icon.image = renderImage
+        icon.tintColor = defaultTextColor
     }
 
     override func selectedState(icon : UIImageView, textLabel : UILabel) {
@@ -43,6 +51,10 @@ class RAMFumeAnimation : RAMItemAnimation {
         playMoveIconAnimation(icon, values:[icon.center.y + 8.0])
         textLabel.alpha = 0
         textLabel.textColor = textSelectedColor
+      
+        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
+        icon.image = renderImage
+        icon.tintColor = textSelectedColor
     }
 
     func playMoveIconAnimation(icon : UIImageView, values: [AnyObject]) {
@@ -71,6 +83,7 @@ class RAMFumeAnimation : RAMItemAnimation {
     }
 
     func createAnimation(keyPath: String, values: [AnyObject], duration: CGFloat)->CAKeyframeAnimation {
+      
         let animation = CAKeyframeAnimation(keyPath: keyPath)
         animation.values = values
         animation.duration = NSTimeInterval(duration)
@@ -83,7 +96,7 @@ class RAMFumeAnimation : RAMItemAnimation {
     // MARK: deselect animation
 
     func playDeselectLabelAnimation(textLabel: UILabel) {
-
+      
         let yPositionAnimation = createAnimation("position.y", values:[textLabel.center.y + 15, textLabel.center.y], duration:duration)
         textLabel.layer.addAnimation(yPositionAnimation, forKey: "yLabelPostionAnimation")
 

@@ -32,10 +32,18 @@ class RAMBounceAnimation : RAMItemAnimation {
 
     override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
         textLabel.textColor = defaultTextColor
+      
+        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
+        icon.image = renderImage
+        icon.tintColor = defaultTextColor
     }
 
     override func selectedState(icon : UIImageView, textLabel : UILabel) {
         textLabel.textColor = textSelectedColor
+      
+        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
+        icon.image = renderImage
+        icon.tintColor = textSelectedColor
     }
 
     func playBounceAnimation(icon : UIImageView) {
@@ -46,6 +54,10 @@ class RAMBounceAnimation : RAMItemAnimation {
         bounceAnimation.calculationMode = kCAAnimationCubic
 
         icon.layer.addAnimation(bounceAnimation, forKey: "bounceAnimation")
+      
+        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
+        icon.image = renderImage
+        icon.tintColor = iconSelectedColor
     }
 
 }

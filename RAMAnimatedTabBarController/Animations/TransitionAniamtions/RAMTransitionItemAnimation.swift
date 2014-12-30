@@ -25,7 +25,6 @@ import UIKit
 class RAMTransitionItemAniamtions : RAMItemAnimation {
 
     var transitionOptions : UIViewAnimationOptions!
-    @IBInspectable var iconSelectedColor: UIColor!
 
     override init() {
         super.init()
