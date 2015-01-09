@@ -14,5 +14,8 @@
   "platforms": {
     "ios": "7.0"
   },
-  "source_files": "RAMAnimatedTabBarController/*.swift"
+  "source_files": [
+    "RAMAnimatedTabBarController/*.swift",
+    "RAMAnimatedTabBarController/**/*.swift"
+  ]
 }
