@@ -59,7 +59,7 @@ class RAMRotationAnimation : RAMItemAnimation {
         rotateAnimation.fromValue = 0.0
 
         var toValue = CGFloat(M_PI * 2.0)
-        if direction == RAMRotationDirection.Left {
+        if direction != nil && direction == RAMRotationDirection.Left {
             toValue = toValue * -1.0
         }
 
