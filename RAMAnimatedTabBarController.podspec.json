@@ -1,0 +1,21 @@
+{
+  "name": "RAMAnimatedTabBarController",
+  "version": "1.0.0",
+  "license": "MIT",
+  "summary": "RAMAnimatedTabBarController is a Swift module for adding animation to tabbar items.",
+  "homepage": "https://github.com/Ramotion/animated-tab-bar",
+  "authors": {
+    "Juri Vasylenko": "juri.v@ramotion.com"
+  },
+  "source": {
+    "git": "https://github.com/Ramotion/animated-tab-bar.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": [
+    "RAMAnimatedTabBarController/*.swift",
+    "RAMAnimatedTabBarController/**/*.swift"
+  ]
+}
