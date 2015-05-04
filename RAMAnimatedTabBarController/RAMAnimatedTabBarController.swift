@@ -75,7 +75,7 @@ class RAMAnimatedTabBarController: UITabBarController {
 
                 assert(item.image != nil, "add image icon in UITabBarItem")
 
-                var container : UIView = containers["container\(itemsCount-index)"] as UIView
+                var container : UIView = containers["container\(itemsCount-index)"] as! UIView
                 container.tag = index
 
                 var icon = UIImageView(image: item.image)
@@ -215,7 +215,7 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func tapHandler(gesture:UIGestureRecognizer) {
 
-        let items = tabBar.items as [RAMAnimatedTabBarItem]
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
 
         let currentIndex = gesture.view!.tag
         if selectedIndex != currentIndex {
