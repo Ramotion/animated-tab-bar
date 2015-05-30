@@ -71,11 +71,11 @@ class RAMAnimatedTabBarController: UITabBarController {
         if let items = tabBar.items {
             let itemsCount = tabBar.items!.count as Int - 1
             var index = 0
-            for item in self.tabBar.items as [RAMAnimatedTabBarItem] {
+            for item in self.tabBar.items as! [RAMAnimatedTabBarItem] {
 
                 assert(item.image != nil, "add image icon in UITabBarItem")
 
-                var container : UIView = containers["container\(itemsCount-index)"] as UIView
+                var container : UIView = containers["container\(itemsCount-index)"] as! UIView
                 container.tag = index
 
                 var icon = UIImageView(image: item.image)
@@ -153,15 +153,15 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func createViewContainers() -> NSDictionary {
 
-        var containersDict = NSMutableDictionary()
+        var containersDict = [String : AnyObject]()
         let itemsCount : Int = tabBar.items!.count as Int - 1
 
         for index in 0...itemsCount {
             var viewContainer = createViewContainer()
-            containersDict.setValue(viewContainer, forKey: "container\(index)")
+            containersDict["container\(index)"] = viewContainer
         }
 
-        var keys = containersDict.allKeys
+        var keys = containersDict.keys
 
         var formatString = "H:|-(0)-[container0]"
         for index in 1...itemsCount {
@@ -215,9 +215,17 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func tapHandler(gesture:UIGestureRecognizer) {
 
-        let items = tabBar.items as [RAMAnimatedTabBarItem]
-
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        
         let currentIndex = gesture.view!.tag
+        let viewController = viewControllers![currentIndex] as! UIViewController
+        
+        if let shouldSelect = delegate?.tabBarController?(self, shouldSelectViewController: viewController)
+            where !shouldSelect
+        {
+            return
+        }
+
         if selectedIndex != currentIndex {
             var animationItem : RAMAnimatedTabBarItem = items[currentIndex]
             var icon = iconsView[currentIndex].icon
@@ -228,8 +236,8 @@ class RAMAnimatedTabBarController: UITabBarController {
             let deselelectTextLabel = iconsView[selectedIndex].textLabel
             let deselectItem = items[selectedIndex]
             deselectItem.deselectAnimation(deselelectIcon, textLabel: deselelectTextLabel)
-
             selectedIndex = gesture.view!.tag
+            delegate?.tabBarController?(self, didSelectViewController: viewController)
         }
     }
 }

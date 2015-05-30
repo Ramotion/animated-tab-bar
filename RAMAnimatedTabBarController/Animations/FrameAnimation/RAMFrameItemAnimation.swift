@@ -38,7 +38,7 @@ class RAMFrameItemAnimation: RAMItemAnimation {
 
         let dict : NSDictionary = NSDictionary(contentsOfFile: path!)!
 
-        let animationImagesName = dict["images"] as Array<String>
+        let animationImagesName = dict["images"] as! Array<String>
         createImagesArray(animationImagesName)
 
         // selected image

@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let delegate = TabDelegate()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let tabVC = window?.rootViewController as? UITabBarController
+        tabVC?.delegate = delegate
         return true
     }
 
