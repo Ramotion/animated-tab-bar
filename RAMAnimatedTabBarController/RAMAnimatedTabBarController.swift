@@ -71,11 +71,11 @@ class RAMAnimatedTabBarController: UITabBarController {
         if let items = tabBar.items {
             let itemsCount = tabBar.items!.count as Int - 1
             var index = 0
-            for item in self.tabBar.items as [RAMAnimatedTabBarItem] {
+            for item in self.tabBar.items as! [RAMAnimatedTabBarItem] {
 
                 assert(item.image != nil, "add image icon in UITabBarItem")
 
-                var container : UIView = containers["container\(itemsCount-index)"] as UIView
+                var container : UIView = containers["container\(itemsCount-index)"] as! UIView
                 container.tag = index
 
                 var icon = UIImageView(image: item.image)
@@ -171,7 +171,7 @@ class RAMAnimatedTabBarController: UITabBarController {
         var  constranints = NSLayoutConstraint.constraintsWithVisualFormat(formatString,
                                                                     options:NSLayoutFormatOptions.DirectionRightToLeft,
                                                                     metrics: nil,
-                                                                      views: containersDict)
+                                                                      views: containersDict as [NSObject : AnyObject])
         view.addConstraints(constranints)
 
         return containersDict
@@ -215,7 +215,7 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func tapHandler(gesture:UIGestureRecognizer) {
 
-        let items = tabBar.items as [RAMAnimatedTabBarItem]
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
 
         let currentIndex = gesture.view!.tag
         if selectedIndex != currentIndex {
