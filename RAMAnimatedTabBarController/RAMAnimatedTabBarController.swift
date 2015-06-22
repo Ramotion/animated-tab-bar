@@ -232,6 +232,13 @@ class RAMAnimatedTabBarController: UITabBarController {
             selectedIndex = gesture.view!.tag
         }
     }
+    
+    func setSelectIndex(#from:Int,to:Int) {
+        self.selectedIndex = to
+        let items = self.tabBar.items as! [RAMAnimatedTabBarItem]
+        items[from].deselectAnimation(iconsView[from].icon, textLabel: iconsView[from].textLabel)
+        items[to].playAnimation(iconsView[to].icon, textLabel: iconsView[to].textLabel)
+    }
 }
 
 
