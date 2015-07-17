@@ -7,5 +7,6 @@ Pod::Spec.new do |s|
   s.authors = { 'Juri Vasylenko' => 'juri.v@ramotion.com' }
   s.source = { :git => 'https://github.com/Ramotion/animated-tab-bar.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
-  s.source_files = 'RAMAnimatedTabBarController/**/*.swift'
+  s.source_files = "RAMAnimatedTabBarController/*.swift", "RAMAnimatedTabBarController/**/*.swift"
+  s.requires_arc = true
 end
