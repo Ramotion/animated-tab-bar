@@ -40,17 +40,21 @@ class RAMRotationAnimation : RAMItemAnimation {
     override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
         textLabel.textColor = defaultTextColor
       
-        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
-        icon.image = renderImage
-        icon.tintColor = defaultTextColor
+        if let iconImage = icon.image {
+            let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+            icon.image = renderImage
+            icon.tintColor = defaultTextColor
+        }
     }
 
     override func selectedState(icon : UIImageView, textLabel : UILabel) {
         textLabel.textColor = textSelectedColor
       
-        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
-        icon.image = renderImage
-        icon.tintColor = textSelectedColor
+        if let iconImage = icon.image {
+            let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+            icon.image = renderImage
+            icon.tintColor = textSelectedColor
+        }
     }
 
     func playRoatationAnimation(icon : UIImageView) {
@@ -68,9 +72,11 @@ class RAMRotationAnimation : RAMItemAnimation {
 
         icon.layer.addAnimation(rotateAnimation, forKey: "rotation360")
       
-        let renderImage = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
-        icon.image = renderImage
-        icon.tintColor = iconSelectedColor
+        if let iconImage = icon.image {
+            let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+            icon.image = renderImage
+            icon.tintColor = iconSelectedColor
+        }
     }
 }
 

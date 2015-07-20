@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QjJ-1j-Kct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QjJ-1j-Kct">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -212,7 +212,7 @@
                             <constraint firstAttribute="centerY" secondItem="qMh-ib-nBJ" secondAttribute="centerY" constant="114.5" id="jUP-sb-8cO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item4" image="Settings" id="EiX-sv-bUZ" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarDemo" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="Item4" id="EiX-sv-bUZ" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarDemo" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -292,7 +292,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Settings" width="30" height="30"/>
         <image name="Tools_00028" width="30" height="30"/>
         <image name="drop" width="24" height="24"/>
         <image name="icon_pin" width="30" height="30"/>
