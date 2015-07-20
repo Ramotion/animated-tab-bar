@@ -37,15 +37,17 @@ class RAMTransitionItemAniamtions : RAMItemAnimation {
         selectedColor(icon, textLabel: textLabel)
 
         UIView.transitionWithView(icon, duration: NSTimeInterval(duration), options: transitionOptions, animations: {
-            }, completion: { finished in
+            }, completion: { _ in
         })
     }
 
     override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
 
-        var renderImage = icon.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        icon.image = renderImage;
-        textLabel.textColor = defaultTextColor
+        if let iconImage = icon.image {
+            let renderImage = iconImage.imageWithRenderingMode(.AlwaysOriginal)
+            icon.image = renderImage
+            textLabel.textColor = defaultTextColor
+        }
     }
 
     override func selectedState(icon : UIImageView, textLabel : UILabel) {
@@ -56,9 +58,9 @@ class RAMTransitionItemAniamtions : RAMItemAnimation {
 
     func selectedColor(icon : UIImageView, textLabel : UILabel) {
 
-        if iconSelectedColor != nil {
-            var renderImage = icon.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            icon.image = renderImage;
+        if let iconImage = icon.image where iconSelectedColor != nil {
+            let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+            icon.image = renderImage
             icon.tintColor = iconSelectedColor
         }
 

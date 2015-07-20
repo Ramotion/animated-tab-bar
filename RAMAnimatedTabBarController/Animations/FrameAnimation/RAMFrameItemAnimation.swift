@@ -42,7 +42,7 @@ class RAMFrameItemAnimation: RAMItemAnimation {
         createImagesArray(animationImagesName)
 
         // selected image
-        var selectedImageName = animationImagesName[animationImagesName.endIndex - 1]
+        let selectedImageName = animationImagesName[animationImagesName.endIndex - 1]
         selectedImage = UIImage(named: selectedImageName)
     }
 
@@ -74,13 +74,13 @@ class RAMFrameItemAnimation: RAMItemAnimation {
     }
 
     func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
-        var frameAnimation = CAKeyframeAnimation(keyPath: "contents")
+        let frameAnimation = CAKeyframeAnimation(keyPath: "contents")
         frameAnimation.calculationMode = kCAAnimationDiscrete
         frameAnimation.duration = NSTimeInterval(duration)
         frameAnimation.values = images
-        frameAnimation.repeatCount = 1;
-        frameAnimation.removedOnCompletion = false;
-        frameAnimation.fillMode = kCAFillModeForwards;
+        frameAnimation.repeatCount = 1
+        frameAnimation.removedOnCompletion = false
+        frameAnimation.fillMode = kCAFillModeForwards
         icon.layer.addAnimation(frameAnimation, forKey: "frameAnimation")
     }
 }

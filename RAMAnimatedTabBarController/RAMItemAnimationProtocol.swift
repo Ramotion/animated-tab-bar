@@ -33,7 +33,7 @@ protocol RAMItemAnimationProtocol {
 
 class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
 
-    @IBInspectable var duration : CGFloat = 0.5;
+    @IBInspectable var duration : CGFloat = 0.5
     @IBInspectable var textSelectedColor: UIColor = UIColor.blackColor()
     @IBInspectable var iconSelectedColor: UIColor!
 

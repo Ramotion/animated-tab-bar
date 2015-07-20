@@ -69,21 +69,21 @@ class RAMAnimatedTabBarController: UITabBarController {
     func createCustomIcons(containers : NSDictionary) {
 
         if let items = tabBar.items {
-            let itemsCount = tabBar.items!.count as Int - 1
-            var index = 0
-            for item in self.tabBar.items as! [RAMAnimatedTabBarItem] {
+            let itemsCount = items.count as Int - 1
+            
+            for (index, item) in enumerate(items as! [RAMAnimatedTabBarItem]) {
 
                 assert(item.image != nil, "add image icon in UITabBarItem")
 
-                var container : UIView = containers["container\(itemsCount-index)"] as! UIView
+                let container : UIView = containers["container\(itemsCount-index)"] as! UIView
                 container.tag = index
 
-                var icon = UIImageView(image: item.image)
+                let icon = UIImageView(image: item.image)
                 icon.setTranslatesAutoresizingMaskIntoConstraints(false)
                 icon.tintColor = UIColor.clearColor()
 
                 // text
-                var textLabel = UILabel()
+                let textLabel = UILabel()
                 textLabel.text = item.title
                 textLabel.backgroundColor = UIColor.clearColor()
                 textLabel.textColor = item.textColor
@@ -92,11 +92,17 @@ class RAMAnimatedTabBarController: UITabBarController {
                 textLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
 
                 container.addSubview(icon)
-                createConstraints(icon, container: container, size: item.image!.size, yOffset: -5)
+                
+                if let itemImage = item.image {
+                    createConstraints(icon, container: container, size: itemImage.size, yOffset: -5)
+                }
 
                 container.addSubview(textLabel)
-                let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBar.items!.count) - 5.0
-                createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
+                
+                if let tabBarItem = tabBar.items {
+                    let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBarItem.count) - 5.0
+                    createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
+                }
 
                 let iconsAndLabels = (icon:icon, textLabel:textLabel)
                 iconsView.append(iconsAndLabels)
@@ -107,14 +113,13 @@ class RAMAnimatedTabBarController: UITabBarController {
 
                 item.image = nil
                 item.title = ""
-                index++
             }
         }
     }
 
     func createConstraints(view:UIView, container:UIView, size:CGSize, yOffset:CGFloat) {
 
-        var constX = NSLayoutConstraint(item: view,
+        let constX = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.CenterX,
             relatedBy: NSLayoutRelation.Equal,
             toItem: container,
@@ -123,7 +128,7 @@ class RAMAnimatedTabBarController: UITabBarController {
             constant: 0)
         container.addConstraint(constX)
 
-        var constY = NSLayoutConstraint(item: view,
+        let constY = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.CenterY,
             relatedBy: NSLayoutRelation.Equal,
             toItem: container,
@@ -132,7 +137,7 @@ class RAMAnimatedTabBarController: UITabBarController {
             constant: yOffset)
         container.addConstraint(constY)
 
-        var constW = NSLayoutConstraint(item: view,
+        let constW = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.Width,
             relatedBy: NSLayoutRelation.Equal,
             toItem: nil,
@@ -141,7 +146,7 @@ class RAMAnimatedTabBarController: UITabBarController {
             constant: size.width)
         view.addConstraint(constW)
 
-        var constH = NSLayoutConstraint(item: view,
+        let constH = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.Height,
             relatedBy: NSLayoutRelation.Equal,
             toItem: nil,
@@ -153,22 +158,22 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func createViewContainers() -> NSDictionary {
 
-        var containersDict = NSMutableDictionary()
-        let itemsCount : Int = tabBar.items!.count as Int - 1
+        let containersDict = NSMutableDictionary()
+        let itemsCount: Int = tabBar.items!.count as Int - 1
 
         for index in 0...itemsCount {
-            var viewContainer = createViewContainer()
+            let viewContainer = createViewContainer()
             containersDict.setValue(viewContainer, forKey: "container\(index)")
         }
 
-        var keys = containersDict.allKeys
+        let keys = containersDict.allKeys
 
         var formatString = "H:|-(0)-[container0]"
         for index in 1...itemsCount {
             formatString += "-(0)-[container\(index)(==container0)]"
         }
         formatString += "-(0)-|"
-        var  constranints = NSLayoutConstraint.constraintsWithVisualFormat(formatString,
+        let constranints = NSLayoutConstraint.constraintsWithVisualFormat(formatString,
                                                                     options:NSLayoutFormatOptions.DirectionRightToLeft,
                                                                     metrics: nil,
                                                                       views: containersDict as [NSObject : AnyObject])
@@ -178,18 +183,18 @@ class RAMAnimatedTabBarController: UITabBarController {
     }
 
     func createViewContainer() -> UIView {
-        var viewContainer = UIView();
+        let viewContainer = UIView()
         viewContainer.backgroundColor = UIColor.clearColor() // for test
         viewContainer.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(viewContainer)
 
         // add gesture
-        var tapGesture = UITapGestureRecognizer(target: self, action: "tapHandler:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tapHandler:")
         tapGesture.numberOfTouchesRequired = 1
         viewContainer.addGestureRecognizer(tapGesture)
 
         // add constrains
-        var constY = NSLayoutConstraint(item: viewContainer,
+        let constY = NSLayoutConstraint(item: viewContainer,
                                    attribute: NSLayoutAttribute.Bottom,
                                    relatedBy: NSLayoutRelation.Equal,
                                       toItem: view,
@@ -199,7 +204,7 @@ class RAMAnimatedTabBarController: UITabBarController {
 
         view.addConstraint(constY)
 
-        var constH = NSLayoutConstraint(item: viewContainer,
+        let constH = NSLayoutConstraint(item: viewContainer,
                                    attribute: NSLayoutAttribute.Height,
                                    relatedBy: NSLayoutRelation.Equal,
                                       toItem: nil,
@@ -219,9 +224,9 @@ class RAMAnimatedTabBarController: UITabBarController {
 
         let currentIndex = gesture.view!.tag
         if selectedIndex != currentIndex {
-            var animationItem : RAMAnimatedTabBarItem = items[currentIndex]
-            var icon = iconsView[currentIndex].icon
-            var textLabel = iconsView[currentIndex].textLabel
+            let animationItem : RAMAnimatedTabBarItem = items[currentIndex]
+            let icon = iconsView[currentIndex].icon
+            let textLabel = iconsView[currentIndex].textLabel
             animationItem.playAnimation(icon, textLabel: textLabel)
 
             let deselelectIcon = iconsView[selectedIndex].icon
@@ -234,8 +239,8 @@ class RAMAnimatedTabBarController: UITabBarController {
     }
     
     func setSelectIndex(#from:Int,to:Int) {
-        self.selectedIndex = to
-        let items = self.tabBar.items as! [RAMAnimatedTabBarItem]
+        selectedIndex = to
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
         items[from].deselectAnimation(iconsView[from].icon, textLabel: iconsView[from].textLabel)
         items[to].playAnimation(iconsView[to].icon, textLabel: iconsView[to].textLabel)
     }
