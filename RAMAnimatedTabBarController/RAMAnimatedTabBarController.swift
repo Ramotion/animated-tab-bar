@@ -102,7 +102,6 @@ class RAMAnimatedTabBarController: UITabBarController {
                 if let tabBarItem = tabBar.items {
                     let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBarItem.count) - 5.0
                     createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
-                    
                 }
 
                 let iconsAndLabels = (icon:icon, textLabel:textLabel)
