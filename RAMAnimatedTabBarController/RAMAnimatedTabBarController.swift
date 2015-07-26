@@ -78,9 +78,11 @@ class RAMAnimatedTabBarController: UITabBarController {
                 let container : UIView = containers["container\(itemsCount-index)"] as! UIView
                 container.tag = index
 
-                let icon = UIImageView(image: item.image)
+                let renderImage = item.image?.imageWithRenderingMode(.AlwaysTemplate)
+                let icon = UIImageView(image: renderImage)
                 icon.setTranslatesAutoresizingMaskIntoConstraints(false)
-                icon.tintColor = UIColor.clearColor()
+                icon.image = renderImage
+                icon.tintColor = item.textColor
 
                 // text
                 let textLabel = UILabel()
