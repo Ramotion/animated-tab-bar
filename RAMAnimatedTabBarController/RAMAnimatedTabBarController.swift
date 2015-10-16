@@ -62,58 +62,59 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func createCustomIcons(containers : [String: UIView]) {
 
-        if let items = tabBar.items as? [RAMAnimatedTabBarItem] {
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
+            return
+        }
+        
+        let itemsCount = items.count as Int - 1
+        
+        for (index, item) in items.enumerate() {
+
+            assert(item.image != nil, "add image icon in UITabBarItem")
             
-            let itemsCount = items.count as Int - 1
-            
-            for (index, item) in items.enumerate() {
-
-                assert(item.image != nil, "add image icon in UITabBarItem")
-                
-                guard let container = containers["container\(itemsCount-index)"] else
-                {
-                    print("No container given")
-                    continue
-                }
-                
-                container.tag = index
-
-                let icon = UIImageView(image: item.image)
-                icon.translatesAutoresizingMaskIntoConstraints = false
-                icon.tintColor = UIColor.clearColor()
-
-                // text
-                let textLabel = UILabel()
-                textLabel.text = item.title
-                textLabel.backgroundColor = UIColor.clearColor()
-                textLabel.textColor = item.textColor
-                textLabel.font = UIFont.systemFontOfSize(10)
-                textLabel.textAlignment = NSTextAlignment.Center
-                textLabel.translatesAutoresizingMaskIntoConstraints = false
-
-                container.addSubview(icon)
-                
-                if let itemImage = item.image {
-                    createConstraints(icon, container: container, size: itemImage.size, yOffset: -5)
-                }
-
-                container.addSubview(textLabel)
-                
-                if let tabBarItem = tabBar.items {
-                    let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBarItem.count) - 5.0
-                    createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
-                }
-
-                let iconsAndLabels = (icon:icon, textLabel:textLabel)
-                iconsView.append(iconsAndLabels)
-
-                if 0 == index { // selected first elemet
-                    item.selectedState(icon, textLabel: textLabel)
-                }
-
-                item.image = nil
-                item.title = ""
+            guard let container = containers["container\(itemsCount-index)"] else
+            {
+                print("No container givenfor item \(item)")
+                continue
             }
+            
+            container.tag = index
+
+            let icon = UIImageView(image: item.image)
+            icon.translatesAutoresizingMaskIntoConstraints = false
+            icon.tintColor = UIColor.clearColor()
+
+            // text
+            let textLabel = UILabel()
+            textLabel.text = item.title
+            textLabel.backgroundColor = UIColor.clearColor()
+            textLabel.textColor = item.textColor
+            textLabel.font = UIFont.systemFontOfSize(10)
+            textLabel.textAlignment = NSTextAlignment.Center
+            textLabel.translatesAutoresizingMaskIntoConstraints = false
+
+            container.addSubview(icon)
+            
+            if let itemImage = item.image {
+                createConstraints(icon, container: container, size: itemImage.size, yOffset: -5)
+            }
+
+            container.addSubview(textLabel)
+            
+            if let tabBarItem = tabBar.items {
+                let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBarItem.count) - 5.0
+                createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
+            }
+
+            let iconsAndLabels = (icon:icon, textLabel:textLabel)
+            iconsView.append(iconsAndLabels)
+
+            if 0 == index { // selected first elemet
+                item.selectedState(icon, textLabel: textLabel)
+            }
+
+            item.image = nil
+            item.title = ""
         }
     }
 
@@ -172,11 +173,11 @@ class RAMAnimatedTabBarController: UITabBarController {
             containersDict["container\(index)"] = viewContainer
         }
 
-        var formatString = "H:|-(0)-[container0]"
+        var formatString = "H:|-[container0]"
         for index in 1...itemsCount {
-            formatString += "-(0)-[container\(index)(==container0)]"
+            formatString += "-[container\(index)(==container0)]"
         }
-        formatString += "-(0)-|"
+        formatString += "-|"
         let constranints = NSLayoutConstraint.constraintsWithVisualFormat(formatString,
                                                                     options:NSLayoutFormatOptions.DirectionRightToLeft,
                                                                     metrics: nil,
@@ -188,7 +189,7 @@ class RAMAnimatedTabBarController: UITabBarController {
 
     func createViewContainer() -> UIView {
         let viewContainer = UIView()
-        viewContainer.backgroundColor = UIColor.clearColor() // for test
+        viewContainer.backgroundColor = UIColor.clearColor()
         viewContainer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(viewContainer)
 
