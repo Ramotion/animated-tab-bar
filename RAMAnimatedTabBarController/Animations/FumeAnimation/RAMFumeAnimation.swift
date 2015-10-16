@@ -25,6 +25,15 @@ import UIKit
 
 
 class RAMFumeAnimation : RAMItemAnimation {
+    
+    struct Constants {
+        static var PositionX = "position.x"
+        static var PositionY = "position.y"
+        
+        static var TransformScale = "transform.scale"
+        
+        static var Opacity = "opacity"
+    }
 
     override func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playMoveIconAnimation(icon, values:[icon.center.y, icon.center.y + 4.0])
@@ -65,7 +74,7 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     func playMoveIconAnimation(icon : UIImageView, values: [AnyObject]) {
 
-        let yPositionAnimation = createAnimation("position.y", values:values, duration:duration / 2)
+        let yPositionAnimation = createAnimation(Constants.PositionY, values:values, duration:duration / 2)
 
         icon.layer.addAnimation(yPositionAnimation, forKey: "yPositionAnimation")
     }
@@ -74,17 +83,17 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     func playLabelAnimation(textLabel: UILabel) {
 
-        let yPositionAnimation = createAnimation("position.y", values:[textLabel.center.y, textLabel.center.y - 60.0], duration:duration)
+        let yPositionAnimation = createAnimation(Constants.PositionY, values:[textLabel.center.y, textLabel.center.y - 60.0], duration:duration)
         yPositionAnimation.fillMode = kCAFillModeRemoved
         yPositionAnimation.removedOnCompletion = true
         textLabel.layer.addAnimation(yPositionAnimation, forKey: "yLabelPostionAnimation")
 
-        let scaleAnimation = createAnimation("transform.scale", values:[1.0 ,2.0], duration:duration)
+        let scaleAnimation = createAnimation(Constants.TransformScale, values:[1.0 ,2.0], duration:duration)
         scaleAnimation.fillMode = kCAFillModeRemoved
         scaleAnimation.removedOnCompletion = true
         textLabel.layer.addAnimation(scaleAnimation, forKey: "scaleLabelAnimation")
 
-        let opacityAnimation = createAnimation("opacity", values:[1.0 ,0.0], duration:duration)
+        let opacityAnimation = createAnimation(Constants.Opacity, values:[1.0 ,0.0], duration:duration)
         textLabel.layer.addAnimation(opacityAnimation, forKey: "opacityLabelAnimation")
     }
 
@@ -103,10 +112,10 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     func playDeselectLabelAnimation(textLabel: UILabel) {
       
-        let yPositionAnimation = createAnimation("position.y", values:[textLabel.center.y + 15, textLabel.center.y], duration:duration)
+        let yPositionAnimation = createAnimation(Constants.PositionY, values:[textLabel.center.y + 15, textLabel.center.y], duration:duration)
         textLabel.layer.addAnimation(yPositionAnimation, forKey: "yLabelPostionAnimation")
 
-        let opacityAnimation = createAnimation("opacity", values:[0, 1], duration:duration)
+        let opacityAnimation = createAnimation(Constants.Opacity, values:[0, 1], duration:duration)
         textLabel.layer.addAnimation(opacityAnimation, forKey: "opacityLabelAnimation")
     }
 
