@@ -58,6 +58,12 @@ public class RAMAnimatedTabBarController: UITabBarController {
         createCustomIcons(containers)
     }
 
+    public func setupContainers() {
+        let containers = createViewContainers()
+
+        createCustomIcons(containers)
+    }
+
 // MARK: create methods
 
     func createCustomIcons(containers : [String: UIView]) {
