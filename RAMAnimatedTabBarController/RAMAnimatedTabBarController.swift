@@ -248,7 +248,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
         }
     }
     
-    func setSelectIndex(from from: Int,to: Int) {
+    public func setSelectIndex(from from: Int,to: Int) {
         selectedIndex = to
         let items = tabBar.items as! [RAMAnimatedTabBarItem]
         items[from].deselectAnimation(iconsView[from].icon, textLabel: iconsView[from].textLabel)
