@@ -24,8 +24,8 @@ import UIKit
 
 public class RAMAnimatedTabBarItem: UITabBarItem {
 
-    @IBOutlet weak var animation: RAMItemAnimation?
-    @IBInspectable var textColor = UIColor.blackColor()
+    @IBOutlet public var animation: RAMItemAnimation?
+    @IBInspectable public var textColor = UIColor.blackColor()
 
     func playAnimation(icon: UIImageView, textLabel: UILabel){
         guard let animation = animation else {
