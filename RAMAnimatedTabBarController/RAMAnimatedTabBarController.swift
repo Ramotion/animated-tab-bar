@@ -22,7 +22,7 @@
 
 import UIKit
 
-class RAMAnimatedTabBarItem: UITabBarItem {
+public class RAMAnimatedTabBarItem: UITabBarItem {
 
     @IBOutlet weak var animation: RAMItemAnimation?
     @IBInspectable var textColor = UIColor.blackColor()
@@ -44,13 +44,13 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     }
 }
 
-class RAMAnimatedTabBarController: UITabBarController {
+public class RAMAnimatedTabBarController: UITabBarController {
 
     var iconsView: [(icon: UIImageView, textLabel: UILabel)] = []
 
 // MARK: life circle
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         let containers = createViewContainers()

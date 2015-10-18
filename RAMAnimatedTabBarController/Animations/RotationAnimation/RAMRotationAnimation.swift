@@ -23,21 +23,21 @@
 import UIKit
 import QuartzCore
 
-enum RAMRotationDirection {
+public enum RAMRotationDirection {
     case Left
     case Right
 }
 
-class RAMRotationAnimation : RAMItemAnimation {
+public class RAMRotationAnimation : RAMItemAnimation {
 
     var direction : RAMRotationDirection!
 
-    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    public override func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playRoatationAnimation(icon)
         textLabel.textColor = textSelectedColor
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+    public override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
         textLabel.textColor = defaultTextColor
       
         if let iconImage = icon.image {
@@ -47,7 +47,7 @@ class RAMRotationAnimation : RAMItemAnimation {
         }
     }
 
-    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+    public override func selectedState(icon : UIImageView, textLabel : UILabel) {
         textLabel.textColor = textSelectedColor
       
         if let iconImage = icon.image {
@@ -57,7 +57,7 @@ class RAMRotationAnimation : RAMItemAnimation {
         }
     }
 
-    func playRoatationAnimation(icon : UIImageView) {
+    public func playRoatationAnimation(icon : UIImageView) {
 
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
