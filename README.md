@@ -4,6 +4,9 @@ RAMAnimatedTabBarController is a Swift module for adding animation to tabbar ite
 
 ![Animation](Screenshots/tab-bar-icons-iphone-ramotion-animation-interface-design.gif)
 
+The [iPhone mockup](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) available [here](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar).
+
+
 Screencast from our Demo
 
 ![Animation](Screenshots/RAMAnimatedTabBarDemo.gif)
