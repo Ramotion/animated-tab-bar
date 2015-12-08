@@ -24,25 +24,25 @@
 import Foundation
 import UIKit
 
-protocol RAMItemAnimationProtocol {
+public protocol RAMItemAnimationProtocol {
 
     func playAnimation(icon : UIImageView, textLabel : UILabel)
     func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor)
     func selectedState(icon : UIImageView, textLabel : UILabel)
 }
 
-class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
+public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
 
     @IBInspectable var duration : CGFloat = 0.5
     @IBInspectable var textSelectedColor: UIColor = UIColor.blackColor()
     @IBInspectable var iconSelectedColor: UIColor!
 
-    func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    public func playAnimation(icon : UIImageView, textLabel : UILabel) {
     }
 
-    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+    public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
     }
 
-    func selectedState(icon: UIImageView, textLabel : UILabel) {
+    public func selectedState(icon: UIImageView, textLabel : UILabel) {
     }
 }

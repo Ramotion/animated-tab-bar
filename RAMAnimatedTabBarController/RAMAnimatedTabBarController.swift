@@ -22,10 +22,10 @@
 
 import UIKit
 
-class RAMAnimatedTabBarItem: UITabBarItem {
+public class RAMAnimatedTabBarItem: UITabBarItem {
 
-    @IBOutlet weak var animation: RAMItemAnimation?
-    @IBInspectable var textColor = UIColor.blackColor()
+    @IBOutlet public var animation: RAMItemAnimation?
+    @IBInspectable public var textColor = UIColor.blackColor()
 
     func playAnimation(icon: UIImageView, textLabel: UILabel){
         guard let animation = animation else {
@@ -44,15 +44,21 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     }
 }
 
-class RAMAnimatedTabBarController: UITabBarController {
+public class RAMAnimatedTabBarController: UITabBarController {
 
     var iconsView: [(icon: UIImageView, textLabel: UILabel)] = []
 
 // MARK: life circle
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
+        let containers = createViewContainers()
+
+        createCustomIcons(containers)
+    }
+
+    public func setupContainers() {
         let containers = createViewContainers()
 
         createCustomIcons(containers)
@@ -242,7 +248,7 @@ class RAMAnimatedTabBarController: UITabBarController {
         }
     }
     
-    func setSelectIndex(from from: Int,to: Int) {
+    public func setSelectIndex(from from: Int,to: Int) {
         selectedIndex = to
         let items = tabBar.items as! [RAMAnimatedTabBarItem]
         items[from].deselectAnimation(iconsView[from].icon, textLabel: iconsView[from].textLabel)
