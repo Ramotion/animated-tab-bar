@@ -230,6 +230,12 @@ class RAMAnimatedTabBarController: UITabBarController {
             deselectItem.deselectAnimation(deselelectIcon, textLabel: deselelectTextLabel)
             
             selectedIndex = gesture.view!.tag
+            
+        } else if selectedIndex == currentIndex {
+            
+            if let navVC = self.viewControllers![selectedIndex] as? UINavigationController {
+                navVC.popToRootViewControllerAnimated(true)
+            }
         }
     }
     
