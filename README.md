@@ -59,7 +59,7 @@ Just add the RAMAnimatedTabBarController folder to your project.
 
 
   ``` swift
-    // method call when Tab Bar Item is selected
+    // method call when TabBarController did load
     override func playAnimation(icon : UIImageView, textLable : UILabel) {
       // add animation
     }
@@ -71,7 +71,7 @@ Just add the RAMAnimatedTabBarController folder to your project.
     }
   ```    
   ``` swift
-    // method call when TabBarController did load
+    // method call when Tab Bar Item is selected
     override func selectedState(icon : UIImageView, textLable : UILabel) {
       // set selected state  
     }
