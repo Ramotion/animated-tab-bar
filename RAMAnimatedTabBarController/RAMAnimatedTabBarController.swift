@@ -48,6 +48,25 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     }
 }
 
+extension  RAMAnimatedTabBarController {
+    
+    func changeSelectedColor(textSelectedColor:UIColor, iconSelectedColor:UIColor) {
+        
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        for var index = 0; index < items.count; ++index {
+            let item = items[index]
+            
+            item.animation.textSelectedColor = textSelectedColor
+            item.animation.iconSelectedColor = iconSelectedColor
+            
+            if item == self.tabBar.selectedItem {
+                item.selectedState(iconsView[index].icon, textLabel: iconsView[index].textLabel)
+            }
+        }
+    }
+}
+
+
 class RAMAnimatedTabBarController: UITabBarController {
     
     var iconsView: [(icon: UIImageView, textLabel: UILabel)] = Array()
@@ -60,8 +79,6 @@ class RAMAnimatedTabBarController: UITabBarController {
         let containers = createViewContainers()
         
         createCustomIcons(containers)
-        
-        
     }
     
     // MARK: create methods
