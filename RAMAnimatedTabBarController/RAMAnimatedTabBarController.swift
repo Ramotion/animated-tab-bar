@@ -263,6 +263,12 @@ class RAMAnimatedTabBarController: UITabBarController {
         let items = tabBar.items as! [RAMAnimatedTabBarItem]
         
         let currentIndex = gesture.view!.tag
+        
+        if let shouldSelect = delegate?.tabBarController?(self, shouldSelectViewController: self)
+            where !shouldSelect {
+            return
+        }
+        
         if selectedIndex != currentIndex {
             let animationItem : RAMAnimatedTabBarItem = items[currentIndex]
             animationItem.playAnimation()
@@ -271,7 +277,8 @@ class RAMAnimatedTabBarController: UITabBarController {
             deselectItem.deselectAnimation()
             
             selectedIndex = gesture.view!.tag
-            
+
+            delegate?.tabBarController?(self, didSelectViewController: self)
         } else if selectedIndex == currentIndex {
             
             if let navVC = self.viewControllers![selectedIndex] as? UINavigationController {
