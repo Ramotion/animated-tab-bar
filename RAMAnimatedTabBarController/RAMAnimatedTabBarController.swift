@@ -95,6 +95,16 @@ extension  RAMAnimatedTabBarController {
             }
         }
     }
+    
+    func animationTabBarHidden(isHidden:Bool) {
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        for item in items {
+            if let iconView = item.iconView {
+                iconView.icon.superview?.hidden = isHidden
+            }
+        }
+        self.tabBar.hidden = isHidden;
+    }
 }
 
 
