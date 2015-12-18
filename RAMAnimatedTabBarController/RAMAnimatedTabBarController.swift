@@ -22,28 +22,59 @@
 
 import UIKit
 
+extension RAMAnimatedTabBarItem {
+    
+    override var badgeValue: String? {
+        get {
+            return badge?.text
+        }
+        set(newValue) {
+            
+            if newValue == nil && badge != nil {
+                badge?.removeFromSuperview()
+                badge = nil;
+                return
+            }
+            
+            if badge == nil {
+                badge = RAMBadge.bage()
+                if let contanerView = self.iconView!.icon.superview {
+                    badge!.addBadgeOnView(contanerView)
+                }
+            }
+            
+            badge?.text = newValue
+        }
+    }
+}
+
+
 class RAMAnimatedTabBarItem: UITabBarItem {
     
     @IBOutlet weak var animation: RAMItemAnimation!
     @IBInspectable var textColor: UIColor = UIColor.blackColor()
     
-    func playAnimation(icon: UIImageView, textLabel: UILabel) {
+    var badge: RAMBadge? // use badgeValue to show badge
+    
+    var iconView: (icon: UIImageView, textLabel: UILabel)?
+    
+    func playAnimation() {
         
         assert(animation != nil, "add animation in UITabBarItem")
-        if animation != nil {
-            animation.playAnimation(icon, textLabel: textLabel)
+        if animation != nil && iconView != nil {
+            animation.playAnimation(iconView!.icon, textLabel: iconView!.textLabel)
         }
     }
     
-    func deselectAnimation(icon: UIImageView, textLabel: UILabel) {
-        if animation != nil {
-            animation.deselectAnimation(icon, textLabel: textLabel, defaultTextColor: textColor)
+    func deselectAnimation() {
+        if animation != nil && iconView != nil {
+            animation.deselectAnimation(iconView!.icon, textLabel: iconView!.textLabel, defaultTextColor: textColor)
         }
     }
     
-    func selectedState(icon: UIImageView, textLabel: UILabel) {
-        if animation != nil {
-            animation.selectedState(icon, textLabel: textLabel)
+    func selectedState() {
+        if animation != nil && iconView != nil {
+            animation.selectedState(iconView!.icon, textLabel: iconView!.textLabel)
         }
     }
 }
@@ -60,7 +91,7 @@ extension  RAMAnimatedTabBarController {
             item.animation.iconSelectedColor = iconSelectedColor
             
             if item == self.tabBar.selectedItem {
-                item.selectedState(iconsView[index].icon, textLabel: iconsView[index].textLabel)
+                item.selectedState()
             }
         }
     }
@@ -68,8 +99,6 @@ extension  RAMAnimatedTabBarController {
 
 
 class RAMAnimatedTabBarController: UITabBarController {
-    
-    var iconsView: [(icon: UIImageView, textLabel: UILabel)] = Array()
     
     // MARK: life circle
     
@@ -115,11 +144,10 @@ class RAMAnimatedTabBarController: UITabBarController {
                 let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBar.items!.count) - 5.0
                 createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
                 
-                let iconsAndLabels = (icon:icon, textLabel:textLabel)
-                iconsView.append(iconsAndLabels)
+                item.iconView = (icon:icon, textLabel:textLabel)
                 
                 if 0 == index { // selected first elemet
-                    item.selectedState(icon, textLabel: textLabel)
+                    item.selectedState()
                 }
                 
                 item.image = nil
@@ -237,14 +265,10 @@ class RAMAnimatedTabBarController: UITabBarController {
         let currentIndex = gesture.view!.tag
         if selectedIndex != currentIndex {
             let animationItem : RAMAnimatedTabBarItem = items[currentIndex]
-            let icon = iconsView[currentIndex].icon
-            let textLabel = iconsView[currentIndex].textLabel
-            animationItem.playAnimation(icon, textLabel: textLabel)
+            animationItem.playAnimation()
             
-            let deselelectIcon = iconsView[selectedIndex].icon
-            let deselelectTextLabel = iconsView[selectedIndex].textLabel
             let deselectItem = items[selectedIndex]
-            deselectItem.deselectAnimation(deselelectIcon, textLabel: deselelectTextLabel)
+            deselectItem.deselectAnimation()
             
             selectedIndex = gesture.view!.tag
             
@@ -259,7 +283,7 @@ class RAMAnimatedTabBarController: UITabBarController {
     func setSelectIndex(from from:Int,to:Int) {
         self.selectedIndex = to
         let items = self.tabBar.items as! [RAMAnimatedTabBarItem]
-        items[from].deselectAnimation(iconsView[from].icon, textLabel: iconsView[from].textLabel)
-        items[to].playAnimation(iconsView[to].icon, textLabel: iconsView[to].textLabel)
+        items[from].deselectAnimation()
+        items[to].playAnimation()
     }
 }

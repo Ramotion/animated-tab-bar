@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var index :NSInteger = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // PRAGMA: actions
+    
+    @IBAction func showBadge(sender: AnyObject) {
+        index++
+        self.tabBarItem.badgeValue = "\(index)"
+    }
+    
+    @IBAction func hideBadge(sender: AnyObject) {
+        self.tabBarItem.badgeValue = nil;
+    }
+    
+    
 }
 
