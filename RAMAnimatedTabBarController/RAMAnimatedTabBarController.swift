@@ -30,7 +30,7 @@ extension RAMAnimatedTabBarItem {
         }
         set(newValue) {
             
-            if newValue == nil && badge != nil {
+            if newValue == nil {
                 badge?.removeFromSuperview()
                 badge = nil;
                 return
