@@ -52,7 +52,7 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     override func selectedState(icon : UIImageView, textLabel : UILabel) {
 
-        playMoveIconAnimation(icon, values:[icon.center.y + 8.0])
+        playMoveIconAnimation(icon, values:[icon.center.y + 12.0])
         textLabel.alpha = 0
         textLabel.textColor = textSelectedColor
       
