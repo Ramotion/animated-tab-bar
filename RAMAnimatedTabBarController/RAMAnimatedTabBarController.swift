@@ -52,7 +52,9 @@ extension RAMAnimatedTabBarItem {
 class RAMAnimatedTabBarItem: UITabBarItem {
     
     @IBOutlet weak var animation: RAMItemAnimation!
+    
     @IBInspectable var textColor: UIColor = UIColor.blackColor()
+    @IBInspectable var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring
     
     var badge: RAMBadge? // use badgeValue to show badge
     
@@ -68,7 +70,7 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     
     func deselectAnimation() {
         if animation != nil && iconView != nil {
-            animation.deselectAnimation(iconView!.icon, textLabel: iconView!.textLabel, defaultTextColor: textColor)
+            animation.deselectAnimation(iconView!.icon, textLabel: iconView!.textLabel, defaultTextColor: textColor, defaultIconColor: iconColor)
         }
     }
     
@@ -134,9 +136,13 @@ class RAMAnimatedTabBarController: UITabBarController {
                 let container : UIView = containers["container\(itemsCount-index)"] as! UIView
                 container.tag = index
                 
-                let icon = UIImageView(image: item.image)
+                
+                let renderMode = CGColorGetAlpha(item.iconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
+                                                                                UIImageRenderingMode.AlwaysTemplate
+                
+                let icon = UIImageView(image: item.image?.imageWithRenderingMode(renderMode))
                 icon.translatesAutoresizingMaskIntoConstraints = false
-                icon.tintColor = UIColor.clearColor()
+                icon.tintColor = item.iconColor
                 
                 // text
                 let textLabel = UILabel()

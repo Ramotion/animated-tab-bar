@@ -60,7 +60,7 @@ class RAMFrameItemAnimation: RAMItemAnimation {
         textLabel.textColor = textSelectedColor
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
         if isDeselectAnimation {
             playFrameAnimation(icon, images:animationImages.reverse())
         }

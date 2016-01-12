@@ -27,7 +27,7 @@ import UIKit
 protocol RAMItemAnimationProtocol {
 
     func playAnimation(icon : UIImageView, textLabel : UILabel)
-    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor)
+    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor)
     func selectedState(icon : UIImageView, textLabel : UILabel)
 }
 
@@ -40,7 +40,7 @@ class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
     func playAnimation(icon : UIImageView, textLabel : UILabel) {
     }
 
-    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
     }
 
     func selectedState(icon: UIImageView, textLabel : UILabel) {

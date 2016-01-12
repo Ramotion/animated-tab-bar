@@ -38,15 +38,18 @@ class RAMFumeAnimation : RAMItemAnimation {
         }
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor) {
+    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+        
         playMoveIconAnimation(icon, values:[icon.center.y + 4.0, icon.center.y])
         playDeselectLabelAnimation(textLabel)
         textLabel.textColor = defaultTextColor
       
         if let iconImage = icon.image {
-            let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+            let renderMode = CGColorGetAlpha(defaultIconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
+                                                                              UIImageRenderingMode.AlwaysTemplate
+            let renderImage = iconImage.imageWithRenderingMode(renderMode)
             icon.image = renderImage
-            icon.tintColor = defaultTextColor
+            icon.tintColor = defaultIconColor
         }
     }
 
