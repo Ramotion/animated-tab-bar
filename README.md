@@ -20,6 +20,11 @@ Screencast from our Demo
 
 Just add the RAMAnimatedTabBarController folder to your project.
 
+or use [CocoaPods](https://cocoapods.org) with Podfile:
+``` ruby
+pod 'RAMAnimatedTabBarController', '~> 1.0.6'
+```
+
 ## Usage
 
 1. Create a new UITabBarController in your storyboard or nib.
