@@ -1,4 +1,10 @@
 # RAMAnimatedTabBarController
+[![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)]()
+[![Github Releases](https://img.shields.io/github/downloads/ramotion/animated-tab-bar/total.svg)]()
+[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
+
 
 RAMAnimatedTabBarController is a Swift module for adding animation to tabbar items. It has pre-set of animations which we prepare for you, and ability to use any custom animation you want. With this module you can make your tabbar alive like our [shot on dribbble](https://dribbble.com/shots/1766396-Animated-Tab-Bar-Icons?list=searches&tag=ramotion&offset=...):
 
