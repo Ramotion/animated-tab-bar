@@ -38,8 +38,8 @@ Thumbs.db
 .idea/
 
 # Xcode
-.DS_Store
-*/build/*
+#
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -48,11 +48,13 @@ Thumbs.db
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
 xcuserdata
-profile
+*.xccheckout
 *.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
 
 # Exclude temp nibs and swap files #
 ####################################
