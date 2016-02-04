@@ -68,7 +68,7 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     func playMoveIconAnimation(icon : UIImageView, values: [AnyObject]) {
 
-        let yPositionAnimation = createAnimation(RAMConstants.AnimationKeys.PositionY, values:values, duration:duration / 2)
+        let yPositionAnimation = createAnimation(Constants.AnimationKeys.PositionY, values:values, duration:duration / 2)
 
         icon.layer.addAnimation(yPositionAnimation, forKey: nil)
     }
@@ -77,17 +77,17 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     func playLabelAnimation(textLabel: UILabel) {
 
-        let yPositionAnimation = createAnimation(RAMConstants.AnimationKeys.PositionY, values:[textLabel.center.y, textLabel.center.y - 60.0], duration:duration)
+        let yPositionAnimation = createAnimation(Constants.AnimationKeys.PositionY, values:[textLabel.center.y, textLabel.center.y - 60.0], duration:duration)
         yPositionAnimation.fillMode = kCAFillModeRemoved
         yPositionAnimation.removedOnCompletion = true
         textLabel.layer.addAnimation(yPositionAnimation, forKey: nil)
 
-        let scaleAnimation = createAnimation(RAMConstants.AnimationKeys.Scale, values:[1.0 ,2.0], duration:duration)
+        let scaleAnimation = createAnimation(Constants.AnimationKeys.Scale, values:[1.0 ,2.0], duration:duration)
         scaleAnimation.fillMode = kCAFillModeRemoved
         scaleAnimation.removedOnCompletion = true
         textLabel.layer.addAnimation(scaleAnimation, forKey: nil)
 
-        let opacityAnimation = createAnimation(RAMConstants.AnimationKeys.Opacity, values:[1.0 ,0.0], duration:duration)
+        let opacityAnimation = createAnimation(Constants.AnimationKeys.Opacity, values:[1.0 ,0.0], duration:duration)
         textLabel.layer.addAnimation(opacityAnimation, forKey: nil)
     }
 
@@ -106,10 +106,10 @@ class RAMFumeAnimation : RAMItemAnimation {
 
     func playDeselectLabelAnimation(textLabel: UILabel) {
       
-        let yPositionAnimation = createAnimation(RAMConstants.AnimationKeys.PositionY, values:[textLabel.center.y + 15, textLabel.center.y], duration:duration)
+        let yPositionAnimation = createAnimation(Constants.AnimationKeys.PositionY, values:[textLabel.center.y + 15, textLabel.center.y], duration:duration)
         textLabel.layer.addAnimation(yPositionAnimation, forKey: nil)
 
-        let opacityAnimation = createAnimation(RAMConstants.AnimationKeys.Opacity, values:[0, 1], duration:duration)
+        let opacityAnimation = createAnimation(Constants.AnimationKeys.Opacity, values:[0, 1], duration:duration)
         textLabel.layer.addAnimation(opacityAnimation, forKey: nil)
     }
 

@@ -33,6 +33,23 @@ protocol RAMItemAnimationProtocol {
 
 class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
 
+    // MARK: constants
+    
+    struct Constants {
+        
+        struct AnimationKeys {
+            
+            static let Scale     = "transform.scale"
+            static let Rotation    = "transform.rotation"
+            static let KeyFrame  = "contents"
+            static let PositionY = "position.y"
+            static let Opacity   = "opacity"
+        }
+        
+    }
+    
+    // MARK: properties
+    
     @IBInspectable var duration : CGFloat = 0.5
     @IBInspectable var textSelectedColor: UIColor = UIColor.init(red: 0, green: 0.478431, blue: 1, alpha: 1)
     @IBInspectable var iconSelectedColor: UIColor!

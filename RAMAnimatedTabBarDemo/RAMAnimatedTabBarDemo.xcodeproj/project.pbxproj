@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		847D23E71C632ABD0085E882 /* RAMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D23E61C632ABD0085E882 /* RAMConstants.swift */; };
 		84BC64221C22E4C800B89B79 /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC64211C22E4C800B89B79 /* RAMBadge.swift */; };
 		CE4146781A1B923D0037F03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4146771A1B923D0037F03C /* AppDelegate.swift */; };
 		CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4146791A1B923D0037F03C /* ViewController.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		847D23E61C632ABD0085E882 /* RAMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMConstants.swift; sourceTree = "<group>"; };
 		84BC64211C22E4C800B89B79 /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBadge.swift; sourceTree = "<group>"; };
 		CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAMAnimatedTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4146761A1B923D0037F03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,14 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		847D23E51C632A9B0085E882 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				847D23E61C632ABD0085E882 /* RAMConstants.swift */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
 		84BC64201C22E41F00B89B79 /* RAMBadge */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +143,6 @@
 		CE4146971A1B94170037F03C /* RAMAnimatedTabBarControlller */ = {
 			isa = PBXGroup;
 			children = (
-				847D23E51C632A9B0085E882 /* Other */,
 				84BC64201C22E41F00B89B79 /* RAMBadge */,
 				CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */,
 				CE4146981A1B944D0037F03C /* Animations */,
@@ -346,7 +335,6 @@
 				CE41469E1A1B944D0037F03C /* RAMFrameItemAnimation.swift in Sources */,
 				CE90A8401A1C7C14002D8931 /* RAMAnimatedTabBarController.swift in Sources */,
 				CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */,
-				847D23E71C632ABD0085E882 /* RAMConstants.swift in Sources */,
 				CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */,
 				F3E056BE1A2DD57600F33DDA /* RAMFumeAnimation.swift in Sources */,
 				CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimation.swift in Sources */,

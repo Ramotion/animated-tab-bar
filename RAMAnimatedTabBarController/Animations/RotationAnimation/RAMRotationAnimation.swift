@@ -61,7 +61,7 @@ class RAMRotationAnimation : RAMItemAnimation {
 
     func playRoatationAnimation(icon : UIImageView) {
 
-        let rotateAnimation = CABasicAnimation(keyPath: RAMConstants.AnimationKeys.Rotation)
+        let rotateAnimation = CABasicAnimation(keyPath: Constants.AnimationKeys.Rotation)
         rotateAnimation.fromValue = 0.0
 
         var toValue = CGFloat(M_PI * 2.0)

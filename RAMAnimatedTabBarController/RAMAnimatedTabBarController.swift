@@ -63,21 +63,31 @@ public class RAMAnimatedTabBarItem: UITabBarItem {
     public func playAnimation() {
         
         assert(animation != nil, "add animation in UITabBarItem")
-        if animation != nil && iconView != nil {
-            animation.playAnimation(iconView!.icon, textLabel: iconView!.textLabel)
+        guard animation != nil && iconView != nil else  {
+            return
         }
+        animation.playAnimation(iconView!.icon, textLabel: iconView!.textLabel)
     }
     
     public func deselectAnimation() {
-        if animation != nil && iconView != nil {
-            animation.deselectAnimation(iconView!.icon, textLabel: iconView!.textLabel, defaultTextColor: textColor, defaultIconColor: iconColor)
+
+        guard animation != nil && iconView != nil else  {
+            return
         }
+        
+        animation.deselectAnimation(
+            iconView!.icon,
+            textLabel: iconView!.textLabel,
+            defaultTextColor: textColor,
+            defaultIconColor: iconColor)
     }
     
     public func selectedState() {
-        if animation != nil && iconView != nil {
-            animation.selectedState(iconView!.icon, textLabel: iconView!.textLabel)
+        guard animation != nil && iconView != nil else  {
+            return
         }
+
+        animation.selectedState(iconView!.icon, textLabel: iconView!.textLabel)
     }
 }
 
@@ -99,7 +109,9 @@ extension  RAMAnimatedTabBarController {
     }
     
     public func animationTabBarHidden(isHidden:Bool) {
-        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
+            fatalError("items must inherit RAMAnimatedTabBarItem")
+        }
         for item in items {
             if let iconView = item.iconView {
                 iconView.icon.superview?.hidden = isHidden
@@ -110,7 +122,9 @@ extension  RAMAnimatedTabBarController {
     
     public func setSelectIndex(from from:Int,to:Int) {
         self.selectedIndex = to
-        let items = self.tabBar.items as! [RAMAnimatedTabBarItem]
+        guard let items = self.tabBar.items as? [RAMAnimatedTabBarItem] else {
+            fatalError("items must inherit RAMAnimatedTabBarItem")
+        }
         items[from].deselectAnimation()
         items[to].playAnimation()
     }
@@ -133,50 +147,55 @@ public class RAMAnimatedTabBarController: UITabBarController {
     
     private func createCustomIcons(containers : NSDictionary) {
         
-        if let _ = tabBar.items {
-            let itemsCount = tabBar.items!.count as Int - 1
-            var index = 0
-            for item in self.tabBar.items as! [RAMAnimatedTabBarItem] {
-                
-                assert(item.image != nil, "add image icon in UITabBarItem")
-                
-                let container : UIView = containers["container\(itemsCount-index)"] as! UIView
-                container.tag = index
-                
-                
-                let renderMode = CGColorGetAlpha(item.iconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
-                                                                                UIImageRenderingMode.AlwaysTemplate
-                
-                let icon = UIImageView(image: item.image?.imageWithRenderingMode(renderMode))
-                icon.translatesAutoresizingMaskIntoConstraints = false
-                icon.tintColor = item.iconColor
-                
-                // text
-                let textLabel = UILabel()
-                textLabel.text = item.title
-                textLabel.backgroundColor = UIColor.clearColor()
-                textLabel.textColor = item.textColor
-                textLabel.font = UIFont.systemFontOfSize(10)
-                textLabel.textAlignment = NSTextAlignment.Center
-                textLabel.translatesAutoresizingMaskIntoConstraints = false
-                
-                container.addSubview(icon)
-                createConstraints(icon, container: container, size: item.image!.size, yOffset: -5)
-                
-                container.addSubview(textLabel)
-                let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBar.items!.count) - 5.0
-                createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
-                
-                item.iconView = (icon:icon, textLabel:textLabel)
-                
-                if 0 == index { // selected first elemet
-                    item.selectedState()
-                }
-                
-                item.image = nil
-                item.title = ""
-                index++
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
+            fatalError("items must inherit RAMAnimatedTabBarItem")
+        }
+    
+        var index = 0
+        for item in items {
+        
+            guard let itemImage = item.image else {
+                fatalError("add image icon in UITabBarItem")
             }
+            
+            guard let container = containers["container\(items.count - 1 - index)"] as? UIView else {
+                fatalError()
+            }
+            container.tag = index
+            
+            
+            let renderMode = CGColorGetAlpha(item.iconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
+                                                                            UIImageRenderingMode.AlwaysTemplate
+            
+            let icon = UIImageView(image: item.image?.imageWithRenderingMode(renderMode))
+            icon.translatesAutoresizingMaskIntoConstraints = false
+            icon.tintColor = item.iconColor
+            
+            // text
+            let textLabel = UILabel()
+            textLabel.text = item.title
+            textLabel.backgroundColor = UIColor.clearColor()
+            textLabel.textColor = item.textColor
+            textLabel.font = UIFont.systemFontOfSize(10)
+            textLabel.textAlignment = NSTextAlignment.Center
+            textLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            container.addSubview(icon)
+            createConstraints(icon, container: container, size: itemImage.size, yOffset: -5)
+            
+            container.addSubview(textLabel)
+            let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
+            createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
+            
+            item.iconView = (icon:icon, textLabel:textLabel)
+            
+            if 0 == index { // selected first elemet
+                item.selectedState()
+            }
+            
+            item.image = nil
+            item.title = ""
+            index++
         }
     }
     
@@ -221,16 +240,19 @@ public class RAMAnimatedTabBarController: UITabBarController {
     
     private func createViewContainers() -> NSDictionary {
         
-        var containersDict = [String: AnyObject]()
-        let itemsCount : Int = tabBar.items!.count as Int - 1
+        guard let items = tabBar.items else {
+            fatalError("add items in tabBar")
+        }
         
-        for index in 0...itemsCount {
+        var containersDict = [String: AnyObject]()
+        
+        for index in 0..<items.count {
             let viewContainer = createViewContainer()
             containersDict["container\(index)"] = viewContainer
         }
         
         var formatString = "H:|-(0)-[container0]"
-        for index in 1...itemsCount {
+        for index in 1..<items.count {
             formatString += "-(0)-[container\(index)(==container0)]"
         }
         formatString += "-(0)-|"
@@ -281,9 +303,15 @@ public class RAMAnimatedTabBarController: UITabBarController {
     
     func tapHandler(gesture:UIGestureRecognizer) {
         
-        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
+            fatalError("items must inherit RAMAnimatedTabBarItem")
+        }
         
-        let currentIndex = gesture.view!.tag
+        guard let gestureView = gesture.view else {
+            return
+        }
+        
+        let currentIndex = gestureView.tag
         
         if let shouldSelect = delegate?.tabBarController?(self, shouldSelectViewController: self)
             where !shouldSelect {
@@ -297,9 +325,9 @@ public class RAMAnimatedTabBarController: UITabBarController {
             let deselectItem = items[selectedIndex]
             deselectItem.deselectAnimation()
             
-            selectedIndex = gesture.view!.tag
-
+            selectedIndex = gestureView.tag
             delegate?.tabBarController?(self, didSelectViewController: self)
+
         } else if selectedIndex == currentIndex {
             
             if let navVC = self.viewControllers![selectedIndex] as? UINavigationController {

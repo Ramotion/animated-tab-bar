@@ -74,7 +74,7 @@ class RAMFrameItemAnimation: RAMItemAnimation {
     }
 
     func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
-        let frameAnimation = CAKeyframeAnimation(keyPath: RAMConstants.AnimationKeys.KeyFrame)
+        let frameAnimation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.KeyFrame)
         frameAnimation.calculationMode = kCAAnimationDiscrete
         frameAnimation.duration = NSTimeInterval(duration)
         frameAnimation.values = images
