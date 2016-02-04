@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var index :NSInteger = 0
+    var index: NSInteger = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hideBadge(sender: AnyObject) {
-        self.tabBarItem.badgeValue = nil;
+        self.tabBarItem.badgeValue = nil
     }
-    
-    
 }
-
