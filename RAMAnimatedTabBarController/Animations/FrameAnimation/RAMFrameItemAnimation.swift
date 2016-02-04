@@ -34,11 +34,17 @@ class RAMFrameItemAnimation: RAMItemAnimation {
 
     override func awakeFromNib() {
 
-        let path = NSBundle.mainBundle().pathForResource(imagesPath, ofType:"plist")
+        guard let path = NSBundle.mainBundle().pathForResource(imagesPath, ofType:"plist") else {
+            fatalError("don't found plist")
+        }
 
-        let dict : NSDictionary = NSDictionary(contentsOfFile: path!)!
+        guard let dict : NSDictionary = NSDictionary(contentsOfFile: path) else {
+            fatalError()
+        }
 
-        let animationImagesName = dict["images"] as! Array<String>
+        guard let animationImagesName = dict["images"] as? Array<String> else {
+            fatalError()
+        }
         createImagesArray(animationImagesName)
 
         // selected image
@@ -49,8 +55,9 @@ class RAMFrameItemAnimation: RAMItemAnimation {
 
     func createImagesArray(imageNames : Array<String>) {
         for name : String in imageNames {
-            let image = UIImage(named: name)?.CGImage
-            animationImages.append(image!)
+            if let image = UIImage(named: name)?.CGImage {
+                animationImages.append(image)
+            }
         }
     }
 
