@@ -74,13 +74,13 @@ class RAMFrameItemAnimation: RAMItemAnimation {
     }
 
     func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
-        let frameAnimation = CAKeyframeAnimation(keyPath: "contents")
+        let frameAnimation = CAKeyframeAnimation(keyPath: RAMConstants.AnimationKeys.KeyFrame)
         frameAnimation.calculationMode = kCAAnimationDiscrete
         frameAnimation.duration = NSTimeInterval(duration)
         frameAnimation.values = images
         frameAnimation.repeatCount = 1
         frameAnimation.removedOnCompletion = false
         frameAnimation.fillMode = kCAFillModeForwards
-        icon.layer.addAnimation(frameAnimation, forKey: "frameAnimation")
+        icon.layer.addAnimation(frameAnimation, forKey: nil)
     }
 }

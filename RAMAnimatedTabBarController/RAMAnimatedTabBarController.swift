@@ -229,8 +229,6 @@ public class RAMAnimatedTabBarController: UITabBarController {
             containersDict["container\(index)"] = viewContainer
         }
         
-        //let keys = containersDict.keys
-        
         var formatString = "H:|-(0)-[container0]"
         for index in 1...itemsCount {
             formatString += "-(0)-[container\(index)(==container0)]"
