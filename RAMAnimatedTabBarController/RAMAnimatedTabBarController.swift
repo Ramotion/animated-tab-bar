@@ -53,8 +53,8 @@ public class RAMAnimatedTabBarItem: UITabBarItem {
     
    @IBOutlet weak var animation: RAMItemAnimation!
     
-    @IBInspectable var textColor: UIColor = UIColor.blackColor()
-    @IBInspectable var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring
+    @IBInspectable public var textColor: UIColor = UIColor.blackColor()
+    @IBInspectable public var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring
     
     public var badge: RAMBadge? // use badgeValue to show badge
     

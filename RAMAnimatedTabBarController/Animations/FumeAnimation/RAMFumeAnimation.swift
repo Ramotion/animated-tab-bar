@@ -24,7 +24,7 @@
 import UIKit
 
 
-class RAMFumeAnimation : RAMItemAnimation {
+public class RAMFumeAnimation : RAMItemAnimation {
 
     override func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playMoveIconAnimation(icon, values:[icon.center.y, icon.center.y + 4.0])

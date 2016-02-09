@@ -23,14 +23,14 @@
 import UIKit
 import QuartzCore
 
-enum RAMRotationDirection {
+public enum RAMRotationDirection {
     case Left
     case Right
 }
 
-class RAMRotationAnimation : RAMItemAnimation {
+public class RAMRotationAnimation : RAMItemAnimation {
 
-    var direction : RAMRotationDirection!
+    public var direction : RAMRotationDirection!
 
     override func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playRoatationAnimation(icon)

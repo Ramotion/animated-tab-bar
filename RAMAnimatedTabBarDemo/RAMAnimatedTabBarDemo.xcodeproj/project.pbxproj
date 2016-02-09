@@ -15,7 +15,7 @@
 		CE4146821A1B923D0037F03C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4146801A1B923D0037F03C /* LaunchScreen.xib */; };
 		CE41468E1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41468D1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift */; };
 		CE41469E1A1B944D0037F03C /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469A1A1B944D0037F03C /* RAMFrameItemAnimation.swift */; };
-		CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimation.swift */; };
+		CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */; };
 		CE4146A01A1B944D0037F03C /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */; };
 		CE90A8401A1C7C14002D8931 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */; };
 		CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A8421A1C8DD3002D8931 /* RAMRotationAnimation.swift */; };
@@ -47,7 +47,7 @@
 		CE41468C1A1B923D0037F03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE41468D1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarDemoTests.swift; sourceTree = "<group>"; };
 		CE41469A1A1B944D0037F03C /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
-		CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
+		CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimations.swift; sourceTree = "<group>"; };
 		CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
 		CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
 		CE90A8421A1C8DD3002D8931 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		CE41469B1A1B944D0037F03C /* TransitionAniamtions */ = {
 			isa = PBXGroup;
 			children = (
-				CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimation.swift */,
+				CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */,
 			);
 			path = TransitionAniamtions;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */,
 				CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */,
 				F3E056BE1A2DD57600F33DDA /* RAMFumeAnimation.swift in Sources */,
-				CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimation.swift in Sources */,
+				CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimations.swift in Sources */,
 				84BC64221C22E4C800B89B79 /* RAMBadge.swift in Sources */,
 				CE4146A01A1B944D0037F03C /* RAMItemAnimationProtocol.swift in Sources */,
 				CE4146781A1B923D0037F03C /* AppDelegate.swift in Sources */,

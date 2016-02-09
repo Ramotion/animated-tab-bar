@@ -23,16 +23,16 @@
 import UIKit
 import QuartzCore
 
-class RAMFrameItemAnimation: RAMItemAnimation {
+public class RAMFrameItemAnimation: RAMItemAnimation {
 
-    var animationImages : Array<CGImage> = Array()
+    public var animationImages : Array<CGImage> = Array()
 
-    var selectedImage : UIImage!
+    public var selectedImage : UIImage!
 
-    @IBInspectable var isDeselectAnimation: Bool = true
-    @IBInspectable var imagesPath: String!
+    @IBInspectable public var isDeselectAnimation: Bool = true
+    @IBInspectable public var imagesPath: String!
 
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
 
         guard let path = NSBundle.mainBundle().pathForResource(imagesPath, ofType:"plist") else {
             fatalError("don't found plist")

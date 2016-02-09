@@ -1,4 +1,4 @@
-//  RAMTransitionItemAniamtions.swift
+//  RAMTransitionItemAnimations.swift
 //
 // Copyright (c) 11/10/14 Ramotion Inc. (http://ramotion.com)
 //
@@ -22,9 +22,9 @@
 
 import UIKit
 
-class RAMTransitionItemAniamtions : RAMItemAnimation {
+public class RAMTransitionItemAnimations : RAMItemAnimation {
 
-    var transitionOptions : UIViewAnimationOptions!
+    public var transitionOptions : UIViewAnimationOptions!
 
     override init() {
         super.init()
@@ -71,7 +71,7 @@ class RAMTransitionItemAniamtions : RAMItemAnimation {
     }
 }
 
-class RAMFlipLeftTransitionItemAniamtions : RAMTransitionItemAniamtions {
+class RAMFlipLeftTransitionItemAnimations : RAMTransitionItemAnimations {
 
     override init() {
         super.init()
@@ -81,7 +81,7 @@ class RAMFlipLeftTransitionItemAniamtions : RAMTransitionItemAniamtions {
 }
 
 
-class RAMFlipRightTransitionItemAniamtions : RAMTransitionItemAniamtions {
+class RAMFlipRightTransitionItemAnimations : RAMTransitionItemAnimations {
 
     override init() {
         super.init()
@@ -90,7 +90,7 @@ class RAMFlipRightTransitionItemAniamtions : RAMTransitionItemAniamtions {
     }
 }
 
-class RAMFlipTopTransitionItemAniamtions : RAMTransitionItemAniamtions {
+class RAMFlipTopTransitionItemAnimations : RAMTransitionItemAnimations {
 
     override init() {
         super.init()
@@ -99,7 +99,7 @@ class RAMFlipTopTransitionItemAniamtions : RAMTransitionItemAniamtions {
     }
 }
 
-class RAMFlipBottomTransitionItemAniamtions : RAMTransitionItemAniamtions {
+class RAMFlipBottomTransitionItemAnimations : RAMTransitionItemAnimations {
 
     override init() {
         super.init()

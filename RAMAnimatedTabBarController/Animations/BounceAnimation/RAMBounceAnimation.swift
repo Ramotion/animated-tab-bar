@@ -23,7 +23,7 @@
 import UIKit
 
 
-class RAMBounceAnimation : RAMItemAnimation {
+public class RAMBounceAnimation : RAMItemAnimation {
 
     override func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playBounceAnimation(icon)
