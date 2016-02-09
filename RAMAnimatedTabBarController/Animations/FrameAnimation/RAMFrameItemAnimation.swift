@@ -80,7 +80,7 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
         textLabel.textColor = textSelectedColor
     }
 
-    func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
+    @nonobjc func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
         let frameAnimation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.KeyFrame)
         frameAnimation.calculationMode = kCAAnimationDiscrete
         frameAnimation.duration = NSTimeInterval(duration)
