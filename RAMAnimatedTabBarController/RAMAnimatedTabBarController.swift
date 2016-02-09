@@ -313,7 +313,9 @@ public class RAMAnimatedTabBarController: UITabBarController {
         
         let currentIndex = gestureView.tag
         
-        if let shouldSelect = delegate?.tabBarController?(self, shouldSelectViewController: self)
+        let controller = self.childViewControllers[currentIndex]
+        
+        if let shouldSelect = delegate?.tabBarController?(self, shouldSelectViewController: controller)
             where !shouldSelect {
             return
         }
