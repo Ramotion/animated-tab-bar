@@ -25,7 +25,7 @@ import QuartzCore
 
 public class RAMFrameItemAnimation: RAMItemAnimation {
 
-    public var animationImages : Array<CGImage> = Array()
+    @nonobjc public var animationImages : Array<CGImage> = Array()
 
     public var selectedImage : UIImage!
 
