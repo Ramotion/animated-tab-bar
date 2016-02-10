@@ -25,7 +25,7 @@ import QuartzCore
 
 public class RAMFrameItemAnimation: RAMItemAnimation {
 
-    public var animationImages : Array<CGImage> = Array()
+    @nonobjc public var animationImages : Array<CGImage> = Array()
 
     public var selectedImage : UIImage!
 
@@ -80,7 +80,7 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
         textLabel.textColor = textSelectedColor
     }
 
-    func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
+    @nonobjc func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
         let frameAnimation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.KeyFrame)
         frameAnimation.calculationMode = kCAAnimationDiscrete
         frameAnimation.duration = NSTimeInterval(duration)
