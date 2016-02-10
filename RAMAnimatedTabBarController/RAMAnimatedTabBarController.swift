@@ -51,7 +51,7 @@ extension RAMAnimatedTabBarItem {
 
 public class RAMAnimatedTabBarItem: UITabBarItem {
     
-   @IBOutlet weak var animation: RAMItemAnimation!
+   @IBOutlet public var animation: RAMItemAnimation!
     
     @IBInspectable public var textColor: UIColor = UIColor.blackColor()
     @IBInspectable public var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring

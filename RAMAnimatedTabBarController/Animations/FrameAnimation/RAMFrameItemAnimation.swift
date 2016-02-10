@@ -25,7 +25,7 @@ import QuartzCore
 
 public class RAMFrameItemAnimation: RAMItemAnimation {
 
-    @nonobjc public var animationImages : Array<CGImage> = Array()
+    @nonobjc private var animationImages : Array<CGImage> = Array()
 
     public var selectedImage : UIImage!
 
@@ -60,6 +60,20 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
             }
         }
     }
+  
+  // MARK: public
+  
+  public func setAnimationImages(images: Array<UIImage>) {
+    var animationImages = Array<CGImage>()
+    for image in images {
+      if let cgImage = image.CGImage {
+        animationImages.append(cgImage)
+      }
+    }
+    self.animationImages = animationImages
+  }
+  
+  // MARK: RAMItemAnimationProtocol
 
     override func playAnimation(icon : UIImageView, textLabel : UILabel) {
 
