@@ -25,12 +25,12 @@ import UIKit
 
 public class RAMBounceAnimation : RAMItemAnimation {
 
-    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    override public func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playBounceAnimation(icon)
         textLabel.textColor = textSelectedColor
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor: UIColor) {
+    override public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor: UIColor) {
         textLabel.textColor = defaultTextColor
       
         if let iconImage = icon.image {
@@ -42,7 +42,7 @@ public class RAMBounceAnimation : RAMItemAnimation {
         }
     }
 
-    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+    override public func selectedState(icon : UIImageView, textLabel : UILabel) {
         textLabel.textColor = textSelectedColor
       
         if let iconImage = icon.image {
