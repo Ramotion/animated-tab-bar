@@ -32,7 +32,7 @@ public class RAMTransitionItemAnimations : RAMItemAnimation {
         transitionOptions = UIViewAnimationOptions.TransitionNone
     }
 
-    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    override public func playAnimation(icon : UIImageView, textLabel : UILabel) {
 
         selectedColor(icon, textLabel: textLabel)
 
@@ -41,7 +41,7 @@ public class RAMTransitionItemAnimations : RAMItemAnimation {
         })
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+    override public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
 
         if let iconImage = icon.image {
             let renderMode = CGColorGetAlpha(defaultIconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
@@ -53,7 +53,7 @@ public class RAMTransitionItemAnimations : RAMItemAnimation {
         textLabel.textColor = defaultTextColor
     }
 
-    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+    override public func selectedState(icon : UIImageView, textLabel : UILabel) {
 
         selectedColor(icon, textLabel: textLabel)
     }

@@ -35,7 +35,7 @@ public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
 
     // MARK: constants
     
-    struct Constants {
+    public struct Constants {
         
         struct AnimationKeys {
             
@@ -54,12 +54,12 @@ public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
     @IBInspectable public var textSelectedColor: UIColor = UIColor.init(red: 0, green: 0.478431, blue: 1, alpha: 1)
     @IBInspectable public var iconSelectedColor: UIColor!
 
-    func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    public func playAnimation(icon : UIImageView, textLabel : UILabel) {
     }
 
-    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+    public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
     }
 
-    func selectedState(icon: UIImageView, textLabel : UILabel) {
+    public func selectedState(icon: UIImageView, textLabel : UILabel) {
     }
 }

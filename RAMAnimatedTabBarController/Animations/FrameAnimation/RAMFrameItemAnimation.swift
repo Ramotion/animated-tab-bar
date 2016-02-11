@@ -75,13 +75,13 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
   
   // MARK: RAMItemAnimationProtocol
 
-    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    override public func playAnimation(icon : UIImageView, textLabel : UILabel) {
 
         playFrameAnimation(icon, images:animationImages)
         textLabel.textColor = textSelectedColor
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+    override public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
         if isDeselectAnimation {
             playFrameAnimation(icon, images:animationImages.reverse())
         }
@@ -89,7 +89,7 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
         textLabel.textColor = defaultTextColor
     }
 
-    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+    override public func selectedState(icon : UIImageView, textLabel : UILabel) {
         icon.image = selectedImage
         textLabel.textColor = textSelectedColor
     }

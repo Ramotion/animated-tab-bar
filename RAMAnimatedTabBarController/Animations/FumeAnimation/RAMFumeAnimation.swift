@@ -26,7 +26,7 @@ import UIKit
 
 public class RAMFumeAnimation : RAMItemAnimation {
 
-    override func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    override public func playAnimation(icon : UIImageView, textLabel : UILabel) {
         playMoveIconAnimation(icon, values:[icon.center.y, icon.center.y + 4.0])
         playLabelAnimation(textLabel)
         textLabel.textColor = textSelectedColor
@@ -38,7 +38,7 @@ public class RAMFumeAnimation : RAMItemAnimation {
         }
     }
 
-    override func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+    override public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
         
         playMoveIconAnimation(icon, values:[icon.center.y + 4.0, icon.center.y])
         playDeselectLabelAnimation(textLabel)
@@ -53,7 +53,7 @@ public class RAMFumeAnimation : RAMItemAnimation {
         }
     }
 
-    override func selectedState(icon : UIImageView, textLabel : UILabel) {
+    override public func selectedState(icon : UIImageView, textLabel : UILabel) {
 
         playMoveIconAnimation(icon, values:[icon.center.y + 12.0])
         textLabel.alpha = 0
