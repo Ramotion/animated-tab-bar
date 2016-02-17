@@ -52,7 +52,8 @@ extension RAMAnimatedTabBarItem {
 public class RAMAnimatedTabBarItem: UITabBarItem {
     
    @IBOutlet public var animation: RAMItemAnimation!
-    
+
+    public var textFont: UIFont = UIFont.systemFontOfSize(10)
     @IBInspectable public var textColor: UIColor = UIColor.blackColor()
     @IBInspectable public var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring
     
@@ -176,7 +177,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             textLabel.text = item.title
             textLabel.backgroundColor = UIColor.clearColor()
             textLabel.textColor = item.textColor
-            textLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 9)!
+            textLabel.font = item.textFont
             textLabel.textAlignment = NSTextAlignment.Center
             textLabel.translatesAutoresizingMaskIntoConstraints = false
             
