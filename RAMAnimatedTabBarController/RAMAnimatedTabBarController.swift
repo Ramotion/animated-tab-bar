@@ -176,7 +176,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             textLabel.text = item.title
             textLabel.backgroundColor = UIColor.clearColor()
             textLabel.textColor = item.textColor
-            textLabel.font = UIFont.systemFontOfSize(10)
+            textLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 9)!
             textLabel.textAlignment = NSTextAlignment.Center
             textLabel.translatesAutoresizingMaskIntoConstraints = false
             
