@@ -55,8 +55,9 @@ public class RAMAnimatedTabBarItem: UITabBarItem {
     
     @IBInspectable public var textColor: UIColor = UIColor.blackColor()
     @IBInspectable public var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring
-    @IBInspectable var bgDefaultColor: UIColor = UIColor.grayColor()
-    @IBInspectable var bgSelectedColor: UIColor = UIColor.whiteColor()
+  
+    @IBInspectable var bgDefaultColor: UIColor = UIColor.clearColor() // background color
+    @IBInspectable var bgSelectedColor: UIColor = UIColor.clearColor()
 
     public var badge: RAMBadge? // use badgeValue to show badge
     
