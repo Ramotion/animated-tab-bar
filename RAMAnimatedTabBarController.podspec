@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'RAMAnimatedTabBarController'
-  s.version = '1.2.1'
+  s.version = '1.2.2'
   s.license = 'MIT'
   s.summary = 'RAMAnimatedTabBarController is a Swift module for adding animation to tabbar items.'
   s.homepage = 'https://github.com/Ramotion/animated-tab-bar'
