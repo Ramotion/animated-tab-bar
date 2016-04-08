@@ -100,7 +100,7 @@ extension  RAMAnimatedTabBarController {
     public func changeSelectedColor(textSelectedColor:UIColor, iconSelectedColor:UIColor) {
         
         let items = tabBar.items as! [RAMAnimatedTabBarItem]
-        for var index = 0; index < items.count; ++index {
+        for index in 0..<items.count {
             let item = items[index]
             
             item.animation.textSelectedColor = textSelectedColor
@@ -202,7 +202,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             
             item.image = nil
             item.title = ""
-            index++
+            index += 1
         }
     }
     
@@ -279,7 +279,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
         view.addSubview(viewContainer)
         
         // add gesture
-        let tapGesture = UITapGestureRecognizer(target: self, action: "tapHandler:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RAMAnimatedTabBarController.tapHandler(_:)))
         tapGesture.numberOfTouchesRequired = 1
         viewContainer.addGestureRecognizer(tapGesture)
         

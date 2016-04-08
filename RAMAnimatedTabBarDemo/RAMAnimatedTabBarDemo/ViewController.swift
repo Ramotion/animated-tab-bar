@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     // PRAGMA: actions
     
     @IBAction func showBadge(sender: AnyObject) {
-        index++
+        index += 1
         self.tabBarItem.badgeValue = "\(index)"
     }
     
