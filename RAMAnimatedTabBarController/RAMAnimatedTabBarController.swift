@@ -23,26 +23,26 @@
 import UIKit
 
 extension RAMAnimatedTabBarItem {
-    
+
     override public var badgeValue: String? {
         get {
             return badge?.text
         }
         set(newValue) {
-            
+
             if newValue == nil {
                 badge?.removeFromSuperview()
                 badge = nil;
                 return
             }
-            
+
             if badge == nil {
                 badge = RAMBadge.bage()
                 if let contanerView = self.iconView!.icon.superview {
                     badge!.addBadgeOnView(contanerView)
                 }
             }
-            
+
             badge?.text = newValue
         }
     }
@@ -50,42 +50,42 @@ extension RAMAnimatedTabBarItem {
 
 
 public class RAMAnimatedTabBarItem: UITabBarItem {
-    
+
    @IBOutlet public var animation: RAMItemAnimation!
 
     public var textFont: UIFont = UIFont.systemFontOfSize(10)
     @IBInspectable public var textColor: UIColor = UIColor.blackColor()
     @IBInspectable public var iconColor: UIColor = UIColor.clearColor() // if alpha color is 0 color ignoring
-  
+
     @IBInspectable var bgDefaultColor: UIColor = UIColor.clearColor() // background color
     @IBInspectable var bgSelectedColor: UIColor = UIColor.clearColor()
 
     public var badge: RAMBadge? // use badgeValue to show badge
-    
+
     public var iconView: (icon: UIImageView, textLabel: UILabel)?
-    
+
     public func playAnimation() {
-        
+
         assert(animation != nil, "add animation in UITabBarItem")
         guard animation != nil && iconView != nil else  {
             return
         }
         animation.playAnimation(iconView!.icon, textLabel: iconView!.textLabel)
     }
-    
+
     public func deselectAnimation() {
 
         guard animation != nil && iconView != nil else  {
             return
         }
-        
+
         animation.deselectAnimation(
             iconView!.icon,
             textLabel: iconView!.textLabel,
             defaultTextColor: textColor,
             defaultIconColor: iconColor)
     }
-    
+
     public func selectedState() {
         guard animation != nil && iconView != nil else  {
             return
@@ -96,22 +96,22 @@ public class RAMAnimatedTabBarItem: UITabBarItem {
 }
 
 extension  RAMAnimatedTabBarController {
-    
+
     public func changeSelectedColor(textSelectedColor:UIColor, iconSelectedColor:UIColor) {
-        
+
         let items = tabBar.items as! [RAMAnimatedTabBarItem]
         for index in 0..<items.count {
             let item = items[index]
-            
+
             item.animation.textSelectedColor = textSelectedColor
             item.animation.iconSelectedColor = iconSelectedColor
-            
+
             if item == self.tabBar.selectedItem {
                 item.selectedState()
             }
         }
     }
-    
+
     public func animationTabBarHidden(isHidden:Bool) {
         guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
@@ -123,58 +123,64 @@ extension  RAMAnimatedTabBarController {
         }
         self.tabBar.hidden = isHidden;
     }
-    
-    public func setSelectIndex(from from:Int,to:Int) {
-        self.selectedIndex = to
-        guard let items = self.tabBar.items as? [RAMAnimatedTabBarItem] else {
+
+    public func setSelectIndex(from from: Int, to: Int) {
+        selectedIndex = to
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
         }
+
+        let containerFrom = items[from].iconView?.icon.superview
+        containerFrom?.backgroundColor = items[from].bgDefaultColor
         items[from].deselectAnimation()
+
+        let containerTo = items[to].iconView?.icon.superview
+        containerTo?.backgroundColor = items[to].bgSelectedColor
         items[to].playAnimation()
     }
 }
 
 
 public class RAMAnimatedTabBarController: UITabBarController {
-    
+
     // MARK: life circle
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let containers = createViewContainers()
-        
+
         createCustomIcons(containers)
     }
-    
+
     // MARK: create methods
-    
+
     private func createCustomIcons(containers : NSDictionary) {
-        
+
         guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
         }
-    
+
         var index = 0
         for item in items {
-        
+
             guard let itemImage = item.image else {
                 fatalError("add image icon in UITabBarItem")
             }
-            
+
             guard let container = containers["container\(items.count - 1 - index)"] as? UIView else {
                 fatalError()
             }
             container.tag = index
-            
-            
+
+
             let renderMode = CGColorGetAlpha(item.iconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
                                                                             UIImageRenderingMode.AlwaysTemplate
-            
+
             let icon = UIImageView(image: item.image?.imageWithRenderingMode(renderMode))
             icon.translatesAutoresizingMaskIntoConstraints = false
             icon.tintColor = item.iconColor
-            
+
             // text
             let textLabel = UILabel()
             textLabel.text = item.title
@@ -185,29 +191,29 @@ public class RAMAnimatedTabBarController: UITabBarController {
             textLabel.translatesAutoresizingMaskIntoConstraints = false
 
             container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
-            
+
             container.addSubview(icon)
             createConstraints(icon, container: container, size: itemImage.size, yOffset: -5)
-            
+
             container.addSubview(textLabel)
             let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
             createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
-            
+
             item.iconView = (icon:icon, textLabel:textLabel)
-            
+
             if 0 == index { // selected first elemet
                 item.selectedState()
                 container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgSelectedColor
             }
-            
+
             item.image = nil
             item.title = ""
             index += 1
         }
     }
-    
+
     private func createConstraints(view:UIView, container:UIView, size:CGSize, yOffset:CGFloat) {
-        
+
         let constX = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.CenterX,
             relatedBy: NSLayoutRelation.Equal,
@@ -216,7 +222,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             multiplier: 1,
             constant: 0)
         container.addConstraint(constX)
-        
+
         let constY = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.CenterY,
             relatedBy: NSLayoutRelation.Equal,
@@ -225,7 +231,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             multiplier: 1,
             constant: yOffset)
         container.addConstraint(constY)
-        
+
         let constW = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.Width,
             relatedBy: NSLayoutRelation.Equal,
@@ -234,7 +240,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             multiplier: 1,
             constant: size.width)
         view.addConstraint(constW)
-        
+
         let constH = NSLayoutConstraint(item: view,
             attribute: NSLayoutAttribute.Height,
             relatedBy: NSLayoutRelation.Equal,
@@ -244,20 +250,20 @@ public class RAMAnimatedTabBarController: UITabBarController {
             constant: size.height)
         view.addConstraint(constH)
     }
-    
+
     private func createViewContainers() -> NSDictionary {
-        
+
         guard let items = tabBar.items else {
             fatalError("add items in tabBar")
         }
-        
+
         var containersDict = [String: AnyObject]()
-        
+
         for index in 0..<items.count {
             let viewContainer = createViewContainer()
             containersDict["container\(index)"] = viewContainer
         }
-        
+
         var formatString = "H:|-(0)-[container0]"
         for index in 1..<items.count {
             formatString += "-(0)-[container\(index)(==container0)]"
@@ -268,21 +274,21 @@ public class RAMAnimatedTabBarController: UITabBarController {
             metrics: nil,
             views: (containersDict as [String : AnyObject]))
         view.addConstraints(constranints)
-        
+
         return containersDict
     }
-    
+
     private func createViewContainer() -> UIView {
         let viewContainer = UIView();
         viewContainer.backgroundColor = UIColor.clearColor() // for test
         viewContainer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(viewContainer)
-        
+
         // add gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RAMAnimatedTabBarController.tapHandler(_:)))
         tapGesture.numberOfTouchesRequired = 1
         viewContainer.addGestureRecognizer(tapGesture)
-        
+
         // add constrains
         let constY = NSLayoutConstraint(item: viewContainer,
             attribute: NSLayoutAttribute.Bottom,
@@ -291,9 +297,9 @@ public class RAMAnimatedTabBarController: UITabBarController {
             attribute: NSLayoutAttribute.Bottom,
             multiplier: 1,
             constant: 0)
-        
+
         view.addConstraint(constY)
-        
+
         let constH = NSLayoutConstraint(item: viewContainer,
             attribute: NSLayoutAttribute.Height,
             relatedBy: NSLayoutRelation.Equal,
@@ -302,26 +308,26 @@ public class RAMAnimatedTabBarController: UITabBarController {
             multiplier: 1,
             constant: tabBar.frame.size.height)
         viewContainer.addConstraint(constH)
-        
+
         return viewContainer
     }
-    
+
     // MARK: actions
-    
+
     func tapHandler(gesture:UIGestureRecognizer) {
-        
+
         guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
         }
-        
+
         guard let gestureView = gesture.view else {
             return
         }
-        
+
         let currentIndex = gestureView.tag
-        
+
         let controller = self.childViewControllers[currentIndex]
-        
+
         if let shouldSelect = delegate?.tabBarController?(self, shouldSelectViewController: controller)
             where !shouldSelect {
             return
@@ -330,7 +336,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
         if selectedIndex != currentIndex {
             let animationItem : RAMAnimatedTabBarItem = items[currentIndex]
             animationItem.playAnimation()
-            
+
             let deselectItem = items[selectedIndex]
 
             let containerPrevious : UIView = deselectItem.iconView!.icon.superview!
@@ -340,12 +346,12 @@ public class RAMAnimatedTabBarController: UITabBarController {
 
             let container : UIView = animationItem.iconView!.icon.superview!
             container.backgroundColor = items[currentIndex].bgSelectedColor
-            
+
             selectedIndex = gestureView.tag
             delegate?.tabBarController?(self, didSelectViewController: self)
 
         } else if selectedIndex == currentIndex {
-            
+
             if let navVC = self.viewControllers![selectedIndex] as? UINavigationController {
                 navVC.popToRootViewControllerAnimated(true)
             }
