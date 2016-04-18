@@ -30,7 +30,7 @@ Just add the RAMAnimatedTabBarController folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'RAMAnimatedTabBarController', '~> 1.2.2'
+pod 'RAMAnimatedTabBarController', '~> 1.3.1'
 ```
 
 ## Usage
@@ -43,13 +43,13 @@ pod 'RAMAnimatedTabBarController', '~> 1.2.2'
 
 4. Add a custom image icon for each RAMAnimatedTabBarItem
 
-5. Add animation for each RAMAnimatedTabBarItem : 
-   * drag and drop an NSObject item into your ViewController 
+5. Add animation for each RAMAnimatedTabBarItem :
+   * drag and drop an NSObject item into your ViewController
    * set its class to ANIMATION_CLASS (where ANIMATION_CLASS is the class name of the animation you want to use)
    * connect the outlet animation in RAMAnimatedTabBarItem to your ANIMATION_CLASS
    [Demonstration video for step 5](http://vimeo.com/112390386)
-   			
-   			
+
+
 ## Included Animations
 
 * RAMBounceAnimation
@@ -64,11 +64,11 @@ pod 'RAMAnimatedTabBarController', '~> 1.2.2'
 
 ## Creating Custom Animations
 1. Create a new class which inherits from RAMItemAnimation:
-	
+
   ``` swift
      class NewAnimation : RAMItemAnimation
   ```
-2. Implement the methods in RAMItemAnimationProtocol: 
+2. Implement the methods in RAMItemAnimationProtocol:
 
 
   ``` swift
@@ -94,27 +94,27 @@ pod 'RAMAnimatedTabBarController', '~> 1.2.2'
 
 ``` swift
 class RAMBounceAnimation : RAMItemAnimation {
-    
+
     override func playAnimation(icon : UIImageView, textLable : UILabel) {
         playBounceAnimation(icon)
         textLable.textColor = textSelectedColor
     }
-    
+
     override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
         textLable.textColor = defaultTextColor
     }
-    
+
     override func selectedState(icon : UIImageView, textLable : UILabel) {
         textLable.textColor = textSelectedColor
     }
 
     func playBounceAnimation(icon : UIImageView) {
-      
+
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
         bounceAnimation.duration = NSTimeInterval(duration)
         bounceAnimation.calculationMode = kCAAnimationCubic
-        
+
         icon.layer.addAnimation(bounceAnimation, forKey: "bounceAnimation")
     }
 }
@@ -126,4 +126,3 @@ See our other [open-source projects](https://github.com/ramotion) or [hire](http
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/ramotion/animated-tab-bar)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ramotion.svg?style=social)](https://twitter.com/ramotion)
-
