@@ -348,7 +348,7 @@ public class RAMAnimatedTabBarController: UITabBarController {
             container.backgroundColor = items[currentIndex].bgSelectedColor
 
             selectedIndex = gestureView.tag
-            delegate?.tabBarController?(self, didSelectViewController: self)
+            delegate?.tabBarController?(self, didSelectViewController: controller)
 
         } else if selectedIndex == currentIndex {
 
