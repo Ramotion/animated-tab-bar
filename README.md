@@ -55,10 +55,10 @@ pod 'RAMAnimatedTabBarController', '~> 1.3.1'
 * RAMBounceAnimation
 * RAMLeftRotationAnimation
 * RAMRightRotationAnimation
-* RAMFlipLeftTransitionItemAniamtions
-* RAMFlipRightTransitionItemAniamtions
-* RAMFlipTopTransitionItemAniamtions
-* RAMFlipBottomTransitionItemAniamtions
+* RAMFlipLeftTransitionItemAnimations
+* RAMFlipRightTransitionItemAnimations
+* RAMFlipTopTransitionItemAnimations
+* RAMFlipBottomTransitionItemAnimations
 * RAMFrameItemAnimation
 * RAMFumeAnimation
 
