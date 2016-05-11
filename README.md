@@ -30,7 +30,7 @@ Just add the RAMAnimatedTabBarController folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'RAMAnimatedTabBarController', '~> 1.3.1'
+pod 'RAMAnimatedTabBarController'
 ```
 
 ## Usage
