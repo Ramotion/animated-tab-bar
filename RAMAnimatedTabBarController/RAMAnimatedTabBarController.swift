@@ -140,17 +140,54 @@ extension  RAMAnimatedTabBarController {
     }
 }
 
-
 public class RAMAnimatedTabBarController: UITabBarController {
 
+    private var didInit: Bool = false
+    private var didLoadView: Bool = false
+    
     // MARK: life circle
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.didInit = true
+        self.initializeContainers()
+    }
+    
+    public init(viewControllers: [UIViewController]) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.didInit = true
+        
+        // Set initial items
+        self.setViewControllers(viewControllers, animated: false)
+        
+        self.initializeContainers()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.didInit = true
+        self.initializeContainers()
+    }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-
-        let containers = createViewContainers()
-
-        createCustomIcons(containers)
+        
+        self.didLoadView = true
+        
+        self.initializeContainers()
+    }
+    
+    private func initializeContainers() {
+        if !self.didInit || !self.didLoadView {
+            return
+        }
+        
+        let containers = self.createViewContainers()
+        
+        self.createCustomIcons(containers)
     }
 
     // MARK: create methods
