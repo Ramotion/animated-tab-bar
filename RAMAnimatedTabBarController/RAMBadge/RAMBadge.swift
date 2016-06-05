@@ -69,7 +69,7 @@ public class RAMBadge: UILabel {
     
     // PRAGMA: helpers
     
-    internal func addBadgeOnView(onView:UIView) {
+    public func addBadgeOnView(onView:UIView) {
 
         onView.addSubview(self)
 
