@@ -18,7 +18,7 @@ public class RAMBadge: UILabel {
         return RAMBadge.init(frame: CGRectMake(0, 0, 18, 18))
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
         self.layer.backgroundColor = UIColor.redColor().CGColor;
