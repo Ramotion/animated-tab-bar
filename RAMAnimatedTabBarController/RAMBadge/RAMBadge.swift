@@ -10,11 +10,11 @@ import UIKit
 
 public class RAMBadge: UILabel {
     
-    var topConstraint: NSLayoutConstraint?
-    var centerXConstraint: NSLayoutConstraint?
+    internal var topConstraint: NSLayoutConstraint?
+    internal var centerXConstraint: NSLayoutConstraint?
 
     public class func badge() -> RAMBadge {
-        return RAMBadge.init(frame: CGRectMake(0, 0, 8, 8))
+        return RAMBadge.init(frame: CGRectMake(0, 0, 18, 18))
     }
     
     override public init(frame: CGRect) {
@@ -61,7 +61,7 @@ public class RAMBadge: UILabel {
         self.addConstraint(heightConstraint)
     }
     
-    func configureNumberLabel()  {
+    private func configureNumberLabel()  {
         textAlignment = .Center
         font = UIFont.systemFontOfSize(13)
         textColor = UIColor.whiteColor()
