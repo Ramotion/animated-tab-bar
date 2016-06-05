@@ -38,7 +38,7 @@ extension RAMAnimatedTabBarItem {
 
             if badge == nil {
                 badge = RAMBadge.badge()
-                if let contanerView = self.iconView!.icon.superview {
+                if let iconView = iconView, let contanerView = iconView.icon.superview {
                     badge!.addBadgeOnView(contanerView)
                 }
             }
