@@ -36,18 +36,15 @@ extension RAMAnimatedTabBarItem {
                 return
             }
 
-            if badge == nil {
-                badge = RAMBadge.bage()
-                if let contanerView = self.iconView!.icon.superview {
-                    badge!.addBadgeOnView(contanerView)
-                }
+            if let iconView = iconView, let contanerView = iconView.icon.superview where badge == nil {
+                badge = RAMBadge.badge()
+                badge!.addBadgeOnView(contanerView)
             }
 
             badge?.text = newValue
         }
     }
 }
-
 
 public class RAMAnimatedTabBarItem: UITabBarItem {
 

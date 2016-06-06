@@ -10,23 +10,22 @@ import UIKit
 
 public class RAMBadge: UILabel {
     
-    var topConstraint: NSLayoutConstraint?
-    var centerXConstraint: NSLayoutConstraint?
-    var numberLabel: UILabel?
-    
-    class func bage()->RAMBadge {
+    internal var topConstraint: NSLayoutConstraint?
+    internal var centerXConstraint: NSLayoutConstraint?
+
+    public class func badge() -> RAMBadge {
         return RAMBadge.init(frame: CGRectMake(0, 0, 18, 18))
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.layer.backgroundColor = UIColor.redColor().CGColor;
-        self.layer.cornerRadius = frame.size.width / 2;
+        layer.backgroundColor = UIColor.redColor().CGColor;
+        layer.cornerRadius = frame.size.width / 2;
         
-       configureNumberLabel()
+        configureNumberLabel()
 
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
         
         // constraints
         createSizeConstraints(frame.size)
@@ -39,7 +38,7 @@ public class RAMBadge: UILabel {
     
     // PRAGMA: create
     
-    func createSizeConstraints(size: CGSize) {
+    internal func createSizeConstraints(size: CGSize) {
         let widthConstraint = NSLayoutConstraint(
             item: self,
             attribute: NSLayoutAttribute.Width,
@@ -62,16 +61,15 @@ public class RAMBadge: UILabel {
         self.addConstraint(heightConstraint)
     }
     
-    func configureNumberLabel()  {
-        
-        self.textAlignment = .Center
-        self.font = UIFont.systemFontOfSize(13)
-        self.textColor = UIColor.whiteColor()
+    private func configureNumberLabel()  {
+        textAlignment = .Center
+        font = UIFont.systemFontOfSize(13)
+        textColor = UIColor.whiteColor()
     }
     
     // PRAGMA: helpers
     
-    func addBadgeOnView(onView:UIView) {
+    public func addBadgeOnView(onView:UIView) {
 
         onView.addSubview(self)
 
