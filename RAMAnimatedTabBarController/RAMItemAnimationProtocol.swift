@@ -25,41 +25,70 @@ import Foundation
 import UIKit
 
 protocol RAMItemAnimationProtocol {
-
-    func playAnimation(icon : UIImageView, textLabel : UILabel)
-    func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor)
-    func selectedState(icon : UIImageView, textLabel : UILabel)
+  
+  func playAnimation(icon : UIImageView, textLabel : UILabel)
+  func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor)
+  func selectedState(icon : UIImageView, textLabel : UILabel)
 }
 
+/// Base class for UITabBarItems animation
 public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
-
-    // MARK: constants
+  
+  // MARK: constants
+  
+  struct Constants {
     
-    public struct Constants {
-        
-        struct AnimationKeys {
-            
-            static let Scale     = "transform.scale"
-            static let Rotation    = "transform.rotation"
-            static let KeyFrame  = "contents"
-            static let PositionY = "position.y"
-            static let Opacity   = "opacity"
-        }
-        
+    struct AnimationKeys {
+      
+      static let Scale     = "transform.scale"
+      static let Rotation    = "transform.rotation"
+      static let KeyFrame  = "contents"
+      static let PositionY = "position.y"
+      static let Opacity   = "opacity"
     }
     
-    // MARK: properties
-    
-    @IBInspectable public var duration : CGFloat = 0.5
-    @IBInspectable public var textSelectedColor: UIColor = UIColor.init(red: 0, green: 0.478431, blue: 1, alpha: 1)
-    @IBInspectable public var iconSelectedColor: UIColor!
-
-    public func playAnimation(icon : UIImageView, textLabel : UILabel) {
-    }
-
-    public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
-    }
-
-    public func selectedState(icon: UIImageView, textLabel : UILabel) {
-    }
+  }
+  
+  // MARK: properties
+  
+  /// The duration of the animation
+  @IBInspectable public var duration : CGFloat = 0.5
+  
+  ///  The text color in selected state.
+  @IBInspectable public var textSelectedColor: UIColor = UIColor.init(red: 0, green: 0.478431, blue: 1, alpha: 1)
+  
+  ///  The icon color in selected state.
+  @IBInspectable public var iconSelectedColor: UIColor!
+  
+   /**
+   Start animation, method call when UITabBarItem is selected
+   
+   - parameter icon:      animating UITabBarItem icon
+   - parameter textLabel: animating UITabBarItem textLabel
+   */
+  public func playAnimation(icon : UIImageView, textLabel : UILabel) {
+    fatalError("override method in subclass")
+  }
+  
+  /**
+   Start animation, method call when UITabBarItem is unselected
+   
+   - parameter icon:      animating UITabBarItem icon
+   - parameter textLabel: animating UITabBarItem textLabel
+   - parameter defaultTextColor: default UITabBarItem text color
+   - parameter defaultIconColor: default UITabBarItem icon color
+   */
+  public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+    fatalError("override method in subclass")
+  }
+  
+  /**
+    Method call when TabBarController did load
+   
+  - parameter icon:      animating UITabBarItem icon
+   - parameter textLabel: animating UITabBarItem textLabel 
+   */
+  public func selectedState(icon: UIImageView, textLabel : UILabel) {
+    fatalError("override method in subclass")
+  }
 }
