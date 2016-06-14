@@ -22,7 +22,7 @@ Screencast from our Demo
 
 ## Requirements
 
-- iOS 7.0+
+- iOS 8.0+
 - Xcode 6.1
 
 ## Installation
