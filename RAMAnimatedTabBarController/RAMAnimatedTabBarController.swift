@@ -53,6 +53,8 @@ extension RAMAnimatedTabBarItem {
 /// UITabBarItem with animation
 public class RAMAnimatedTabBarItem: UITabBarItem {
   
+  @IBInspectable public var yOffSet: CGFloat = 0
+  
   public override var enabled: Bool {
     didSet {
       iconView?.icon.alpha = enabled == true ? 1 : 0.5
@@ -301,11 +303,11 @@ public class RAMAnimatedTabBarController: UITabBarController {
       container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
       
       container.addSubview(icon)
-      createConstraints(icon, container: container, size: itemImage.size, yOffset: -5)
+      createConstraints(icon, container: container, size: itemImage.size, yOffset: -5 - item.yOffSet)
       
       container.addSubview(textLabel)
       let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
-      createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
+      createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16 - item.yOffSet)
       
       if item.enabled == false {
         icon.alpha      = 0.5
