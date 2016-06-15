@@ -53,6 +53,13 @@ extension RAMAnimatedTabBarItem {
 /// UITabBarItem with animation
 public class RAMAnimatedTabBarItem: UITabBarItem {
   
+  public override var enabled: Bool {
+    didSet {
+      iconView?.icon.alpha = enabled == true ? 1 : 0.5
+      iconView?.textLabel.alpha = enabled == true ? 1 : 0.5
+    }
+  }
+  
   /// animation for UITabBarItem. use RAMFumeAnimation, RAMBounceAnimation, RAMRotationAnimation, RAMFrameItemAnimation, RAMTransitionAnimation
   /// or create custom anmation inherit RAMItemAnimation
   @IBOutlet public var animation: RAMItemAnimation!
@@ -300,6 +307,10 @@ public class RAMAnimatedTabBarController: UITabBarController {
       let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
       createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16)
       
+      if item.enabled == false {
+        icon.alpha      = 0.5
+        textLabel.alpha = 0.5
+      }
       item.iconView = (icon:icon, textLabel:textLabel)
       
       if 0 == index { // selected first elemet
@@ -417,15 +428,14 @@ public class RAMAnimatedTabBarController: UITabBarController {
   
   func tapHandler(gesture:UIGestureRecognizer) {
     
-    guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
-      fatalError("items must inherit RAMAnimatedTabBarItem")
-    }
-    
-    guard let gestureView = gesture.view else {
-      return
+    guard let items = tabBar.items as? [RAMAnimatedTabBarItem],
+      let gestureView = gesture.view else {
+        fatalError("items must inherit RAMAnimatedTabBarItem")
     }
     
     let currentIndex = gestureView.tag
+    
+    if items[currentIndex].enabled == false { return }
     
     let controller = self.childViewControllers[currentIndex]
     
