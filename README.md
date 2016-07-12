@@ -80,19 +80,19 @@ github "Ramotion/animated-tab-bar"
 
   ``` swift
     // method call when Tab Bar Item is selected
-    override func playAnimation(icon : UIImageView, textLable : UILabel) {
+    override func playAnimation(icon: UIImageView, textLabel: UILabel) {
       // add animation
     }
   ```  
   ``` swift
     // method call when Tab Bar Item is deselected
-    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
+    override func deselectAnimation(icon: UIImageView, textLabel: UILabel, defaultTextColor: UIColor, defaultIconColor: UIColor) {
       // add animation
     }
   ```    
   ``` swift
     // method call when TabBarController did load
-    override func selectedState(icon : UIImageView, textLable : UILabel) {
+    override func selectedState(icon: UIImageView, textLabel: UILabel) {
       // set selected state  
     }
   ```
@@ -102,17 +102,17 @@ github "Ramotion/animated-tab-bar"
 ``` swift
 class RAMBounceAnimation : RAMItemAnimation {
 
-    override func playAnimation(icon : UIImageView, textLable : UILabel) {
+    override func playAnimation(icon: UIImageView, textLabel: UILabel) {
         playBounceAnimation(icon)
-        textLable.textColor = textSelectedColor
+        textLabel.textColor = textSelectedColor
     }
 
-    override func deselectAnimation(icon : UIImageView, textLable : UILabel, defaultTextColor : UIColor) {
-        textLable.textColor = defaultTextColor
+    override func deselectAnimation(icon: UIImageView, textLabel: UILabel, defaultTextColor: UIColor, defaultIconColor: UIColor) {
+        textLabel.textColor = defaultTextColor
     }
 
-    override func selectedState(icon : UIImageView, textLable : UILabel) {
-        textLable.textColor = textSelectedColor
+    override func selectedState(icon: UIImageView, textLabel: UILabel) {
+        textLabel.textColor = textSelectedColor
     }
 
     func playBounceAnimation(icon : UIImageView) {
