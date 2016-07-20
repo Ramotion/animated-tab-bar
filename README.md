@@ -140,7 +140,7 @@ class RAMBounceAnimation : RAMItemAnimation {
 }
 ```
 
-## Follow us 
+## Follow to get updated
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/ramotion/animated-tab-bar)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ramotion.svg?style=social)](https://twitter.com/ramotion)
