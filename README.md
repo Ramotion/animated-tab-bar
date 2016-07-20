@@ -11,8 +11,10 @@
 RAMAnimatedTabBarController is a Swift module for adding of animations to tabbar items.
 
 ## About
-Ramotion builds dedicated software engineering teams and provides end-to-end management.
-[Contact our sales to get a quote for your project.](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) 
+Ramotion specializes in building dedicated engineering teams and developing custom software.
+
+[Write us and we’ll help your company work with the best engineers from Eastern Europe.](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) 
+
 
 Explore below how to use it in your project.
 
