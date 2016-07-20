@@ -1,4 +1,4 @@
-![header](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/header.png)
+[![header](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/header.png)](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=aquarelle)
 # RAMAnimatedTabBarController
 [![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
