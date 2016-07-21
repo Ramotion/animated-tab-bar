@@ -1,4 +1,4 @@
-[![header](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/header.png)](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar)
+[![header](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/header.png)](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-logo)
 # RAMAnimatedTabBarController
 [![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
@@ -7,15 +7,10 @@
 [![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
 [![Travis](https://img.shields.io/travis/Ramotion/animated-tab-bar.svg)](https://travis-ci.org/Ramotion/animated-tab-bar)
 
-## Summary
-RAMAnimatedTabBarController is a Swift module for adding of animations to tabbar items.
+
 
 ## About
-Ramotion specializes in building dedicated engineering teams and developing custom software.<br> [Contact our team](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us) and we’ll help you work with the best engineers from Eastern Europe.
-
-
-
-
+This project is maintained by Ramotion, an agency specialized in building dedicated engineering teams and developing custom software.<br><br> [Contact our team](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us) and we’ll help you work with the best engineers from Eastern Europe.
 
 
 
