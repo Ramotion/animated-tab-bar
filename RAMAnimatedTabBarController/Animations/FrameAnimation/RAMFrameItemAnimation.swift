@@ -38,7 +38,7 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
   
   override public func awakeFromNib() {
     
-    guard let path = NSBundle.mainBundle().pathForResource(imagesPath, ofType:"plist") else {
+    guard let path = Bundle.main.path(forResource: imagesPath, ofType:"plist") else {
       fatalError("don't found plist")
     }
     
@@ -53,9 +53,9 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
     selectedImage = UIImage(named: selectedImageName)
   }
   
-  func createImagesArray(imageNames : Array<String>) {
+  func createImagesArray(_ imageNames : Array<String>) {
     for name : String in imageNames {
-      if let image = UIImage(named: name)?.CGImage {
+      if let image = UIImage(named: name)?.cgImage {
         animationImages.append(image)
       }
     }
@@ -68,10 +68,10 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
    
    - parameter images: images for keyframe animation
    */
-  public func setAnimationImages(images: Array<UIImage>) {
+  public func setAnimationImages(_ images: Array<UIImage>) {
     var animationImages = Array<CGImage>()
     for image in images {
-      if let cgImage = image.CGImage {
+      if let cgImage = image.cgImage {
         animationImages.append(cgImage)
       }
     }
@@ -86,7 +86,7 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
    - parameter icon:      animating UITabBarItem icon
    - parameter textLabel: animating UITabBarItem textLabel
    */
-  override public func playAnimation(icon : UIImageView, textLabel : UILabel) {
+  override public func playAnimation(_ icon : UIImageView, textLabel : UILabel) {
     
     playFrameAnimation(icon, images:animationImages)
     textLabel.textColor = textSelectedColor
@@ -100,9 +100,9 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
    - parameter defaultTextColor: default UITabBarItem text color
    - parameter defaultIconColor: default UITabBarItem icon color
    */
-  override public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+  override public func deselectAnimation(_ icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
     if isDeselectAnimation {
-      playFrameAnimation(icon, images:animationImages.reverse())
+      playFrameAnimation(icon, images:animationImages.reversed())
     }
     
     textLabel.textColor = defaultTextColor
@@ -114,19 +114,19 @@ public class RAMFrameItemAnimation: RAMItemAnimation {
    - parameter icon:      animating UITabBarItem icon
    - parameter textLabel: animating UITabBarItem textLabel
    */
-  override public func selectedState(icon : UIImageView, textLabel : UILabel) {
+  override public func selectedState(_ icon : UIImageView, textLabel : UILabel) {
     icon.image = selectedImage
     textLabel.textColor = textSelectedColor
   }
   
-  @nonobjc func playFrameAnimation(icon : UIImageView, images : Array<CGImage>) {
+  @nonobjc func playFrameAnimation(_ icon : UIImageView, images : Array<CGImage>) {
     let frameAnimation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.KeyFrame)
     frameAnimation.calculationMode = kCAAnimationDiscrete
-    frameAnimation.duration = NSTimeInterval(duration)
+    frameAnimation.duration = TimeInterval(duration)
     frameAnimation.values = images
     frameAnimation.repeatCount = 1
-    frameAnimation.removedOnCompletion = false
+    frameAnimation.isRemovedOnCompletion = false
     frameAnimation.fillMode = kCAFillModeForwards
-    icon.layer.addAnimation(frameAnimation, forKey: nil)
+    icon.layer.add(frameAnimation, forKey: nil)
   }
 }
