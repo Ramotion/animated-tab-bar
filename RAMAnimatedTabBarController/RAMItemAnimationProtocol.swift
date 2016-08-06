@@ -26,9 +26,9 @@ import UIKit
 
 protocol RAMItemAnimationProtocol {
   
-  func playAnimation(icon : UIImageView, textLabel : UILabel)
-  func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor)
-  func selectedState(icon : UIImageView, textLabel : UILabel)
+  func playAnimation(_ icon : UIImageView, textLabel : UILabel)
+  func deselectAnimation(_ icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor)
+  func selectedState(_ icon : UIImageView, textLabel : UILabel)
 }
 
 /// Base class for UITabBarItems animation
@@ -66,7 +66,7 @@ public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
    - parameter icon:      animating UITabBarItem icon
    - parameter textLabel: animating UITabBarItem textLabel
    */
-  public func playAnimation(icon : UIImageView, textLabel : UILabel) {
+  public func playAnimation(_ icon : UIImageView, textLabel : UILabel) {
     fatalError("override method in subclass")
   }
   
@@ -78,7 +78,7 @@ public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
    - parameter defaultTextColor: default UITabBarItem text color
    - parameter defaultIconColor: default UITabBarItem icon color
    */
-  public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+  public func deselectAnimation(_ icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
     fatalError("override method in subclass")
   }
   
@@ -88,7 +88,7 @@ public class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
   - parameter icon:      animating UITabBarItem icon
    - parameter textLabel: animating UITabBarItem textLabel 
    */
-  public func selectedState(icon: UIImageView, textLabel : UILabel) {
+  public func selectedState(_ icon: UIImageView, textLabel : UILabel) {
     fatalError("override method in subclass")
   }
 }
