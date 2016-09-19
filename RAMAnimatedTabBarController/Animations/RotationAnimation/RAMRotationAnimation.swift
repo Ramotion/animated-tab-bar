@@ -24,7 +24,7 @@ import UIKit
 import QuartzCore
 
 /// The RAMRotationAnimation class provides rotation animation.
-public class RAMRotationAnimation : RAMItemAnimation {
+open class RAMRotationAnimation : RAMItemAnimation {
   
   /**
    Animation direction
@@ -33,11 +33,11 @@ public class RAMRotationAnimation : RAMItemAnimation {
    - Right: right direction
    */
   public enum RAMRotationDirection {
-    case Left
-    case Right
+    case left
+    case right
   }
  /// Animation direction (left, right)
-  public var direction : RAMRotationDirection!
+  open var direction : RAMRotationDirection!
   
   /**
    Start animation, method call when UITabBarItem is selected
@@ -45,7 +45,7 @@ public class RAMRotationAnimation : RAMItemAnimation {
    - parameter icon:      animating UITabBarItem icon
    - parameter textLabel: animating UITabBarItem textLabel
    */
-  override public func playAnimation(icon : UIImageView, textLabel : UILabel) {
+  override open func playAnimation(_ icon : UIImageView, textLabel : UILabel) {
     playRoatationAnimation(icon)
     textLabel.textColor = textSelectedColor
   }
@@ -58,13 +58,13 @@ public class RAMRotationAnimation : RAMItemAnimation {
    - parameter defaultTextColor: default UITabBarItem text color
    - parameter defaultIconColor: default UITabBarItem icon color
    */
-  override public func deselectAnimation(icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
+  override open func deselectAnimation(_ icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor) {
     textLabel.textColor = defaultTextColor
     
     if let iconImage = icon.image {
-      let renderMode = CGColorGetAlpha(defaultIconColor.CGColor) == 0 ? UIImageRenderingMode.AlwaysOriginal :
-        UIImageRenderingMode.AlwaysTemplate
-      let renderImage = iconImage.imageWithRenderingMode(renderMode)
+      let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
+        UIImageRenderingMode.alwaysTemplate
+      let renderImage = iconImage.withRenderingMode(renderMode)
       icon.image = renderImage
       icon.tintColor = defaultIconColor
     }
@@ -76,33 +76,33 @@ public class RAMRotationAnimation : RAMItemAnimation {
    - parameter icon:      animating UITabBarItem icon
    - parameter textLabel: animating UITabBarItem textLabel
    */
-  override public func selectedState(icon : UIImageView, textLabel : UILabel) {
+  override open func selectedState(_ icon : UIImageView, textLabel : UILabel) {
     textLabel.textColor = textSelectedColor
     
     if let iconImage = icon.image {
-      let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+      let renderImage = iconImage.withRenderingMode(.alwaysTemplate)
       icon.image = renderImage
       icon.tintColor = textSelectedColor
     }
   }
   
-  func playRoatationAnimation(icon : UIImageView) {
+  func playRoatationAnimation(_ icon : UIImageView) {
     
     let rotateAnimation = CABasicAnimation(keyPath: Constants.AnimationKeys.Rotation)
     rotateAnimation.fromValue = 0.0
     
     var toValue = CGFloat(M_PI * 2.0)
-    if direction != nil && direction == RAMRotationDirection.Left {
+    if direction != nil && direction == RAMRotationDirection.left {
       toValue = toValue * -1.0
     }
     
     rotateAnimation.toValue = toValue
-    rotateAnimation.duration = NSTimeInterval(duration)
+    rotateAnimation.duration = TimeInterval(duration)
     
-    icon.layer.addAnimation(rotateAnimation, forKey: nil)
+    icon.layer.add(rotateAnimation, forKey: nil)
     
     if let iconImage = icon.image {
-      let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
+      let renderImage = iconImage.withRenderingMode(.alwaysTemplate)
       icon.image = renderImage
       icon.tintColor = iconSelectedColor
     }
@@ -114,7 +114,7 @@ class RAMLeftRotationAnimation : RAMRotationAnimation {
   
   override init() {
     super.init()
-    direction = RAMRotationDirection.Left
+    direction = RAMRotationDirection.left
   }
 }
 
@@ -123,7 +123,7 @@ class RAMRightRotationAnimation : RAMRotationAnimation {
   
   override init() {
     super.init()
-    direction = RAMRotationDirection.Right
+    direction = RAMRotationDirection.right
   }
 }
 
