@@ -24,12 +24,12 @@ class ViewController: UIViewController {
 
     // PRAGMA: actions
     
-    @IBAction func showBadge(sender: AnyObject) {
+    @IBAction func showBadgeHandelr(_ sender: AnyObject) {
         index += 1
         self.tabBarItem.badgeValue = "\(index)"
     }
-    
-    @IBAction func hideBadge(sender: AnyObject) {
+  
+    @IBAction func hideBadgeHandler(_ sender: AnyObject) {
         self.tabBarItem.badgeValue = nil
     }
 }
