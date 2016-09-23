@@ -39,7 +39,9 @@ pod 'RAMAnimatedTabBarController'
 
 or [Carthage](https://github.com/Carthage/Carthage) users can simply add to their `Cartfile`:
 ```
-github "Ramotion/animated-tab-bar"
+github "Ramotion/animated-tab-bar", "~> 1.5.3"  swift 2.2
+
+github "Ramotion/animated-tab-bar", "~> 2.0.1"  swift 3
 ```
 
 
