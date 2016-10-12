@@ -24,7 +24,7 @@
 import Foundation
 import UIKit
 
-protocol RAMItemAnimationProtocol {
+public protocol RAMItemAnimationProtocol {
   
   func playAnimation(_ icon : UIImageView, textLabel : UILabel)
   func deselectAnimation(_ icon : UIImageView, textLabel : UILabel, defaultTextColor : UIColor, defaultIconColor : UIColor)

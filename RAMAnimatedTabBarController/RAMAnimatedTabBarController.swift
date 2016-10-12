@@ -132,7 +132,7 @@ extension  RAMAnimatedTabBarController {
    - parameter textSelectedColor: set new color for text
    - parameter iconSelectedColor: set new color for icon
    */
-  public func changeSelectedColor(_ textSelectedColor:UIColor, iconSelectedColor:UIColor) {
+  open func changeSelectedColor(_ textSelectedColor:UIColor, iconSelectedColor:UIColor) {
     
     let items = tabBar.items as! [RAMAnimatedTabBarItem]
     for index in 0..<items.count {
@@ -152,7 +152,7 @@ extension  RAMAnimatedTabBarController {
    
     - parameter isHidden: A Boolean indicating whether the UITabBarController is displayed
    */
-  public func animationTabBarHidden(_ isHidden:Bool) {
+  open func animationTabBarHidden(_ isHidden:Bool) {
     guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
       fatalError("items must inherit RAMAnimatedTabBarItem")
     }
@@ -170,7 +170,7 @@ extension  RAMAnimatedTabBarController {
    - parameter from: Index for unselected animation
    - parameter to:   Index for selected animation
    */
-  public func setSelectIndex(from: Int, to: Int) {
+  open func setSelectIndex(from: Int, to: Int) {
     selectedIndex = to
     guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
       fatalError("items must inherit RAMAnimatedTabBarItem")
