@@ -43,7 +43,6 @@ or [Carthage](https://github.com/Carthage/Carthage) users can simply add to thei
 ```
 github "Ramotion/animated-tab-bar"
 
-github "Ramotion/animated-tab-bar"
 ```
 
 
