@@ -26,8 +26,8 @@ Screencast from our Demo
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 6.1
+- iOS 9.0+
+- xCode 8
 
 ## Installation
 
@@ -35,14 +35,15 @@ Just add the RAMAnimatedTabBarController folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'RAMAnimatedTabBarController'
+pod 'RAMAnimatedTabBarController', "~> 1.5.3"  swift 2.2
+pod 'RAMAnimatedTabBarController', "~> 2.0.2"  swift 3
 ```
 
 or [Carthage](https://github.com/Carthage/Carthage) users can simply add to their `Cartfile`:
 ```
-github "Ramotion/animated-tab-bar", "~> 1.5.3"  swift 2.2
+github "Ramotion/animated-tab-bar"
 
-github "Ramotion/animated-tab-bar", "~> 2.0.1"  swift 3
+github "Ramotion/animated-tab-bar"
 ```
 
 

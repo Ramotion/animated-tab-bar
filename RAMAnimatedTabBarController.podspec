@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'RAMAnimatedTabBarController'
-  s.version = '2.0.1'
+  s.version = '2.0.2'
   s.license = 'MIT'
   s.summary = 'RAMAnimatedTabBarController is a Swift module for adding animation to tabbar items.'
   s.homepage = 'https://github.com/Ramotion/animated-tab-bar'
@@ -8,5 +8,4 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/Ramotion/animated-tab-bar.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
   s.source_files = "RAMAnimatedTabBarController/*.swift", "RAMAnimatedTabBarController/**/*.swift"
-  s.requires_arc = true
 end
