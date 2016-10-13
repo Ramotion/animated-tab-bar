@@ -46,7 +46,6 @@ open class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
       static let PositionY = "position.y"
       static let Opacity   = "opacity"
     }
-    
   }
   
   // MARK: properties
