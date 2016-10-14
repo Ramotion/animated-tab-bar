@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8499D8EC1D0069C6004B5B37"
-               BuildableName = "AnimatedTabBar.framework"
-               BlueprintName = "AnimatedTabBar"
+               BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
+               BuildableName = "TabBarLib.framework"
+               BlueprintName = "TabBarLib"
                ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8499D8EC1D0069C6004B5B37"
-            BuildableName = "AnimatedTabBar.framework"
-            BlueprintName = "AnimatedTabBar"
+            BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
+            BuildableName = "TabBarLib.framework"
+            BlueprintName = "TabBarLib"
             ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8499D8EC1D0069C6004B5B37"
-            BuildableName = "AnimatedTabBar.framework"
-            BlueprintName = "AnimatedTabBar"
+            BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
+            BuildableName = "TabBarLib.framework"
+            BlueprintName = "TabBarLib"
             ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

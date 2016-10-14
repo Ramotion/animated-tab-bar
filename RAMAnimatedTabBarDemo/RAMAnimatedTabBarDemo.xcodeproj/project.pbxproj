@@ -20,6 +20,17 @@
 		8499D9001D006A1B004B5B37 /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */; };
 		8499D9011D006A1E004B5B37 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */; };
 		84BC64221C22E4C800B89B79 /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC64211C22E4C800B89B79 /* RAMBadge.swift */; };
+		84D4B7A11DB0D35500EE38C6 /* TabBarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84D4B7A41DB0D35500EE38C6 /* TabBarLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */; };
+		84D4B7A51DB0D35500EE38C6 /* TabBarLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84D4B7A91DB0D37700EE38C6 /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC64211C22E4C800B89B79 /* RAMBadge.swift */; };
+		84D4B7AA1DB0D37B00EE38C6 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */; };
+		84D4B7AB1DB0D37F00EE38C6 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E056BD1A2DD57600F33DDA /* RAMFumeAnimation.swift */; };
+		84D4B7AC1DB0D38100EE38C6 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A8781A1CE200002D8931 /* RAMBounceAnimation.swift */; };
+		84D4B7AD1DB0D38400EE38C6 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A8421A1C8DD3002D8931 /* RAMRotationAnimation.swift */; };
+		84D4B7AE1DB0D38700EE38C6 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469A1A1B944D0037F03C /* RAMFrameItemAnimation.swift */; };
+		84D4B7AF1DB0D38B00EE38C6 /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */; };
+		84D4B7B01DB0D38F00EE38C6 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */; };
 		CE4146781A1B923D0037F03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4146771A1B923D0037F03C /* AppDelegate.swift */; };
 		CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4146791A1B923D0037F03C /* ViewController.swift */; };
 		CE41467D1A1B923D0037F03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE41467B1A1B923D0037F03C /* Main.storyboard */; };
@@ -43,6 +54,13 @@
 			remoteGlobalIDString = 8499D8EC1D0069C6004B5B37;
 			remoteInfo = AnimatedTabBar;
 		};
+		84D4B7A21DB0D35500EE38C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE41466A1A1B923D0037F03C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D4B79C1DB0D35500EE38C6;
+			remoteInfo = TabBarLib;
+		};
 		CE4146881A1B923D0037F03C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE41466A1A1B923D0037F03C /* Project object */;
@@ -59,6 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				84D4B7A51DB0D35500EE38C6 /* TabBarLib.framework in Embed Frameworks */,
 				8499D8F51D0069C6004B5B37 /* AnimatedTabBar.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -72,6 +91,9 @@
 		8499D8EF1D0069C6004B5B37 /* AnimatedTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimatedTabBar.h; sourceTree = "<group>"; };
 		8499D8F11D0069C6004B5B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BC64211C22E4C800B89B79 /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBadge.swift; sourceTree = "<group>"; };
+		84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabBarLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarLib.h; sourceTree = "<group>"; };
+		84D4B7A01DB0D35500EE38C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAMAnimatedTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4146761A1B923D0037F03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4146771A1B923D0037F03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,10 +121,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D4B7991DB0D35500EE38C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE41466F1A1B923D0037F03C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D4B7A41DB0D35500EE38C6 /* TabBarLib.framework in Frameworks */,
 				8499D8F41D0069C6004B5B37 /* AnimatedTabBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,12 +164,22 @@
 			path = RAMBadge;
 			sourceTree = "<group>";
 		};
+		84D4B79E1DB0D35500EE38C6 /* TabBarLib */ = {
+			isa = PBXGroup;
+			children = (
+				84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */,
+				84D4B7A01DB0D35500EE38C6 /* Info.plist */,
+			);
+			path = TabBarLib;
+			sourceTree = "<group>";
+		};
 		CE4146691A1B923D0037F03C = {
 			isa = PBXGroup;
 			children = (
 				CE4146741A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
 				CE41468A1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */,
 				8499D8EE1D0069C6004B5B37 /* AnimatedTabBar */,
+				84D4B79E1DB0D35500EE38C6 /* TabBarLib */,
 				CE4146731A1B923D0037F03C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,6 +190,7 @@
 				CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */,
 				CE4146871A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.xctest */,
 				8499D8ED1D0069C6004B5B37 /* AnimatedTabBar.framework */,
+				84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,6 +318,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D4B79A1DB0D35500EE38C6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D4B7A11DB0D35500EE38C6 /* TabBarLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -298,6 +347,24 @@
 			productReference = 8499D8ED1D0069C6004B5B37 /* AnimatedTabBar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		84D4B79C1DB0D35500EE38C6 /* TabBarLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "TabBarLib" */;
+			buildPhases = (
+				84D4B7981DB0D35500EE38C6 /* Sources */,
+				84D4B7991DB0D35500EE38C6 /* Frameworks */,
+				84D4B79A1DB0D35500EE38C6 /* Headers */,
+				84D4B79B1DB0D35500EE38C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TabBarLib;
+			productName = TabBarLib;
+			productReference = 84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE4146911A1B923D0037F03C /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarDemo" */;
@@ -312,6 +379,7 @@
 			);
 			dependencies = (
 				8499D8F31D0069C6004B5B37 /* PBXTargetDependency */,
+				84D4B7A31DB0D35500EE38C6 /* PBXTargetDependency */,
 			);
 			name = RAMAnimatedTabBarDemo;
 			productName = RAMAnimatedTabBarDemo;
@@ -350,6 +418,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
 					};
+					84D4B79C1DB0D35500EE38C6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 34MUF9YXTA;
+						ProvisioningStyle = Automatic;
+					};
 					CE4146711A1B923D0037F03C = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 34MUF9YXTA;
@@ -377,12 +450,20 @@
 				CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
 				CE4146861A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */,
 				8499D8EC1D0069C6004B5B37 /* AnimatedTabBar */,
+				84D4B79C1DB0D35500EE38C6 /* TabBarLib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8499D8EB1D0069C6004B5B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D4B79B1DB0D35500EE38C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -442,6 +523,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84D4B7981DB0D35500EE38C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D4B7A91DB0D37700EE38C6 /* RAMBadge.swift in Sources */,
+				84D4B7AF1DB0D38B00EE38C6 /* RAMTransitionItemAnimations.swift in Sources */,
+				84D4B7B01DB0D38F00EE38C6 /* RAMItemAnimationProtocol.swift in Sources */,
+				84D4B7AB1DB0D37F00EE38C6 /* RAMFumeAnimation.swift in Sources */,
+				84D4B7AA1DB0D37B00EE38C6 /* RAMAnimatedTabBarController.swift in Sources */,
+				84D4B7AC1DB0D38100EE38C6 /* RAMBounceAnimation.swift in Sources */,
+				84D4B7AE1DB0D38700EE38C6 /* RAMFrameItemAnimation.swift in Sources */,
+				84D4B7AD1DB0D38400EE38C6 /* RAMRotationAnimation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE41466E1A1B923D0037F03C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,6 +570,11 @@
 			isa = PBXTargetDependency;
 			target = 8499D8EC1D0069C6004B5B37 /* AnimatedTabBar */;
 			targetProxy = 8499D8F21D0069C6004B5B37 /* PBXContainerItemProxy */;
+		};
+		84D4B7A31DB0D35500EE38C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D4B79C1DB0D35500EE38C6 /* TabBarLib */;
+			targetProxy = 84D4B7A21DB0D35500EE38C6 /* PBXContainerItemProxy */;
 		};
 		CE4146891A1B923D0037F03C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -547,6 +648,62 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.AnimatedTabBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		84D4B7A61DB0D35500EE38C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 34MUF9YXTA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TabBarLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.TabBarLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84D4B7A71DB0D35500EE38C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 34MUF9YXTA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TabBarLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.TabBarLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -725,6 +882,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "TabBarLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D4B7A61DB0D35500EE38C6 /* Debug */,
+				84D4B7A71DB0D35500EE38C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		CE41466D1A1B923D0037F03C /* Build configuration list for PBXProject "RAMAnimatedTabBarDemo" */ = {
 			isa = XCConfigurationList;
