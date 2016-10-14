@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
-               BuildableName = "TabBarLib.framework"
-               BlueprintName = "TabBarLib"
+               BuildableName = "RAMAnimatedTabBarController.framework"
+               BlueprintName = "RAMAnimatedTabBarController"
                ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
-            BuildableName = "TabBarLib.framework"
-            BlueprintName = "TabBarLib"
+            BuildableName = "RAMAnimatedTabBarController.framework"
+            BlueprintName = "RAMAnimatedTabBarController"
             ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
-            BuildableName = "TabBarLib.framework"
-            BlueprintName = "TabBarLib"
+            BuildableName = "RAMAnimatedTabBarController.framework"
+            BlueprintName = "RAMAnimatedTabBarController"
             ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

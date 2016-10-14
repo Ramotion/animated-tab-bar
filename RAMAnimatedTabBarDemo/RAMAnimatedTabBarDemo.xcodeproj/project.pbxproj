@@ -10,8 +10,8 @@
 		849507011D05772B0005EC1A /* ToolsAnimation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849507001D05772B0005EC1A /* ToolsAnimation.plist */; };
 		84BC64221C22E4C800B89B79 /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC64211C22E4C800B89B79 /* RAMBadge.swift */; };
 		84D4B7A11DB0D35500EE38C6 /* TabBarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84D4B7A41DB0D35500EE38C6 /* TabBarLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */; };
-		84D4B7A51DB0D35500EE38C6 /* TabBarLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84D4B7A41DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */; };
+		84D4B7A51DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84D4B7A91DB0D37700EE38C6 /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC64211C22E4C800B89B79 /* RAMBadge.swift */; };
 		84D4B7AA1DB0D37B00EE38C6 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */; };
 		84D4B7AB1DB0D37F00EE38C6 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E056BD1A2DD57600F33DDA /* RAMFumeAnimation.swift */; };
@@ -59,7 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				84D4B7A51DB0D35500EE38C6 /* TabBarLib.framework in Embed Frameworks */,
+				84D4B7A51DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +71,7 @@
 		8499D8EF1D0069C6004B5B37 /* AnimatedTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimatedTabBar.h; sourceTree = "<group>"; };
 		8499D8F11D0069C6004B5B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BC64211C22E4C800B89B79 /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBadge.swift; sourceTree = "<group>"; };
-		84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabBarLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAMAnimatedTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarLib.h; sourceTree = "<group>"; };
 		84D4B7A01DB0D35500EE38C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAMAnimatedTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D4B7A41DB0D35500EE38C6 /* TabBarLib.framework in Frameworks */,
+				84D4B7A41DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 			children = (
 				CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */,
 				CE4146871A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.xctest */,
-				84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */,
+				84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,9 +292,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		84D4B79C1DB0D35500EE38C6 /* TabBarLib */ = {
+		84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "TabBarLib" */;
+			buildConfigurationList = 84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarController" */;
 			buildPhases = (
 				84D4B7981DB0D35500EE38C6 /* Sources */,
 				84D4B7991DB0D35500EE38C6 /* Frameworks */,
@@ -305,9 +305,9 @@
 			);
 			dependencies = (
 			);
-			name = TabBarLib;
+			name = RAMAnimatedTabBarController;
 			productName = TabBarLib;
-			productReference = 84D4B79D1DB0D35500EE38C6 /* TabBarLib.framework */;
+			productReference = 84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */ = {
@@ -389,7 +389,7 @@
 			targets = (
 				CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
 				CE4146861A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */,
-				84D4B79C1DB0D35500EE38C6 /* TabBarLib */,
+				84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */,
 			);
 		};
 /* End PBXProject section */
@@ -485,7 +485,7 @@
 /* Begin PBXTargetDependency section */
 		84D4B7A31DB0D35500EE38C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84D4B79C1DB0D35500EE38C6 /* TabBarLib */;
+			target = 84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */;
 			targetProxy = 84D4B7A21DB0D35500EE38C6 /* PBXContainerItemProxy */;
 		};
 		CE4146891A1B923D0037F03C /* PBXTargetDependency */ = {
@@ -733,7 +733,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "TabBarLib" */ = {
+		84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84D4B7A61DB0D35500EE38C6 /* Debug */,
