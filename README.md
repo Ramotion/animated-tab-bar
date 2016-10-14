@@ -8,11 +8,9 @@
 [![Travis](https://img.shields.io/travis/Ramotion/animated-tab-bar.svg)](https://travis-ci.org/Ramotion/animated-tab-bar)
 [![Analytics](https://ga-beacon.appspot.com/UA-84973210-1/ramotion/animated-tab-bar)](https://github.com/igrigorik/ga-beacon)
 
-
-
 ## About
 This project is maintained by Ramotion, Inc.<br>
-We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br>[**Looking for developers for your project?** [CONTACT OUR TEAM](http://business.ramotion.com/#Get_in_Touch?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us)]
+We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br>**Looking for developers for your project?** [[▶︎CONTACT OUR TEAM◀︎](http://business.ramotion.com/#Get_in_Touch?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us)]
 
 
 
