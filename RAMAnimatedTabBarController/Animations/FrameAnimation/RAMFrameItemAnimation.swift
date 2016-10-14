@@ -24,7 +24,7 @@ import UIKit
 import QuartzCore
 
 /// The RAMFrameItemAnimation class provides keyframe animation.
-public class RAMFrameItemAnimation: RAMItemAnimation {
+open class RAMFrameItemAnimation: RAMItemAnimation {
   
   @nonobjc fileprivate var animationImages : Array<CGImage> = Array()
   
