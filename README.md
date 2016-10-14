@@ -11,7 +11,8 @@
 
 
 ## About
-This project is maintained by Ramotion, an agency specialized in building dedicated engineering teams and developing custom software.<br><br> [Contact our team](https://business.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us) and we’ll help you work with the best engineers from Eastern Europe.
+This project is maintained by Ramotion, Inc.
+We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br>[**Looking for developers for your project?** [CONTACT OUR TEAM](https://business.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us)]
 
 
 
