@@ -31,6 +31,12 @@ open class RAMBadge: UILabel {
         createSizeConstraints(frame.size)
 
     }
+    
+    override open var intrinsicContentSize: CGSize {
+        var contentSize = super.intrinsicContentSize
+        contentSize.width += 10.0
+        return contentSize
+    }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
