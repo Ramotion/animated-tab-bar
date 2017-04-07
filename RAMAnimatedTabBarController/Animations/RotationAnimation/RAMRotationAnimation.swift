@@ -91,7 +91,7 @@ open class RAMRotationAnimation : RAMItemAnimation {
     let rotateAnimation = CABasicAnimation(keyPath: Constants.AnimationKeys.Rotation)
     rotateAnimation.fromValue = 0.0
     
-    var toValue = CGFloat(M_PI * 2.0)
+    var toValue = CGFloat.pi * 2
     if direction != nil && direction == RAMRotationDirection.left {
       toValue = toValue * -1.0
     }
