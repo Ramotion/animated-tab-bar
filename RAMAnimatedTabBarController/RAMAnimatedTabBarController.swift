@@ -234,7 +234,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
   /**
    Returns a newly initialized view controller with the nib file in the specified bundle.
    
-   - parameter coder: An unarchiver object.
+   - parameter aDecoder: An unarchiver object.
    
    - returns: A newly initialized RAMAnimatedTabBarController object.
    */
