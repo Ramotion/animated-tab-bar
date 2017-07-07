@@ -307,7 +307,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
       
       container.addSubview(textLabel)
       let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
-      createConstraints(textLabel, container: container, size: CGSize(width: textLabelWidth , height: 10), yOffset: 16 - item.yOffSet)
+      createConstraints(textLabel, container: container, width: textLabelWidth, yOffset: 16 - item.yOffSet)
       
       if item.isEnabled == false {
         icon.alpha      = 0.5
@@ -326,7 +326,11 @@ open class RAMAnimatedTabBarController: UITabBarController {
     }
   }
   
-  fileprivate func createConstraints(_ view:UIView, container:UIView, size:CGSize, yOffset:CGFloat) {
+  fileprivate func createConstraints(_ view: UIView, container: UIView, size: CGSize, yOffset: CGFloat) {
+    createConstraints(view, container: container, width: size.width, height: size.height, yOffset: yOffset)
+  }
+  
+  fileprivate func createConstraints(_ view:UIView, container:UIView, width: CGFloat? = nil, height: CGFloat? = nil, yOffset:CGFloat) {
     
     let constX = NSLayoutConstraint(item: view,
                                     attribute: NSLayoutAttribute.centerX,
@@ -346,23 +350,27 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                     constant: yOffset)
     container.addConstraint(constY)
     
-    let constW = NSLayoutConstraint(item: view,
-                                    attribute: NSLayoutAttribute.width,
-                                    relatedBy: NSLayoutRelation.equal,
-                                    toItem: nil,
-                                    attribute: NSLayoutAttribute.notAnAttribute,
-                                    multiplier: 1,
-                                    constant: size.width)
-    view.addConstraint(constW)
+    if let width = width {
+      let constW = NSLayoutConstraint(item: view,
+                                      attribute: NSLayoutAttribute.width,
+                                      relatedBy: NSLayoutRelation.equal,
+                                      toItem: nil,
+                                      attribute: NSLayoutAttribute.notAnAttribute,
+                                      multiplier: 1,
+                                      constant: width)
+      view.addConstraint(constW)
+    }
     
-    let constH = NSLayoutConstraint(item: view,
-                                    attribute: NSLayoutAttribute.height,
-                                    relatedBy: NSLayoutRelation.equal,
-                                    toItem: nil,
-                                    attribute: NSLayoutAttribute.notAnAttribute,
-                                    multiplier: 1,
-                                    constant: size.height)
-    view.addConstraint(constH)
+    if let height = height {
+      let constH = NSLayoutConstraint(item: view,
+                                      attribute: NSLayoutAttribute.height,
+                                      relatedBy: NSLayoutRelation.equal,
+                                      toItem: nil,
+                                      attribute: NSLayoutAttribute.notAnAttribute,
+                                      multiplier: 1,
+                                      constant: height)
+      view.addConstraint(constH)
+    }
   }
   
   fileprivate func createViewContainers() -> NSDictionary {
