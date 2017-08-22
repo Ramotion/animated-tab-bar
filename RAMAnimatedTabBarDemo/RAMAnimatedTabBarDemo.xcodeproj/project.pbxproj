@@ -365,7 +365,6 @@
 					};
 					CE4146711A1B923D0037F03C = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 34MUF9YXTA;
 						LastSwiftMigration = 0800;
 					};
 					CE4146861A1B923D0037F03C = {
@@ -670,7 +669,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 34MUF9YXTA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RAMAnimatedTabBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -689,7 +688,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 34MUF9YXTA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RAMAnimatedTabBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
