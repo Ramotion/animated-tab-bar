@@ -75,8 +75,8 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
   /// The tint color of the UITabBarItem icon.
   @IBInspectable open var iconColor: UIColor = UIColor.clear // if alpha color is 0 color ignoring
   
-  var bgDefaultColor: UIColor = UIColor.clear // background color
-  var bgSelectedColor: UIColor = UIColor.clear
+  open var bgDefaultColor: UIColor = UIColor.clear // background color
+  open var bgSelectedColor: UIColor = UIColor.clear
   
   //  The current badge value
   open var badge: RAMBadge? // use badgeValue to show badge
