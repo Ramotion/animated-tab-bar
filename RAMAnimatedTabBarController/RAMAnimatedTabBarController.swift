@@ -429,7 +429,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
   
   // MARK: actions
   
-  open func tapHandler(_ gesture:UIGestureRecognizer) {
+  @objc open func tapHandler(_ gesture:UIGestureRecognizer) {
     
     guard let items = tabBar.items as? [RAMAnimatedTabBarItem],
       let gestureView = gesture.view else {
