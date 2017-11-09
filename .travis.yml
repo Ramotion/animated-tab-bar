@@ -1,4 +1,4 @@
-osx_image: xcode8
+osx_image: xcode9.1
 language: objective-c
 
 xcode_project: RAMAnimatedTabBarDemo/RAMAnimatedTabBarDemo.xcodeproj
