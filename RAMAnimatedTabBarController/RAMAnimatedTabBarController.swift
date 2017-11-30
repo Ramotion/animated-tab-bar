@@ -462,7 +462,6 @@ open class RAMAnimatedTabBarController: UITabBarController {
       container.backgroundColor = items[currentIndex].bgSelectedColor
       
       selectedIndex = gestureView.tag
-      delegate?.tabBarController?(self, didSelect: controller)
       
     } else if selectedIndex == currentIndex {
       
@@ -470,5 +469,6 @@ open class RAMAnimatedTabBarController: UITabBarController {
         navVC.popToRootViewController(animated: true)
       }
     }
+    delegate?.tabBarController?(self, didSelect: controller)
   }
 }
