@@ -25,7 +25,6 @@
 		CE41467D1A1B923D0037F03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE41467B1A1B923D0037F03C /* Main.storyboard */; };
 		CE41467F1A1B923D0037F03C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE41467E1A1B923D0037F03C /* Images.xcassets */; };
 		CE4146821A1B923D0037F03C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4146801A1B923D0037F03C /* LaunchScreen.xib */; };
-		CE41468E1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41468D1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift */; };
 		CE41469E1A1B944D0037F03C /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469A1A1B944D0037F03C /* RAMFrameItemAnimation.swift */; };
 		CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */; };
 		CE4146A01A1B944D0037F03C /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */; };
@@ -42,13 +41,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 84D4B79C1DB0D35500EE38C6;
 			remoteInfo = TabBarLib;
-		};
-		CE4146881A1B923D0037F03C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE41466A1A1B923D0037F03C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE4146711A1B923D0037F03C;
-			remoteInfo = RAMAnimatedTabBarDemo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -74,16 +66,13 @@
 		84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAMAnimatedTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarLib.h; sourceTree = "<group>"; };
 		84D4B7A01DB0D35500EE38C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAMAnimatedTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4146721A1B923D0037F03C /* Animated Tab Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animated Tab Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4146761A1B923D0037F03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4146771A1B923D0037F03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4146791A1B923D0037F03C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE41467C1A1B923D0037F03C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE41467E1A1B923D0037F03C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE4146811A1B923D0037F03C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CE4146871A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RAMAnimatedTabBarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE41468C1A1B923D0037F03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE41468D1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarDemoTests.swift; sourceTree = "<group>"; };
 		CE41469A1A1B944D0037F03C /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
 		CE41469C1A1B944D0037F03C /* RAMTransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimations.swift; sourceTree = "<group>"; };
 		CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
@@ -106,13 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D4B7A41DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE4146841A1B923D0037F03C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4146741A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
-				CE41468A1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */,
 				8499D8EE1D0069C6004B5B37 /* AnimatedTabBar */,
 				84D4B79E1DB0D35500EE38C6 /* TabBarLib */,
 				CE4146731A1B923D0037F03C /* Products */,
@@ -159,8 +140,7 @@
 		CE4146731A1B923D0037F03C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */,
-				CE4146871A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.xctest */,
+				CE4146721A1B923D0037F03C /* Animated Tab Bar.app */,
 				84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */,
 			);
 			name = Products;
@@ -185,23 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4146761A1B923D0037F03C /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CE41468A1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE41468D1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift */,
-				CE41468B1A1B923D0037F03C /* Supporting Files */,
-			);
-			path = RAMAnimatedTabBarDemoTests;
-			sourceTree = "<group>";
-		};
-		CE41468B1A1B923D0037F03C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CE41468C1A1B923D0037F03C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -327,26 +290,8 @@
 			);
 			name = RAMAnimatedTabBarDemo;
 			productName = RAMAnimatedTabBarDemo;
-			productReference = CE4146721A1B923D0037F03C /* RAMAnimatedTabBarDemo.app */;
+			productReference = CE4146721A1B923D0037F03C /* Animated Tab Bar.app */;
 			productType = "com.apple.product-type.application";
-		};
-		CE4146861A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE4146941A1B923D0037F03C /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarDemoTests" */;
-			buildPhases = (
-				CE4146831A1B923D0037F03C /* Sources */,
-				CE4146841A1B923D0037F03C /* Frameworks */,
-				CE4146851A1B923D0037F03C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE4146891A1B923D0037F03C /* PBXTargetDependency */,
-			);
-			name = RAMAnimatedTabBarDemoTests;
-			productName = RAMAnimatedTabBarDemoTests;
-			productReference = CE4146871A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -367,10 +312,6 @@
 						CreatedOnToolsVersion = 6.1;
 						LastSwiftMigration = 0800;
 					};
-					CE4146861A1B923D0037F03C = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = CE4146711A1B923D0037F03C;
-					};
 				};
 			};
 			buildConfigurationList = CE41466D1A1B923D0037F03C /* Build configuration list for PBXProject "RAMAnimatedTabBarDemo" */;
@@ -387,7 +328,6 @@
 			projectRoot = "";
 			targets = (
 				CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
-				CE4146861A1B923D0037F03C /* RAMAnimatedTabBarDemoTests */,
 				84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */,
 			);
 		};
@@ -409,13 +349,6 @@
 				CE41467D1A1B923D0037F03C /* Main.storyboard in Resources */,
 				CE4146821A1B923D0037F03C /* LaunchScreen.xib in Resources */,
 				CE41467F1A1B923D0037F03C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE4146851A1B923D0037F03C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,14 +404,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE4146831A1B923D0037F03C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE41468E1A1B923D0037F03C /* RAMAnimatedTabBarDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -486,11 +411,6 @@
 			isa = PBXTargetDependency;
 			target = 84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */;
 			targetProxy = 84D4B7A21DB0D35500EE38C6 /* PBXContainerItemProxy */;
-		};
-		CE4146891A1B923D0037F03C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */;
-			targetProxy = CE4146881A1B923D0037F03C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -688,7 +608,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Animated Tab Bar";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -707,41 +627,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Animated Tab Bar";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		CE4146951A1B923D0037F03C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RAMAnimatedTabBarDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ramotion.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RAMAnimatedTabBarDemo.app/RAMAnimatedTabBarDemo";
-			};
-			name = Debug;
-		};
-		CE4146961A1B923D0037F03C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = RAMAnimatedTabBarDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ramotion.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RAMAnimatedTabBarDemo.app/RAMAnimatedTabBarDemo";
 			};
 			name = Release;
 		};
@@ -771,15 +659,6 @@
 			buildConfigurations = (
 				CE4146921A1B923D0037F03C /* Debug */,
 				CE4146931A1B923D0037F03C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE4146941A1B923D0037F03C /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE4146951A1B923D0037F03C /* Debug */,
-				CE4146961A1B923D0037F03C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
