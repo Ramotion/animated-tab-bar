@@ -13,10 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private func application(
-        application _: UIApplication,
-        didFinishLaunchingWithOptions _: [NSObject: AnyObject]?) -> Bool {
-
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {        
         return true
     }
 }

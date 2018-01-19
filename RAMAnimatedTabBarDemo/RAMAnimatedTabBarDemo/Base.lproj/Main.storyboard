@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QjJ-1j-Kct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QjJ-1j-Kct">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,10 +15,6 @@
         <scene sceneID="Y99-CA-jqU">
             <objects>
                 <viewController id="wJE-Q4-t8C" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n1y-U7-ZG1"/>
-                        <viewControllerLayoutGuide type="bottom" id="ccN-XV-rhh"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PmG-Vl-9D1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,9 +28,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="UxN-OP-GHb" secondAttribute="centerX" id="1l9-FQ-w0o"/>
+                            <constraint firstItem="cbk-oV-z7H" firstAttribute="centerX" secondItem="UxN-OP-GHb" secondAttribute="centerX" id="1l9-FQ-w0o"/>
                             <constraint firstAttribute="centerY" secondItem="UxN-OP-GHb" secondAttribute="centerY" id="5ae-83-gzq"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cbk-oV-z7H"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="drop" id="tS2-0E-St8" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
@@ -61,10 +59,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,8 +73,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="AeA-ED-4jL" secondAttribute="centerY" id="Ifi-6x-Ruv"/>
-                            <constraint firstAttribute="centerX" secondItem="AeA-ED-4jL" secondAttribute="centerX" id="gXX-8c-cGG"/>
+                            <constraint firstItem="8ec-QI-6Cw" firstAttribute="centerX" secondItem="AeA-ED-4jL" secondAttribute="centerX" id="gXX-8c-cGG"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="8ec-QI-6Cw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item1" image="icon_pin" id="lUH-JS-dWf" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
@@ -111,10 +106,6 @@
         <scene sceneID="quI-1J-que">
             <objects>
                 <viewController id="DFF-lT-Wr8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bPS-fl-hCE"/>
-                        <viewControllerLayoutGuide type="bottom" id="hbL-QY-0OH"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DX2-Ge-a2o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,8 +120,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="juj-np-Jde" secondAttribute="centerY" id="5B9-09-yru"/>
-                            <constraint firstAttribute="centerX" secondItem="juj-np-Jde" secondAttribute="centerX" id="JZ0-P4-3th"/>
+                            <constraint firstItem="VaI-Rh-DC9" firstAttribute="centerX" secondItem="juj-np-Jde" secondAttribute="centerX" id="JZ0-P4-3th"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="VaI-Rh-DC9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item2" image="icon_user" id="z5N-yh-KHH" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
@@ -181,10 +173,6 @@
         <scene sceneID="ttZ-oS-sRQ">
             <objects>
                 <viewController id="eCt-4k-9Vu" customClass="ViewController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bHT-V9-9VP"/>
-                        <viewControllerLayoutGuide type="bottom" id="KE1-We-Sek"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JgG-ft-dcB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,11 +204,12 @@
                             <constraint firstItem="KK9-Py-qqm" firstAttribute="leading" secondItem="JgG-ft-dcB" secondAttribute="leadingMargin" constant="-20" id="Isz-OD-x14"/>
                             <constraint firstItem="KK9-Py-qqm" firstAttribute="width" secondItem="FKl-OF-gs1" secondAttribute="width" id="WnW-pO-RYO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FKl-OF-gs1" secondAttribute="trailing" constant="-20" id="YyU-4n-KYs"/>
-                            <constraint firstAttribute="centerX" secondItem="qMh-ib-nBJ" secondAttribute="centerX" id="b2F-Ux-a2l"/>
+                            <constraint firstItem="kSB-yj-LRJ" firstAttribute="centerX" secondItem="qMh-ib-nBJ" secondAttribute="centerX" id="b2F-Ux-a2l"/>
                             <constraint firstAttribute="centerY" secondItem="qMh-ib-nBJ" secondAttribute="centerY" id="jUP-sb-8cO"/>
-                            <constraint firstItem="KE1-We-Sek" firstAttribute="top" secondItem="KK9-Py-qqm" secondAttribute="bottom" constant="8" id="naI-ed-60X"/>
-                            <constraint firstItem="KE1-We-Sek" firstAttribute="top" secondItem="FKl-OF-gs1" secondAttribute="bottom" constant="8" id="ush-0w-xgF"/>
+                            <constraint firstItem="kSB-yj-LRJ" firstAttribute="bottom" secondItem="KK9-Py-qqm" secondAttribute="bottom" constant="8" id="naI-ed-60X"/>
+                            <constraint firstItem="kSB-yj-LRJ" firstAttribute="bottom" secondItem="FKl-OF-gs1" secondAttribute="bottom" constant="8" id="ush-0w-xgF"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kSB-yj-LRJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item4" image="Settings" id="EiX-sv-bUZ" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
@@ -251,10 +240,6 @@
         <scene sceneID="rxZ-sE-b31">
             <objects>
                 <viewController id="Zsy-o9-m6D" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lxI-Ta-Ipa"/>
-                        <viewControllerLayoutGuide type="bottom" id="YWx-Sv-OdQ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qT7-Vb-aMC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,9 +253,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="gnW-CR-KSE" secondAttribute="centerX" id="jwX-bj-6Ah"/>
+                            <constraint firstItem="oai-od-5ae" firstAttribute="centerX" secondItem="gnW-CR-KSE" secondAttribute="centerX" id="jwX-bj-6Ah"/>
                             <constraint firstAttribute="centerY" secondItem="gnW-CR-KSE" secondAttribute="centerY" id="pMh-vB-55X"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="oai-od-5ae"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item3" image="Tools_00028" id="c38-iL-qNf" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>

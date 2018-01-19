@@ -60,7 +60,7 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
             iconView?.textLabel.alpha = isEnabled == true ? 1 : 0.5
         }
     }
-
+    
     /// animation for UITabBarItem. use RAMFumeAnimation, RAMBounceAnimation, RAMRotationAnimation, RAMFrameItemAnimation, RAMTransitionAnimation
     /// or create custom anmation inherit RAMItemAnimation
     @IBOutlet open var animation: RAMItemAnimation!
@@ -188,83 +188,37 @@ extension RAMAnimatedTabBarController {
 /// UITabBarController with item animations
 open class RAMAnimatedTabBarController: UITabBarController {
 
-    fileprivate var didInit: Bool = false
-    fileprivate var didLoadView: Bool = false
-
+    fileprivate var containers: [String: UIView] = [:]
+    
+    open override var viewControllers: [UIViewController]? {
+        didSet {
+            initializeContainers()
+        }
+    }
+    
+    open override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        super.setViewControllers(viewControllers, animated: animated)
+        initializeContainers()
+    }
+    
     // MARK: life circle
-
-    /**
-     Returns a newly initialized view controller with the nib file in the specified bundle.
-
-     - parameter nibNameOrNil:   The name of the nib file to associate with the view controller. The nib file name should
-     not contain any leading path information. If you specify nil, the nibName property is set to nil.
-
-     - parameter nibBundleOrNil: The bundle in which to search for the nib file. This method looks for the nib file in the
-     bundle's language-specific project directories first, followed by the Resources directory. If this parameter is nil,
-     the method uses the heuristics described below to locate the nib file.
-
-     - returns: A newly initialized RAMAnimatedTabBarController object.
-     */
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-        didInit = true
-        initializeContainers()
-    }
-
-    /**
-     Returns a newly initialized view controller with the nib file in the specified bundle.
-
-     - parameter viewControllers: Sets the root view controllers of the tab bar controller.
-
-     - returns: A newly initialized RAMAnimatedTabBarController object.
-     */
-    public init(viewControllers: [UIViewController]) {
-        super.init(nibName: nil, bundle: nil)
-
-        didInit = true
-
-        // Set initial items
-        setViewControllers(viewControllers, animated: false)
-
-        initializeContainers()
-    }
-
-    /**
-     Returns a newly initialized view controller with the nib file in the specified bundle.
-
-     - parameter aDecoder: An unarchiver object.
-
-     - returns: A newly initialized RAMAnimatedTabBarController object.
-     */
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        didInit = true
-        initializeContainers()
-    }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-
-        didLoadView = true
-
         initializeContainers()
     }
 
     fileprivate func initializeContainers() {
-        if !didInit || !didLoadView {
-            return
-        }
-
-        let containers = createViewContainers()
+        
+        containers.values.forEach { $0.removeFromSuperview() }
+        containers = createViewContainers()
 
         createCustomIcons(containers)
     }
 
     // MARK: create methods
 
-    fileprivate func createCustomIcons(_ containers: NSDictionary) {
+    fileprivate func createCustomIcons(_ containers: [String: UIView]) {
 
         guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
@@ -273,11 +227,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
         var index = 0
         for item in items {
 
-            guard let itemImage = item.image else {
-                fatalError("add image icon in UITabBarItem")
-            }
-
-            guard let container = containers["container\(items.count - 1 - index)"] as? UIView else {
+            guard let container = containers["container\(items.count - 1 - index)"] else {
                 fatalError()
             }
             container.tag = index
@@ -285,13 +235,18 @@ open class RAMAnimatedTabBarController: UITabBarController {
             let renderMode = item.iconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
                 UIImageRenderingMode.alwaysTemplate
 
-            let icon = UIImageView(image: item.image?.withRenderingMode(renderMode))
+            let iconImage = item.image ?? item.iconView?.icon.image
+            let icon = UIImageView(image: iconImage?.withRenderingMode(renderMode))
             icon.translatesAutoresizingMaskIntoConstraints = false
             icon.tintColor = item.iconColor
 
             // text
             let textLabel = UILabel()
-            textLabel.text = item.title
+            if let title = item.title, !title.isEmpty {
+                textLabel.text = title
+            } else {
+                textLabel.text = item.iconView?.textLabel.text
+            }
             textLabel.backgroundColor = UIColor.clear
             textLabel.textColor = item.textColor
             textLabel.font = item.textFont
@@ -301,7 +256,8 @@ open class RAMAnimatedTabBarController: UITabBarController {
             container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
 
             container.addSubview(icon)
-            createConstraints(icon, container: container, size: itemImage.size, yOffset: -5 - item.yOffSet)
+            let itemSize = item.image?.size ?? CGSize(width: 30, height: 30)
+            createConstraints(icon, container: container, size: itemSize, yOffset: -5 - item.yOffSet)
 
             container.addSubview(textLabel)
             let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
@@ -371,13 +327,13 @@ open class RAMAnimatedTabBarController: UITabBarController {
         }
     }
 
-    fileprivate func createViewContainers() -> NSDictionary {
+    fileprivate func createViewContainers() -> [String: UIView] {
 
         guard let items = tabBar.items else {
             fatalError("add items in tabBar")
         }
 
-        var containersDict = [String: AnyObject]()
+        var containersDict: [String: UIView] = [:]
 
         for index in 0 ..< items.count {
             let viewContainer = createViewContainer()
@@ -395,7 +351,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                                           views: (containersDict as [String: AnyObject]))
         view.addConstraints(constranints)
 
-        return containersDict as NSDictionary
+        return containersDict
     }
 
     fileprivate func createViewContainer() -> UIView {
