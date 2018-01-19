@@ -375,7 +375,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                         toItem: nil,
                                         attribute: NSLayoutAttribute.notAnAttribute,
                                         multiplier: 1,
-                                        constant: tabBar.frame.size.height)
+                                        constant: 49)
         viewContainer.addConstraint(constH)
 
         return viewContainer
