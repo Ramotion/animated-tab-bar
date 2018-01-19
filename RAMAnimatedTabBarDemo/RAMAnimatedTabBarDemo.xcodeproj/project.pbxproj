@@ -60,8 +60,6 @@
 
 /* Begin PBXFileReference section */
 		849507001D05772B0005EC1A /* ToolsAnimation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolsAnimation.plist; sourceTree = "<group>"; };
-		8499D8EF1D0069C6004B5B37 /* AnimatedTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimatedTabBar.h; sourceTree = "<group>"; };
-		8499D8F11D0069C6004B5B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BC64211C22E4C800B89B79 /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBadge.swift; sourceTree = "<group>"; };
 		84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAMAnimatedTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D4B79F1DB0D35500EE38C6 /* TabBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarLib.h; sourceTree = "<group>"; };
@@ -101,15 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8499D8EE1D0069C6004B5B37 /* AnimatedTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				8499D8EF1D0069C6004B5B37 /* AnimatedTabBar.h */,
-				8499D8F11D0069C6004B5B37 /* Info.plist */,
-			);
-			path = AnimatedTabBar;
-			sourceTree = "<group>";
-		};
 		84BC64201C22E41F00B89B79 /* RAMBadge */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4146741A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
-				8499D8EE1D0069C6004B5B37 /* AnimatedTabBar */,
 				84D4B79E1DB0D35500EE38C6 /* TabBarLib */,
 				CE4146731A1B923D0037F03C /* Products */,
 			);
