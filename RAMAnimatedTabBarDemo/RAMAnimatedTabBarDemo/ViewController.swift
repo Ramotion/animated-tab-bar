@@ -9,17 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     var index: NSInteger = 0
 
-
-    // PRAGMA: actions    
-    @IBAction func showBadgeHandelr(_ sender: AnyObject) {
+    // PRAGMA: actions
+    @IBAction func showBadgeHandelr(_: AnyObject) {
         index += 1
-        self.tabBarItem.badgeValue = "\(index)"
+        tabBarItem.badgeValue = "\(index)"
     }
-  
-    @IBAction func hideBadgeHandler(_ sender: AnyObject) {
-        self.tabBarItem.badgeValue = nil
+
+    @IBAction func hideBadgeHandler(_: AnyObject) {
+        tabBarItem.badgeValue = nil
     }
 }
