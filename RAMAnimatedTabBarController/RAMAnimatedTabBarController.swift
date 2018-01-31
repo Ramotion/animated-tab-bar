@@ -239,7 +239,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
             let icon = UIImageView(image: iconImage?.withRenderingMode(renderMode))
             icon.translatesAutoresizingMaskIntoConstraints = false
             icon.tintColor = item.iconColor
-            icon.highlightedImage = item.selectedImage
+            icon.highlightedImage = item.selectedImage?.withRenderingMode(renderMode)
 
             // text
             let textLabel = UILabel()
