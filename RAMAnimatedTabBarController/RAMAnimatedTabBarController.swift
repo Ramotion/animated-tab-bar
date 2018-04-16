@@ -220,6 +220,8 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
     fileprivate func createCustomIcons(_ containers: [String: UIView]) {
 
+        if let items = tabBar.items, items.count > 5 { fatalError("More button not supported") }
+
         guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
         }
