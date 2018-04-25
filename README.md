@@ -1,5 +1,7 @@
 [![header](./header.png)](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-logo)
-[![Animation](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/Screenshots/animatedTabBar.gif)](https://dribbble.com/shots/1766396-Animated-Tab-Bar-Icons)
+<img src="https://github.com/Ramotion/animated-tab-bar/blob/master/Screenshots/animatedTabBar.gif" width="600" height="450" />
+<br><br/>
+
 # Animated-tab-bar
 [![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
