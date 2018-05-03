@@ -187,6 +187,13 @@ extension RAMAnimatedTabBarController {
 
 /// UITabBarController with item animations
 open class RAMAnimatedTabBarController: UITabBarController {
+    
+    /**
+     The animated items displayed by the tab bar.
+     **/
+    open var animatedItems: [RAMAnimatedTabBarItem] {
+        return tabBar.items as? [RAMAnimatedTabBarItem] ?? []
+    }
 
     fileprivate var containers: [String: UIView] = [:]
     
