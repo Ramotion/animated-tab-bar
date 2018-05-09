@@ -23,7 +23,7 @@ This project is maintained by Ramotion, Inc. We specialize in the designing and 
 <br>
 
 
-The [iPhone mockup](https://store.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) available [here](https://store.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar).
+The [iPhone mockup](https://store.ramotion.com/product/iphone-x-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) available [here](https://store.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar).
 
 ## Try this UI control in action
 
