@@ -403,7 +403,6 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
     fileprivate func createViewContainer() -> UIView {
         let viewContainer = UIView()
-        viewContainer.backgroundColor = UIColor.clear // for test
         viewContainer.translatesAutoresizingMaskIntoConstraints = false
         viewContainer.isExclusiveTouch = true
         view.addSubview(viewContainer)
