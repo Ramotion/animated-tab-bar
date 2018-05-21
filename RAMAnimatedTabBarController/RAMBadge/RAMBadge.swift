@@ -78,22 +78,24 @@ open class RAMBadge: UILabel {
         onView.addSubview(self)
 
         // create constraints
-        topConstraint = NSLayoutConstraint(item: self,
+        let top = NSLayoutConstraint(item: self,
                                            attribute: NSLayoutAttribute.top,
                                            relatedBy: NSLayoutRelation.equal,
                                            toItem: onView,
                                            attribute: NSLayoutAttribute.top,
                                            multiplier: 1,
                                            constant: 3)
-        onView.addConstraint(topConstraint!)
+        onView.addConstraint(top)
+        topConstraint = top
 
-        centerXConstraint = NSLayoutConstraint(item: self,
+        let centerX = NSLayoutConstraint(item: self,
                                                attribute: NSLayoutAttribute.centerX,
                                                relatedBy: NSLayoutRelation.equal,
                                                toItem: onView,
                                                attribute: NSLayoutAttribute.centerX,
                                                multiplier: 1,
                                                constant: 10)
-        onView.addConstraint(centerXConstraint!)
+        onView.addConstraint(centerX)
+        centerXConstraint = centerX
     }
 }
