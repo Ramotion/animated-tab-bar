@@ -257,7 +257,9 @@ open class RAMAnimatedTabBarController: UITabBarController {
         containers.values.forEach { $0.removeFromSuperview() }
         containers = createViewContainers()
 
-        createCustomIcons(containers)
+        if !containers.isEmpty {
+            createCustomIcons(containers)
+        }
     }
 
     // MARK: create methods
@@ -377,7 +379,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
     fileprivate func createViewContainers() -> [String: UIView] {
 
         guard let items = tabBar.items else {
-            fatalError("add items in tabBar")
+            return [:]
         }
 
         var containersDict: [String: UIView] = [:]
