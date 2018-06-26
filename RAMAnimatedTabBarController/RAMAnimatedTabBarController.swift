@@ -121,6 +121,17 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
 
         animation.selectedState(iconView!.icon, textLabel: iconView!.textLabel)
     }
+    
+    /**
+     Set deselected state without animation
+     */
+    open func deselectedState() {
+        guard animation != nil && iconView != nil else {
+            return
+        }
+        
+        animation.deselectedState(iconView!.icon, textLabel: iconView!.textLabel)
+    }
 }
 
 extension RAMAnimatedTabBarController {
@@ -321,6 +332,9 @@ open class RAMAnimatedTabBarController: UITabBarController {
             if 0 == index { // selected first elemet
                 item.selectedState()
                 container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgSelectedColor
+            } else {
+                item.deselectedState()
+                container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
             }
 
             item.image = nil

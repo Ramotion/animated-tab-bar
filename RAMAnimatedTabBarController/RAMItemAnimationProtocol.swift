@@ -89,4 +89,12 @@ open class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
     open func selectedState(_: UIImageView, textLabel _: UILabel) {
         fatalError("override method in subclass")
     }
+    
+    /**
+     (Optional) Method call when TabBarController did load
+     
+     - parameter icon:      animating UITabBarItem icon
+     - parameter textLabel: animating UITabBarItem textLabel
+     */
+    open func deselectedState(_: UIImageView, textLabel _: UILabel) {}
 }
