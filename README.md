@@ -143,6 +143,8 @@ class RAMBounceAnimation : RAMItemAnimation {
 }
 ```
 
+<br>This library is a part of a <a href="https://github.com/Ramotion/swift-ui-animation-components-and-libraries"><b>selection of our best UI open-source projects.</b></a></br>
+
 # Get the Showroom App for iOS to give it a try
 Try this UI library in our iOS app. Contact us if you interested in hiring the team.
 
