@@ -393,8 +393,9 @@ open class RAMAnimatedTabBarController: UITabBarController {
     fileprivate func createViewContainers() -> [String: UIView] {
         
         guard let items = tabBar.items else {
-            fatalError("add items in tabBar")
+            return [:]
         }
+
         
         var containersDict: [String: UIView] = [:]
         
