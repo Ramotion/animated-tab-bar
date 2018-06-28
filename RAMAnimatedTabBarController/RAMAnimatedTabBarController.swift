@@ -391,29 +391,40 @@ open class RAMAnimatedTabBarController: UITabBarController {
     }
 
     fileprivate func createViewContainers() -> [String: UIView] {
-
+        
         guard let items = tabBar.items else {
             return [:]
         }
 
+        
         var containersDict: [String: UIView] = [:]
-
+        
         for index in 0 ..< items.count {
             let viewContainer = createViewContainer()
             containersDict["container\(index)"] = viewContainer
         }
-
+        
         var formatString = "H:|-(0)-[container0]"
         for index in 1 ..< items.count {
             formatString += "-(0)-[container\(index)(==container0)]"
         }
         formatString += "-(0)-|"
-        let constranints = NSLayoutConstraint.constraints(withVisualFormat: formatString,
+        
+        var constranints:[NSLayoutConstraint]!
+        
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
+            constranints = NSLayoutConstraint.constraints(withVisualFormat: formatString,
+                                                          options: NSLayoutFormatOptions.directionLeftToRight,
+                                                          metrics: nil,
+                                                          views: (containersDict as [String: AnyObject]))
+        }else{
+            constranints = NSLayoutConstraint.constraints(withVisualFormat: formatString,
                                                           options: NSLayoutFormatOptions.directionRightToLeft,
                                                           metrics: nil,
                                                           views: (containersDict as [String: AnyObject]))
+        }
         view.addConstraints(constranints)
-
+        
         return containersDict
     }
 
