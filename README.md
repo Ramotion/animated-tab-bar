@@ -18,7 +18,7 @@ We specialize in the designing and coding of custom UI for Mobile Apps and Websi
 **Looking for developers for your project?**<br>
 This project is maintained by Ramotion, Inc. We specialize in the designing and coding of custom UI for Mobile Apps and Websites.
 
-<a href="https://dev.ramotion.com/?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-contact-us">
+<a href="mailto:alex.a@ramotion.com?subject=Project%20inquiry%20from%20Github">
 <img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
 <br>
 
