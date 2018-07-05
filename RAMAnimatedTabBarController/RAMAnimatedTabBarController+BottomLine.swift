@@ -49,6 +49,7 @@ extension RAMAnimatedTabBarController {
         lineLeadingConstraint = bottomLine?.leadingAnchor.constraint(equalTo: currentItem.leadingAnchor)
         lineLeadingConstraint?.isActive = true
 
+        // add constraints
         bottomLine?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         bottomLine?.heightAnchor.constraint(equalToConstant: lineHeight).isActive = true
         bottomLine?.widthAnchor.constraint(equalTo: currentItem.widthAnchor).isActive = true
