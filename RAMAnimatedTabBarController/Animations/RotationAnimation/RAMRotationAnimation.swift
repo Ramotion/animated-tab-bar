@@ -111,18 +111,18 @@ open class RAMRotationAnimation: RAMItemAnimation {
 }
 
 /// The RAMLeftRotationAnimation class provides letf rotation animation.
-class RAMLeftRotationAnimation: RAMRotationAnimation {
+open class RAMLeftRotationAnimation: RAMRotationAnimation {
 
-    override init() {
+    public override init() {
         super.init()
         direction = RAMRotationDirection.left
     }
 }
 
 /// The RAMRightRotationAnimation class provides rigth rotation animation.
-class RAMRightRotationAnimation: RAMRotationAnimation {
+open class RAMRightRotationAnimation: RAMRotationAnimation {
 
-    override init() {
+    public override init() {
         super.init()
         direction = RAMRotationDirection.right
     }

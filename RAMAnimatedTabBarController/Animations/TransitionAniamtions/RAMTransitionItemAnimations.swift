@@ -92,36 +92,36 @@ open class RAMTransitionItemAnimations: RAMItemAnimation {
     }
 }
 
-class RAMFlipLeftTransitionItemAnimations: RAMTransitionItemAnimations {
+open class RAMFlipLeftTransitionItemAnimations: RAMTransitionItemAnimations {
 
-    override init() {
+    public override init() {
         super.init()
 
         transitionOptions = UIViewAnimationOptions.transitionFlipFromLeft
     }
 }
 
-class RAMFlipRightTransitionItemAnimations: RAMTransitionItemAnimations {
+open class RAMFlipRightTransitionItemAnimations: RAMTransitionItemAnimations {
 
-    override init() {
+    public override init() {
         super.init()
 
         transitionOptions = UIViewAnimationOptions.transitionFlipFromRight
     }
 }
 
-class RAMFlipTopTransitionItemAnimations: RAMTransitionItemAnimations {
+open class RAMFlipTopTransitionItemAnimations: RAMTransitionItemAnimations {
 
-    override init() {
+    public override init() {
         super.init()
 
         transitionOptions = UIViewAnimationOptions.transitionFlipFromTop
     }
 }
 
-class RAMFlipBottomTransitionItemAnimations: RAMTransitionItemAnimations {
+open class RAMFlipBottomTransitionItemAnimations: RAMTransitionItemAnimations {
 
-    override init() {
+    public override init() {
         super.init()
 
         transitionOptions = UIViewAnimationOptions.transitionFlipFromBottom
