@@ -40,7 +40,7 @@ open class RAMFumeAnimation: RAMItemAnimation {
         if let iconImage = icon.image {
             let renderImage = iconImage.withRenderingMode(.alwaysTemplate)
             icon.image = renderImage
-            icon.tintColor = textSelectedColor
+            icon.tintColor = iconSelectedColor
         }
     }
 
@@ -82,7 +82,7 @@ open class RAMFumeAnimation: RAMItemAnimation {
         if let iconImage = icon.image {
             let renderImage = iconImage.withRenderingMode(.alwaysTemplate)
             icon.image = renderImage
-            icon.tintColor = textSelectedColor
+            icon.tintColor = iconSelectedColor
         }
     }
 
