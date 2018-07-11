@@ -396,7 +396,6 @@ open class RAMAnimatedTabBarController: UITabBarController {
             return [:]
         }
 
-        
         var containersDict: [String: UIView] = [:]
         
         for index in 0 ..< items.count {
