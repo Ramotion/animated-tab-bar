@@ -270,6 +270,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
         if !containers.isEmpty {
             createCustomIcons(containers)
+            setSelectIndex(from: selectedIndex, to: 0)
         }
     }
 
@@ -328,14 +329,6 @@ open class RAMAnimatedTabBarController: UITabBarController {
                 textLabel.alpha = 0.5
             }
             item.iconView = (icon: icon, textLabel: textLabel)
-
-            if 0 == index { // selected first elemet
-                item.selectedState()
-                container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgSelectedColor
-            } else {
-                item.deselectedState()
-                container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
-            }
 
             item.image = nil
             item.title = ""
