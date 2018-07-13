@@ -337,6 +337,14 @@ open class RAMAnimatedTabBarController: UITabBarController {
                 container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
             }
 
+            if 0 == index { // selected first elemet
+                item.selectedState()
+                container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgSelectedColor
+            } else {
+                item.deselectedState()
+                container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
+            }
+
             item.image = nil
             item.title = ""
             index += 1
