@@ -102,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AC42AE5210AFA110009889F /* BottomLine */ = {
+			isa = PBXGroup;
+			children = (
+				5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */,
+			);
+			path = BottomLine;
+			sourceTree = "<group>";
+		};
 		84BC64201C22E41F00B89B79 /* RAMBadge */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +171,9 @@
 		CE4146971A1B94170037F03C /* RAMAnimatedTabBarControlller */ = {
 			isa = PBXGroup;
 			children = (
+				5AC42AE5210AFA110009889F /* BottomLine */,
 				84BC64201C22E41F00B89B79 /* RAMBadge */,
 				CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */,
-				5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */,
 				CE4146981A1B944D0037F03C /* Animations */,
 				CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */,
 			);
