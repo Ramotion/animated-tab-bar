@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1F33BC2126AA3D004B8735 /* AnimatedTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */; };
 		5ADAB94A209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */; };
 		5ADAB94B209B51E5006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */; };
 		849507011D05772B0005EC1A /* ToolsAnimation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849507001D05772B0005EC1A /* ToolsAnimation.plist */; };
@@ -37,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A1F33BE2126AA3D004B8735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE41466A1A1B923D0037F03C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE4146711A1B923D0037F03C;
+			remoteInfo = RAMAnimatedTabBarDemo;
+		};
 		84D4B7A21DB0D35500EE38C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE41466A1A1B923D0037F03C /* Project object */;
@@ -61,6 +69,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A1F33B92126AA3D004B8735 /* AnimatedTabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedTabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarTests.swift; sourceTree = "<group>"; };
+		5A1F33BD2126AA3D004B8735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RAMAnimatedTabBarController+BottomLine.swift"; sourceTree = "<group>"; };
 		849507001D05772B0005EC1A /* ToolsAnimation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolsAnimation.plist; sourceTree = "<group>"; };
 		84BC64211C22E4C800B89B79 /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBadge.swift; sourceTree = "<group>"; };
@@ -84,6 +95,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A1F33B62126AA3D004B8735 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84D4B7991DB0D35500EE38C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1F33BA2126AA3D004B8735 /* AnimatedTabBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */,
+				5A1F33BD2126AA3D004B8735 /* Info.plist */,
+			);
+			path = AnimatedTabBarTests;
+			sourceTree = "<group>";
+		};
 		5AC42AE5210AFA110009889F /* BottomLine */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +159,7 @@
 			children = (
 				CE4146741A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
 				84D4B79E1DB0D35500EE38C6 /* TabBarLib */,
+				5A1F33BA2126AA3D004B8735 /* AnimatedTabBarTests */,
 				CE4146731A1B923D0037F03C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +169,7 @@
 			children = (
 				CE4146721A1B923D0037F03C /* Animated Tab Bar.app */,
 				84D4B79D1DB0D35500EE38C6 /* RAMAnimatedTabBarController.framework */,
+				5A1F33B92126AA3D004B8735 /* AnimatedTabBarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,6 +284,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5A1F33B82126AA3D004B8735 /* AnimatedTabBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A1F33C22126AA3D004B8735 /* Build configuration list for PBXNativeTarget "AnimatedTabBarTests" */;
+			buildPhases = (
+				5A1F33B52126AA3D004B8735 /* Sources */,
+				5A1F33B62126AA3D004B8735 /* Frameworks */,
+				5A1F33B72126AA3D004B8735 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A1F33BF2126AA3D004B8735 /* PBXTargetDependency */,
+			);
+			name = AnimatedTabBarTests;
+			productName = AnimatedTabBarTests;
+			productReference = 5A1F33B92126AA3D004B8735 /* AnimatedTabBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarController" */;
@@ -299,10 +346,15 @@
 		CE41466A1A1B923D0037F03C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Ramotion;
 				TargetAttributes = {
+					5A1F33B82126AA3D004B8735 = {
+						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CE4146711A1B923D0037F03C;
+					};
 					84D4B79C1DB0D35500EE38C6 = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0910;
@@ -329,11 +381,19 @@
 			targets = (
 				CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */,
 				84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */,
+				5A1F33B82126AA3D004B8735 /* AnimatedTabBarTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A1F33B72126AA3D004B8735 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84D4B79B1DB0D35500EE38C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +432,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A1F33B52126AA3D004B8735 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A1F33BC2126AA3D004B8735 /* AnimatedTabBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84D4B7981DB0D35500EE38C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +477,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5A1F33BF2126AA3D004B8735 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE4146711A1B923D0037F03C /* RAMAnimatedTabBarDemo */;
+			targetProxy = 5A1F33BE2126AA3D004B8735 /* PBXContainerItemProxy */;
+		};
 		84D4B7A31DB0D35500EE38C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84D4B79C1DB0D35500EE38C6 /* RAMAnimatedTabBarController */;
@@ -436,6 +509,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A1F33C02126AA3D004B8735 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AnimatedTabBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.AnimatedTabBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animated Tab Bar.app/Animated Tab Bar";
+			};
+			name = Debug;
+		};
+		5A1F33C12126AA3D004B8735 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AnimatedTabBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.AnimatedTabBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animated Tab Bar.app/Animated Tab Bar";
+			};
+			name = Release;
+		};
 		84D4B7A61DB0D35500EE38C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -642,6 +765,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A1F33C22126AA3D004B8735 /* Build configuration list for PBXNativeTarget "AnimatedTabBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A1F33C02126AA3D004B8735 /* Debug */,
+				5A1F33C12126AA3D004B8735 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84D4B7A81DB0D35500EE38C6 /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
