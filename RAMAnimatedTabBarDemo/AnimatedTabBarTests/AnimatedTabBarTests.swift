@@ -17,6 +17,7 @@ class AnimatedTabBarTests: XCTestCase {
         super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         tabBarController = storyboard.instantiateViewController(withIdentifier: "RAMAnimatedTabBarController") as? RAMAnimatedTabBarController
+        _ = tabBarController.view
         
     }
     override func tearDown() {
@@ -25,5 +26,16 @@ class AnimatedTabBarTests: XCTestCase {
     
     func testCreateController() {
         XCTAssertNotNil(tabBarController)
+    }
+    
+    func testIsBottomLineShowen() {
+        
+        XCTAssertEqual(tabBarController.bottomLine, nil)
+
+        tabBarController.isBottomLineShow = true
+        XCTAssertNotNil(tabBarController.bottomLine)
+        
+        tabBarController.isBottomLineShow = false
+        XCTAssertEqual(tabBarController.bottomLine, nil)
     }
 }
