@@ -38,4 +38,15 @@ class AnimatedTabBarTests: XCTestCase {
         tabBarController.isBottomLineShow = false
         XCTAssertEqual(tabBarController.bottomLine, nil)
     }
+    
+    func testChangeSelectedColor() {
+        let selectedColor = UIColor.red
+        let iconSelectedColor = UIColor.green
+        tabBarController.changeSelectedColor(selectedColor, iconSelectedColor: iconSelectedColor)
+        
+        tabBarController.animatedItems.forEach {
+            XCTAssertEqual($0.animation.textSelectedColor, selectedColor)
+            XCTAssertEqual($0.animation.iconSelectedColor, iconSelectedColor)
+        }
+    }
 }
