@@ -49,4 +49,19 @@ class AnimatedTabBarTests: XCTestCase {
             XCTAssertEqual($0.animation.iconSelectedColor, iconSelectedColor)
         }
     }
+    
+    func testAnimationBarHidden() {
+    
+        XCTAssertEqual(tabBarController.tabBar.isHidden, false)
+        tabBarController.animatedItems.forEach {
+            XCTAssertEqual($0.iconView?.icon.superview?.isHidden, false)
+        }
+        
+        tabBarController.animationTabBarHidden(true)
+        
+        XCTAssertEqual(tabBarController.tabBar.isHidden, true)
+        tabBarController.animatedItems.forEach {
+            XCTAssertEqual($0.iconView?.icon.superview?.isHidden, true)
+        }
+    }
 }
