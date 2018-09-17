@@ -60,20 +60,20 @@ open class RAMBadge: UILabel {
     internal func createSizeConstraints(_ size: CGSize) {
         let widthConstraint = NSLayoutConstraint(
             item: self,
-            attribute: NSLayoutAttribute.width,
-            relatedBy: NSLayoutRelation.greaterThanOrEqual,
+            attribute: NSLayoutConstraint.Attribute.width,
+            relatedBy: NSLayoutConstraint.Relation.greaterThanOrEqual,
             toItem: nil,
-            attribute: NSLayoutAttribute.notAnAttribute,
+            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
             constant: size.width)
         addConstraint(widthConstraint)
 
         let heightConstraint = NSLayoutConstraint(
             item: self,
-            attribute: NSLayoutAttribute.height,
-            relatedBy: NSLayoutRelation.equal,
+            attribute: NSLayoutConstraint.Attribute.height,
+            relatedBy: NSLayoutConstraint.Relation.equal,
             toItem: nil,
-            attribute: NSLayoutAttribute.notAnAttribute,
+            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
             constant: size.height)
         addConstraint(heightConstraint)
@@ -93,20 +93,20 @@ open class RAMBadge: UILabel {
 
         // create constraints
         let top = NSLayoutConstraint(item: self,
-                                           attribute: NSLayoutAttribute.top,
-                                           relatedBy: NSLayoutRelation.equal,
+                                           attribute: NSLayoutConstraint.Attribute.top,
+                                           relatedBy: NSLayoutConstraint.Relation.equal,
                                            toItem: onView,
-                                           attribute: NSLayoutAttribute.top,
+                                           attribute: NSLayoutConstraint.Attribute.top,
                                            multiplier: 1,
                                            constant: 3)
         onView.addConstraint(top)
         topConstraint = top
 
         let centerX = NSLayoutConstraint(item: self,
-                                               attribute: NSLayoutAttribute.centerX,
-                                               relatedBy: NSLayoutRelation.equal,
+                                               attribute: NSLayoutConstraint.Attribute.centerX,
+                                               relatedBy: NSLayoutConstraint.Relation.equal,
                                                toItem: onView,
-                                               attribute: NSLayoutAttribute.centerX,
+                                               attribute: NSLayoutConstraint.Attribute.centerX,
                                                multiplier: 1,
                                                constant: 10)
         onView.addConstraint(centerX)

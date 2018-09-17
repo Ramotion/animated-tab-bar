@@ -59,8 +59,8 @@ open class RAMFumeAnimation: RAMItemAnimation {
         textLabel.textColor = defaultTextColor
 
         if let iconImage = icon.image {
-            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
-                UIImageRenderingMode.alwaysTemplate
+            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImage.RenderingMode.alwaysOriginal :
+                UIImage.RenderingMode.alwaysTemplate
             let renderImage = iconImage.withRenderingMode(renderMode)
             icon.image = renderImage
             icon.tintColor = defaultIconColor
@@ -98,12 +98,12 @@ open class RAMFumeAnimation: RAMItemAnimation {
     func playLabelAnimation(_ textLabel: UILabel) {
 
         let yPositionAnimation = createAnimation(Constants.AnimationKeys.PositionY, values: [textLabel.center.y as AnyObject, (textLabel.center.y - 60.0) as AnyObject], duration: duration)
-        yPositionAnimation.fillMode = kCAFillModeRemoved
+        yPositionAnimation.fillMode = CAMediaTimingFillMode.removed
         yPositionAnimation.isRemovedOnCompletion = true
         textLabel.layer.add(yPositionAnimation, forKey: nil)
 
         let scaleAnimation = createAnimation(Constants.AnimationKeys.Scale, values: [1.0 as AnyObject, 2.0 as AnyObject], duration: duration)
-        scaleAnimation.fillMode = kCAFillModeRemoved
+        scaleAnimation.fillMode = CAMediaTimingFillMode.removed
         scaleAnimation.isRemovedOnCompletion = true
         textLabel.layer.add(scaleAnimation, forKey: nil)
 
@@ -116,8 +116,8 @@ open class RAMFumeAnimation: RAMItemAnimation {
         let animation = CAKeyframeAnimation(keyPath: keyPath)
         animation.values = values
         animation.duration = TimeInterval(duration)
-        animation.calculationMode = kCAAnimationCubic
-        animation.fillMode = kCAFillModeForwards
+        animation.calculationMode = CAAnimationCalculationMode.cubic
+        animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = false
         return animation
     }
