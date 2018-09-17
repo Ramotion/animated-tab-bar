@@ -291,8 +291,8 @@ open class RAMAnimatedTabBarController: UITabBarController {
             }
             container.tag = index
 
-            let renderMode = item.iconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
-                UIImageRenderingMode.alwaysTemplate
+            let renderMode = item.iconColor.cgColor.alpha == 0 ? UIImage.RenderingMode.alwaysOriginal :
+                UIImage.RenderingMode.alwaysTemplate
 
             let iconImage = item.image ?? item.iconView?.icon.image
             let icon = UIImageView(image: iconImage?.withRenderingMode(renderMode))
@@ -347,32 +347,32 @@ open class RAMAnimatedTabBarController: UITabBarController {
         createConstraints(view, container: container, width: size.width, height: size.height, yOffset: yOffset)
     }
 
-    fileprivate func createConstraints(_ view: UIView, container: UIView, width: CGFloat? = nil, height: CGFloat? = nil, yOffset: CGFloat, heightRelation: NSLayoutRelation = .equal) {
+    fileprivate func createConstraints(_ view: UIView, container: UIView, width: CGFloat? = nil, height: CGFloat? = nil, yOffset: CGFloat, heightRelation: NSLayoutConstraint.Relation = .equal) {
 
         let constX = NSLayoutConstraint(item: view,
-                                        attribute: NSLayoutAttribute.centerX,
-                                        relatedBy: NSLayoutRelation.equal,
+                                        attribute: NSLayoutConstraint.Attribute.centerX,
+                                        relatedBy: NSLayoutConstraint.Relation.equal,
                                         toItem: container,
-                                        attribute: NSLayoutAttribute.centerX,
+                                        attribute: NSLayoutConstraint.Attribute.centerX,
                                         multiplier: 1,
                                         constant: 0)
         container.addConstraint(constX)
 
         let constY = NSLayoutConstraint(item: view,
-                                        attribute: NSLayoutAttribute.centerY,
-                                        relatedBy: NSLayoutRelation.equal,
+                                        attribute: NSLayoutConstraint.Attribute.centerY,
+                                        relatedBy: NSLayoutConstraint.Relation.equal,
                                         toItem: container,
-                                        attribute: NSLayoutAttribute.centerY,
+                                        attribute: NSLayoutConstraint.Attribute.centerY,
                                         multiplier: 1,
                                         constant: yOffset)
         container.addConstraint(constY)
 
         if let width = width {
             let constW = NSLayoutConstraint(item: view,
-                                            attribute: NSLayoutAttribute.width,
-                                            relatedBy: NSLayoutRelation.equal,
+                                            attribute: NSLayoutConstraint.Attribute.width,
+                                            relatedBy: NSLayoutConstraint.Relation.equal,
                                             toItem: nil,
-                                            attribute: NSLayoutAttribute.notAnAttribute,
+                                            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                             multiplier: 1,
                                             constant: width)
             view.addConstraint(constW)
@@ -380,10 +380,10 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
         if let height = height {
             let constH = NSLayoutConstraint(item: view,
-                                            attribute: NSLayoutAttribute.height,
+                                            attribute: NSLayoutConstraint.Attribute.height,
                                             relatedBy: heightRelation,
                                             toItem: nil,
-                                            attribute: NSLayoutAttribute.notAnAttribute,
+                                            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                             multiplier: 1,
                                             constant: height)
             view.addConstraint(constH)
@@ -411,12 +411,12 @@ open class RAMAnimatedTabBarController: UITabBarController {
         
         if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft{
             constranints = NSLayoutConstraint.constraints(withVisualFormat: formatString,
-                                                          options: NSLayoutFormatOptions.directionLeftToRight,
+                                                          options: NSLayoutConstraint.FormatOptions.directionLeftToRight,
                                                           metrics: nil,
                                                           views: (containersDict as [String: AnyObject]))
         } else {
             constranints = NSLayoutConstraint.constraints(withVisualFormat: formatString,
-                                                          options: NSLayoutFormatOptions.directionRightToLeft,
+                                                          options: NSLayoutConstraint.FormatOptions.directionRightToLeft,
                                                           metrics: nil,
                                                           views: (containersDict as [String: AnyObject]))
         }
@@ -440,10 +440,10 @@ open class RAMAnimatedTabBarController: UITabBarController {
         viewContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
 
         let constH = NSLayoutConstraint(item: viewContainer,
-                                        attribute: NSLayoutAttribute.height,
-                                        relatedBy: NSLayoutRelation.equal,
+                                        attribute: NSLayoutConstraint.Attribute.height,
+                                        relatedBy: NSLayoutConstraint.Relation.equal,
                                         toItem: nil,
-                                        attribute: NSLayoutAttribute.notAnAttribute,
+                                        attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                         multiplier: 1,
                                         constant: 49)
         viewContainer.addConstraint(constH)
@@ -464,7 +464,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
         if items[currentIndex].isEnabled == false { return }
 
-        let controller = childViewControllers[currentIndex]
+        let controller = children[currentIndex]
 
         if let shouldSelect = delegate?.tabBarController?(self, shouldSelect: controller)
             , !shouldSelect {

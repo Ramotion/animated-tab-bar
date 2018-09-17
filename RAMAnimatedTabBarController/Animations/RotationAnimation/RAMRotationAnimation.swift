@@ -63,8 +63,8 @@ open class RAMRotationAnimation: RAMItemAnimation {
         textLabel.textColor = defaultTextColor
 
         if let iconImage = icon.image {
-            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
-                UIImageRenderingMode.alwaysTemplate
+            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImage.RenderingMode.alwaysOriginal :
+                UIImage.RenderingMode.alwaysTemplate
             let renderImage = iconImage.withRenderingMode(renderMode)
             icon.image = renderImage
             icon.tintColor = defaultIconColor

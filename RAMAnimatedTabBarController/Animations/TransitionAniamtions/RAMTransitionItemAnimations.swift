@@ -26,12 +26,12 @@ import UIKit
 open class RAMTransitionItemAnimations: RAMItemAnimation {
 
     ///  Options for animating. Default TransitionNone
-    open var transitionOptions: UIViewAnimationOptions!
+    open var transitionOptions: UIView.AnimationOptions!
 
     override init() {
         super.init()
 
-        transitionOptions = UIViewAnimationOptions()
+        transitionOptions = UIView.AnimationOptions()
     }
 
     /**
@@ -60,8 +60,8 @@ open class RAMTransitionItemAnimations: RAMItemAnimation {
     open override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel, defaultTextColor: UIColor, defaultIconColor: UIColor) {
 
         if let iconImage = icon.image {
-            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImageRenderingMode.alwaysOriginal :
-                UIImageRenderingMode.alwaysTemplate
+            let renderMode = defaultIconColor.cgColor.alpha == 0 ? UIImage.RenderingMode.alwaysOriginal :
+                UIImage.RenderingMode.alwaysTemplate
             let renderImage = iconImage.withRenderingMode(renderMode)
             icon.image = renderImage
             icon.tintColor = defaultIconColor
@@ -97,7 +97,7 @@ open class RAMFlipLeftTransitionItemAnimations: RAMTransitionItemAnimations {
     public override init() {
         super.init()
 
-        transitionOptions = UIViewAnimationOptions.transitionFlipFromLeft
+        transitionOptions = UIView.AnimationOptions.transitionFlipFromLeft
     }
 }
 
@@ -106,7 +106,7 @@ open class RAMFlipRightTransitionItemAnimations: RAMTransitionItemAnimations {
     public override init() {
         super.init()
 
-        transitionOptions = UIViewAnimationOptions.transitionFlipFromRight
+        transitionOptions = UIView.AnimationOptions.transitionFlipFromRight
     }
 }
 
@@ -115,7 +115,7 @@ open class RAMFlipTopTransitionItemAnimations: RAMTransitionItemAnimations {
     public override init() {
         super.init()
 
-        transitionOptions = UIViewAnimationOptions.transitionFlipFromTop
+        transitionOptions = UIView.AnimationOptions.transitionFlipFromTop
     }
 }
 
@@ -124,6 +124,6 @@ open class RAMFlipBottomTransitionItemAnimations: RAMTransitionItemAnimations {
     public override init() {
         super.init()
 
-        transitionOptions = UIViewAnimationOptions.transitionFlipFromBottom
+        transitionOptions = UIView.AnimationOptions.transitionFlipFromBottom
     }
 }
