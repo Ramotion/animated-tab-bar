@@ -64,4 +64,10 @@ class AnimatedTabBarTests: XCTestCase {
             XCTAssertEqual($0.iconView?.icon.superview?.isHidden, true)
         }
     }
+    
+    func testSelectIndex() {
+        let toIndex = 2
+        tabBarController.setSelectIndex(from: 0, to: toIndex)
+        XCTAssertEqual(tabBarController.selectedIndex, toIndex)
+    }
 }
