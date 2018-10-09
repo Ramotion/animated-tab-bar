@@ -70,4 +70,8 @@ class AnimatedTabBarTests: XCTestCase {
         tabBarController.setSelectIndex(from: 0, to: toIndex)
         XCTAssertEqual(tabBarController.selectedIndex, toIndex)
     }
+    
+    func testAnimatedItems() {
+        XCTAssertEqual(tabBarController.viewControllers?.count, tabBarController.animatedItems.count)
+    }
 }
