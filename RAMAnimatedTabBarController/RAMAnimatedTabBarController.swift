@@ -255,6 +255,8 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
     var lineLeadingConstraint: NSLayoutConstraint?
     var bottomLine: UIView?
+    var arrBottomAnchor:[NSLayoutConstraint] = []
+    var arrViews:[UIView] = []
     
     // MARK: life circle
 
@@ -274,6 +276,34 @@ open class RAMAnimatedTabBarController: UITabBarController {
         }
     }
 
+    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (transitionCoordinatorContext) -> Void in
+            let orient = UIApplication.shared.statusBarOrientation
+            
+            for (index, var layoutAnchor) in self.arrBottomAnchor.enumerated() {
+                
+                layoutAnchor.isActive = false
+                
+                switch orient {
+                case .portrait:
+                    layoutAnchor = self.arrViews[index].bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor)
+                case .landscapeLeft,.landscapeRight :
+                    layoutAnchor = self.arrViews[index].bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor)
+                default:
+                    print("Anything But Portrait")
+                }
+                
+                self.arrBottomAnchor[index] = layoutAnchor
+                self.arrBottomAnchor[index].isActive = true
+            }
+            self.view.updateConstraints()
+            
+        }, completion: { (transitionCoordinatorContext) -> Void in
+            //refresh view once rotation is completed not in will transition as it returns incorrect frame size.Refresh here
+        })
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
     // MARK: create methods
 
     fileprivate func createCustomIcons(_ containers: [String: UIView]) {
@@ -436,9 +466,18 @@ open class RAMAnimatedTabBarController: UITabBarController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RAMAnimatedTabBarController.tapHandler(_:)))
         tapGesture.numberOfTouchesRequired = 1
         viewContainer.addGestureRecognizer(tapGesture)
-
+        arrViews.append(viewContainer)
+        
         // add constrains
-        viewContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        if UIDevice.current.orientation.isLandscape {
+            let bottomAnchor = viewContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor)
+            self.arrBottomAnchor.append(bottomAnchor)
+            bottomAnchor.isActive = true
+        } else {
+            let bottomAnchor = viewContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor)
+            self.arrBottomAnchor.append(bottomAnchor)
+            bottomAnchor.isActive = true
+        }
 
         let constH = NSLayoutConstraint(item: viewContainer,
                                         attribute: NSLayoutConstraint.Attribute.height,
