@@ -74,4 +74,13 @@ class AnimatedTabBarTests: XCTestCase {
     func testAnimatedItems() {
         XCTAssertEqual(tabBarController.viewControllers?.count, tabBarController.animatedItems.count)
     }
+    
+    func testIsBottomLineShow() {
+        XCTAssertEqual(tabBarController.isBottomLineShow, false)
+        XCTAssertNil(tabBarController.bottomLine)
+        tabBarController.isBottomLineShow = true
+        
+        XCTAssertEqual(tabBarController.isBottomLineShow, true)
+        XCTAssertNotNil(tabBarController.bottomLine)
+    }
 }
