@@ -83,4 +83,12 @@ class AnimatedTabBarTests: XCTestCase {
         XCTAssertEqual(tabBarController.isBottomLineShow, true)
         XCTAssertNotNil(tabBarController.bottomLine)
     }
+    
+    func testBottomLineColor() {
+        let color = UIColor.red
+        tabBarController.isBottomLineShow = true
+        XCTAssertNotEqual(tabBarController.bottomLine, color)
+        tabBarController.bottomLineColor = color
+        XCTAssertEqual(tabBarController.bottomLineColor, color)
+    }
 }
