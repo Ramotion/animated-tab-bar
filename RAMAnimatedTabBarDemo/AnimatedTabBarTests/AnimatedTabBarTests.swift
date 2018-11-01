@@ -91,4 +91,8 @@ class AnimatedTabBarTests: XCTestCase {
         tabBarController.bottomLineColor = color
         XCTAssertEqual(tabBarController.bottomLineColor, color)
     }
+    
+    func testContainersCount() {
+        XCTAssertEqual(tabBarController.viewControllers?.count, tabBarController.containers.count)
+    }
 }
