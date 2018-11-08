@@ -95,4 +95,10 @@ class AnimatedTabBarTests: XCTestCase {
     func testContainersCount() {
         XCTAssertEqual(tabBarController.viewControllers?.count, tabBarController.containers.count)
     }
+    
+    func testBadge() {
+        let value = "1"
+        tabBarController.animatedItems.first?.badgeValue = value
+        XCTAssertEqual(tabBarController.animatedItems.first?.badgeValue, tabBarController.animatedItems.first?.badge?.text)
+    }
 }
