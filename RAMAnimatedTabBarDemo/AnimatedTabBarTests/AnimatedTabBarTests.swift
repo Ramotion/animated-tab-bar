@@ -101,4 +101,16 @@ class AnimatedTabBarTests: XCTestCase {
         tabBarController.animatedItems.first?.badgeValue = value
         XCTAssertEqual(tabBarController.animatedItems.first?.badgeValue, tabBarController.animatedItems.first?.badge?.text)
     }
+    
+    func testIsEnabled() {
+        guard let item = tabBarController.animatedItems.first else { return }
+        item.isEnabled = true
+        XCTAssertEqual(item.iconView?.icon.alpha, 1)
+        XCTAssertEqual(item.iconView?.textLabel.alpha, 1)
+        
+        item.isEnabled = false
+        XCTAssertEqual(item.iconView?.icon.alpha, 0.5)
+        XCTAssertEqual(item.iconView?.textLabel.alpha, 0.5)
+    }
+    
 }
