@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5A1F33B82126AA3D004B8735"
+               BuildableName = "AnimatedTabBarTests.xctest"
+               BlueprintName = "AnimatedTabBarTests"
+               ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "84D4B79C1DB0D35500EE38C6"
+            BuildableName = "RAMAnimatedTabBarController.framework"
+            BlueprintName = "RAMAnimatedTabBarController"
+            ReferencedContainer = "container:RAMAnimatedTabBarDemo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
