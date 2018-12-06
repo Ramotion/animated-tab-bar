@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A1F33BC2126AA3D004B8735 /* AnimatedTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */; };
+		5A5D3FF021B91D0700304986 /* RAMBadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D3FEF21B91D0700304986 /* RAMBadgeTests.swift */; };
 		5ADAB94A209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */; };
 		5ADAB94B209B51E5006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */; };
 		849507011D05772B0005EC1A /* ToolsAnimation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849507001D05772B0005EC1A /* ToolsAnimation.plist */; };
@@ -72,6 +73,7 @@
 		5A1F33B92126AA3D004B8735 /* AnimatedTabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedTabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarTests.swift; sourceTree = "<group>"; };
 		5A1F33BD2126AA3D004B8735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A5D3FEF21B91D0700304986 /* RAMBadgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMBadgeTests.swift; sourceTree = "<group>"; };
 		5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RAMAnimatedTabBarController+BottomLine.swift"; sourceTree = "<group>"; };
 		849507001D05772B0005EC1A /* ToolsAnimation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolsAnimation.plist; sourceTree = "<group>"; };
 		84BC64211C22E4C800B89B79 /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBadge.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */,
 				5A1F33BD2126AA3D004B8735 /* Info.plist */,
+				5A5D3FEF21B91D0700304986 /* RAMBadgeTests.swift */,
 			);
 			path = AnimatedTabBarTests;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5D3FF021B91D0700304986 /* RAMBadgeTests.swift in Sources */,
 				5A1F33BC2126AA3D004B8735 /* AnimatedTabBarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
