@@ -14,7 +14,7 @@ class RAMBadgeTests: XCTestCase {
     var badge: RAMBadge!
 
     override func setUp() {
-        badge = RAMBadge()
+        badge = RAMBadge.badge()
     }
 
     override func tearDown() {
