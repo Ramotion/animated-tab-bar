@@ -2,6 +2,8 @@
 <img src="https://github.com/Ramotion/animated-tab-bar/blob/master/Screenshots/animatedTabBar.gif" width="600" height="450" />
 <br><br/>
 
+<b>[Get a Free White iPhone X Clay Mockup for your next project](https://store.ramotion.com/product/iphone-x-clay-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar#demo)</b>
+
 # Animated-tab-bar
 [![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
@@ -22,8 +24,6 @@ This project is maintained by Ramotion, Inc. We specialize in the designing and 
 <img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
 <br>
 
-
-The [iPhone mockup](https://store.ramotion.com/product/iphone-x-clay-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar) available [here](https://store.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar).
 
 ## Try this UI control in action
 
@@ -144,6 +144,8 @@ class RAMBounceAnimation : RAMItemAnimation {
 ```
 
 <br>This library is a part of a <a href="https://github.com/Ramotion/swift-ui-animation-components-and-libraries"><b>selection of our best UI open-source projects.</b></a></br>
+
+If you use the open-source library in your project, please make sure to credit and backlink to www.ramotion.com
 
 # Get the Showroom App for iOS to give it a try
 Try this UI library in our iOS app. Contact us if you interested in hiring the team.
