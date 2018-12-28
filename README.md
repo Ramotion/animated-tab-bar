@@ -1,10 +1,28 @@
-[![header](./header.png)](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar-logo)
-<img src="https://github.com/Ramotion/animated-tab-bar/blob/master/Screenshots/animatedTabBar.gif" width="600" height="450" />
-<br><br/>
+<img src="https://github.com/Ramotion/animated-tab-bar/blob/master/header.png">
 
-<b>[Get a Free White iPhone X Clay Mockup for your next project](https://store.ramotion.com/product/iphone-x-clay-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar#demo)</b>
+<a href="https://github.com/Ramotion/animated-tab-bar">
+<img align="left" src="https://github.com/Ramotion/animated-tab-bar/blob/master/Screenshots/animatedTabBar.gif" width="480" height="360" /></a>
 
-# Animated-tab-bar
+<p><h1 align="left">ANIMATED TAB BAR</h1></p>
+
+<h4>Swift UI module library for adding animation to iOS tabbar items and icons.</h4>
+
+
+___
+
+
+
+<p><h6>We specialize in the designing and coding of custom UI for Mobile Apps and Websites.</h6>
+<a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
+<img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
+</p>
+<p><h6>Stay tuned for the latest updates:</h6>
+<a href="https://goo.gl/rPFpid" >
+<img src="https://i.imgur.com/ziSqeSo.png/" width="156" height="28"></a></p>
+<h6><a href="https://store.ramotion.com/product/iphone-x-clay-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar#demo">Get Free Mockup For your project →</a></h6>
+
+</br>
+
 [![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Ramotion/animated-tab-bar)
@@ -12,26 +30,6 @@
 [![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
 [![Travis](https://img.shields.io/travis/Ramotion/animated-tab-bar.svg)](https://travis-ci.org/Ramotion/animated-tab-bar)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/Ramotion)
-
-## About
-This project is maintained by Ramotion, Inc.<br>
-We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br>
-
-**Looking for developers for your project?**<br>
-This project is maintained by Ramotion, Inc. We specialize in the designing and coding of custom UI for Mobile Apps and Websites.
-
-<a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
-<img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
-<br>
-
-
-## Try this UI control in action
-
-<a href="https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=gthb-animated-tab-bar&mt=8" > <img src="https://github.com/Ramotion/navigation-stack/raw/master/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="170" height="58"></a>
-
-Screencast from our Demo
-
-![Animation](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/Screenshots/RAMAnimatedTabBarDemo.gif)
 
 ## Requirements
 
@@ -147,6 +145,14 @@ class RAMBounceAnimation : RAMItemAnimation {
 
 If you use the open-source library in your project, please make sure to credit and backlink to www.ramotion.com
 
+## Try this UI control in action
+
+<a href="https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=gthb-animated-tab-bar&mt=8" > <img src="https://github.com/Ramotion/navigation-stack/raw/master/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="170" height="58"></a>
+
+Screencast from our Demo
+
+![Animation](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/Screenshots/RAMAnimatedTabBarDemo.gif)
+
 # Get the Showroom App for iOS to give it a try
 Try this UI library in our iOS app. Contact us if you interested in hiring the team.
 
@@ -156,9 +162,3 @@ Try this UI library in our iOS app. Contact us if you interested in hiring the t
 <img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
 <br>
 <br>
-
-
-
-Follow us for the latest updates<br>
-<a href="https://goo.gl/rPFpid" >
-<img src="https://i.imgur.com/ziSqeSo.png/" width="156" height="28"></a>
