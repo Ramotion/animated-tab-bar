@@ -1,4 +1,4 @@
-<img src="https://github.com/Ramotion/animated-tab-bar/blob/master/header.png">
+<a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar"><img src="https://github.com/Ramotion/animated-tab-bar/blob/master/header.png"></a>
 
 <a href="https://github.com/Ramotion/animated-tab-bar">
 <img align="left" src="https://github.com/Ramotion/animated-tab-bar/blob/master/Screenshots/animatedTabBar.gif" width="480" height="360" /></a>
@@ -141,23 +141,22 @@ class RAMBounceAnimation : RAMItemAnimation {
 }
 ```
 
-<br>This library is a part of a <a href="https://github.com/Ramotion/swift-ui-animation-components-and-libraries"><b>selection of our best UI open-source projects.</b></a></br>
+
+## 📄 License
+
+Animated Tab Bar is released under the MIT license.
+See [LICENSE](./LICENSE) for details.
+
+This library is a part of a <a href="https://github.com/Ramotion/swift-ui-animation-components-and-libraries"><b>selection of our best UI open-source projects.</b></a>
 
 If you use the open-source library in your project, please make sure to credit and backlink to www.ramotion.com
 
-## Try this UI control in action
-
-<a href="https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=gthb-animated-tab-bar&mt=8" > <img src="https://github.com/Ramotion/navigation-stack/raw/master/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="170" height="58"></a>
-
-Screencast from our Demo
-
-![Animation](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/Screenshots/RAMAnimatedTabBarDemo.gif)
-
-# Get the Showroom App for iOS to give it a try
-Try this UI library in our iOS app. Contact us if you interested in hiring the team.
+## 📱 Get the Showroom App for iOS to give it a try
+Try this UI component and more like this in our iOS app. Contact us if interested.
 
 <a href="https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=animated-tab-bar&mt=8" >
 <img src="https://github.com/ramotion/gliding-collection/raw/master/app_store@2x.png" width="117" height="34"></a>
+
 <a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
 <img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
 <br>
