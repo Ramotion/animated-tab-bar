@@ -23,4 +23,13 @@ class RAMBadgeTests: XCTestCase {
     func testCreateBadge() {
         XCTAssertNotNil(badge)
     }
+    
+    func testAddBadgeOnView() {
+        let view = UIView()
+        XCTAssertNil(badge.superview)
+        badge.addBadgeOnView(view)
+        XCTAssertNotNil(badge.superview)
+        XCTAssertNotNil(badge.topConstraint)
+        XCTAssertNotNil(badge.centerXConstraint)
+    }
 }
