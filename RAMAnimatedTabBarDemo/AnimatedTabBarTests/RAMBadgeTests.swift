@@ -17,9 +17,6 @@ class RAMBadgeTests: XCTestCase {
         badge = RAMBadge.badge()
     }
 
-    override func tearDown() {
-    }
-
     func testCreateBadge() {
         XCTAssertNotNil(badge)
     }
