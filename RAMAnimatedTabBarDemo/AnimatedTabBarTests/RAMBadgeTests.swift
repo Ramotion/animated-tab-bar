@@ -1,11 +1,3 @@
-//
-//  RAMBadgeTests.swift
-//  AnimatedTabBarTests
-//
-//  Created by Alex K on 06/12/2018.
-//  Copyright © 2018 Ramotion. All rights reserved.
-//
-
 import XCTest
 @testable import Animated_Tab_Bar
 
