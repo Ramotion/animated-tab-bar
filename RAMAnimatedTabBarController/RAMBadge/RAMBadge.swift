@@ -85,7 +85,7 @@ open class RAMBadge: UILabel {
         textColor = .white
     }
 
-    // PRAGMA: helpers
+    // PRAGMA: public
 
     open func addBadgeOnView(_ onView: UIView) {
 
