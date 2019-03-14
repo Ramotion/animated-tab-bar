@@ -39,11 +39,11 @@ open class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
 
         struct AnimationKeys {
 
-            static let Scale = "transform.scale"
-            static let Rotation = "transform.rotation"
-            static let KeyFrame = "contents"
-            static let PositionY = "position.y"
-            static let Opacity = "opacity"
+            static let scale = "transform.scale"
+            static let rotation = "transform.rotation"
+            static let keyFrame = "contents"
+            static let positionY = "position.y"
+            static let opacity = "opacity"
         }
     }
 
