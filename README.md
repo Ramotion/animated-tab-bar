@@ -52,6 +52,10 @@ github "Ramotion/animated-tab-bar"
 
 ```
 
+or [Accio](https://github.com/JamitLabs/Accio) users can simply add to their `Package.swift`:
+```swift
+.package(url: "https://github.com/Ramotion/animated-tab-bar.git", .upToNextMajor(from: "5.0.0")),
+```
 
 ## Usage
 
