@@ -22,8 +22,4 @@ class ViewController: UIViewController {
     @IBAction func hideBadgeHandler(_: AnyObject) {
         tabBarItem.badgeValue = nil
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
