@@ -61,8 +61,8 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
         }
     }
     
-    /// animation for UITabBarItem. use RAMFumeAnimation, RAMBounceAnimation, RAMRotationAnimation, RAMFrameItemAnimation, RAMTransitionAnimation
-    /// or create custom anmation inherit RAMItemAnimation
+    /// Animation for UITabBarItem. Use RAMFumeAnimation, RAMBounceAnimation, RAMRotationAnimation, RAMFrameItemAnimation, RAMTransitionAnimation
+    /// Also posible create custom anmation inherit from the RAMItemAnimation look for https://github.com/Ramotion/animated-tab-bar#creating-custom-animations
     @IBOutlet open var animation: RAMItemAnimation!
 
     /// The font used to render the UITabBarItem text.
