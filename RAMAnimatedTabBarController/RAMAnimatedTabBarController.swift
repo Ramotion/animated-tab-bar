@@ -230,6 +230,17 @@ open class RAMAnimatedTabBarController: UITabBarController {
     }
     
     /**
+     Bottom line height
+     **/
+    open var bottomLineHeight: CGFloat = 2 {
+        didSet {
+            if bottomLineHeight > 0 {
+                updateBottomLineHeight(to: bottomLineHeight)
+            }
+        }
+    }
+    
+    /**
      Bottom line time of animations duration
      **/
     open var bottomLineMoveDuration: TimeInterval = 0.3
