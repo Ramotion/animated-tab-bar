@@ -516,7 +516,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
             let deselectItem = items[selectedIndex]
 
             let containerPrevious: UIView = deselectItem.iconView!.icon.superview!
-            containerPrevious.backgroundColor = items[currentIndex].bgDefaultColor
+            containerPrevious.backgroundColor = items[selectedIndex].bgDefaultColor
 
             deselectItem.deselectAnimation()
 
