@@ -25,19 +25,17 @@ extension RAMAnimatedTabBarController {
     
     func createBottomLine() {
         guard let currentItem = (containers.filter { $0.value.tag == 0 }).first?.value else { return }
-
-        let lineHeight: CGFloat = 2
         
         let container = UIView()
         container.backgroundColor = .clear
         container.translatesAutoresizingMaskIntoConstraints = false
-
+        
         view.addSubview(container)
         
         container.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         container.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         container.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        container.heightAnchor.constraint(equalToConstant: lineHeight).isActive = true
+        container.heightAnchor.constraint(equalToConstant: bottomLineHeight).isActive = true
         
         
         let line = UIView()
@@ -48,10 +46,12 @@ extension RAMAnimatedTabBarController {
         
         lineLeadingConstraint = bottomLine?.leadingAnchor.constraint(equalTo: currentItem.leadingAnchor)
         lineLeadingConstraint?.isActive = true
-
+        
+        lineHeightConstraint = bottomLine?.heightAnchor.constraint(equalToConstant: bottomLineHeight)
+        lineHeightConstraint?.isActive = true
+        
         // add constraints
         bottomLine?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        bottomLine?.heightAnchor.constraint(equalToConstant: lineHeight).isActive = true
         bottomLine?.widthAnchor.constraint(equalTo: currentItem.widthAnchor).isActive = true
     }
     
@@ -78,5 +78,12 @@ extension RAMAnimatedTabBarController {
         } else {
             self.bottomLine?.superview?.layoutIfNeeded()
         }
+    }
+    
+    func updateBottomLineHeight(to height: CGFloat) {
+        lineHeightConstraint?.isActive = false
+        
+        lineHeightConstraint = bottomLine?.heightAnchor.constraint(equalToConstant: height)
+        lineHeightConstraint?.isActive = true
     }
 }
