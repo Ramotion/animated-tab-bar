@@ -22,4 +22,15 @@ class ViewController: UIViewController {
     @IBAction func hideBadgeHandler(_: AnyObject) {
         tabBarItem.badgeValue = nil
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let gesuter = UITapGestureRecognizer(target: self, action: #selector(selected(sender:)))
+        view.addGestureRecognizer(gesuter)
+    }
+    
+    @objc func selected(sender: UIGestureRecognizer) {
+        tabBarController?.viewControllers?.remove(at: 0)
+    }
 }
