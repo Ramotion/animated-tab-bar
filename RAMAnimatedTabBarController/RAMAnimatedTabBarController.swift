@@ -264,6 +264,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
         }
     }
 
+    var lineHeightConstraint: NSLayoutConstraint?
     var lineLeadingConstraint: NSLayoutConstraint?
     var bottomLine: UIView?
     var arrBottomAnchor:[NSLayoutConstraint] = []
