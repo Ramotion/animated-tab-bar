@@ -269,6 +269,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
     var bottomLine: UIView?
     var arrBottomAnchor:[NSLayoutConstraint] = []
     var arrViews:[UIView] = []
+    var iconConstraints = [NSLayoutConstraint]()
     
     // MARK: life circle
 
@@ -324,6 +325,12 @@ open class RAMAnimatedTabBarController: UITabBarController {
             fatalError("items must inherit RAMAnimatedTabBarItem")
         }
 
+        for constraint in iconConstraints {
+            constraint.isActive = false
+        }
+
+        iconConstraints.removeAll()
+
         var index = 0
         for item in items {
 
@@ -357,8 +364,8 @@ open class RAMAnimatedTabBarController: UITabBarController {
             container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
 
             container.addSubview(icon)
-            let itemSize = item.image?.size ?? CGSize(width: 30, height: 30)
-            createConstraints(icon, container: container, size: itemSize, yOffset: -5 - item.yOffSet)
+            let itemSize = item.image?.size ?? CGSize(width: 23, height: 23)
+            iconConstraints.append(contentsOf: createConstraints(icon, container: container, size: itemSize, yOffset: -5 - item.yOffSet))
 
             container.addSubview(textLabel)
             let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
@@ -384,11 +391,15 @@ open class RAMAnimatedTabBarController: UITabBarController {
         }
     }
 
-    fileprivate func createConstraints(_ view: UIView, container: UIView, size: CGSize, yOffset: CGFloat) {
-        createConstraints(view, container: container, width: size.width, height: size.height, yOffset: yOffset)
+    @discardableResult
+    fileprivate func createConstraints(_ view: UIView, container: UIView, size: CGSize, yOffset: CGFloat) -> [NSLayoutConstraint] {
+        return createConstraints(view, container: container, width: size.width, height: size.height, yOffset: yOffset)
     }
 
-    fileprivate func createConstraints(_ view: UIView, container: UIView, width: CGFloat? = nil, height: CGFloat? = nil, yOffset: CGFloat, heightRelation: NSLayoutConstraint.Relation = .equal) {
+    @discardableResult
+    fileprivate func createConstraints(_ view: UIView, container: UIView, width: CGFloat? = nil, height: CGFloat? = nil, yOffset: CGFloat, heightRelation: NSLayoutConstraint.Relation = .equal) -> [NSLayoutConstraint] {
+
+        var constraints = [NSLayoutConstraint]()
 
         let constX = NSLayoutConstraint(item: view,
                                         attribute: NSLayoutConstraint.Attribute.centerX,
@@ -398,6 +409,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                         multiplier: 1,
                                         constant: 0)
         container.addConstraint(constX)
+        constraints.append(constX)
 
         let constY = NSLayoutConstraint(item: view,
                                         attribute: NSLayoutConstraint.Attribute.centerY,
@@ -407,6 +419,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                         multiplier: 1,
                                         constant: yOffset)
         container.addConstraint(constY)
+        constraints.append(constY)
 
         if let width = width {
             let constW = NSLayoutConstraint(item: view,
@@ -417,6 +430,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                             multiplier: 1,
                                             constant: width)
             view.addConstraint(constW)
+            constraints.append(constW)
         }
 
         if let height = height {
@@ -428,7 +442,10 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                             multiplier: 1,
                                             constant: height)
             view.addConstraint(constH)
+            constraints.append(constH)
         }
+
+        return constraints
     }
 
     fileprivate func createViewContainers() -> [String: UIView] {
