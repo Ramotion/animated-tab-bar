@@ -68,6 +68,9 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
     /// The font used to render the UITabBarItem text.
     @IBInspectable open var textFontSize: CGFloat = 10
 
+    /// The text attributes to use for the UITabBarItem title
+    open var titleTextAttributes: [NSAttributedString.Key: Any]?
+
     /// The color of the UITabBarItem text.
     @IBInspectable open var textColor: UIColor = UIColor.black
 
@@ -350,7 +353,11 @@ open class RAMAnimatedTabBarController: UITabBarController {
             }
             textLabel.backgroundColor = UIColor.clear
             textLabel.textColor = item.textColor
-            textLabel.font =  UIFont.systemFont(ofSize: item.textFontSize)
+            if let attributes = item.titleTextAttributes {
+                textLabel.attributedText = NSAttributedString(string: textLabel.text ?? "", attributes: attributes)
+            } else {
+                textLabel.font =  UIFont.systemFont(ofSize: item.textFontSize)
+            }
             textLabel.textAlignment = NSTextAlignment.center
             textLabel.translatesAutoresizingMaskIntoConstraints = false
 
