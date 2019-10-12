@@ -19,7 +19,6 @@ ___
 <p><h6>Stay tuned for the latest updates:</h6>
 <a href="https://goo.gl/rPFpid" >
 <img src="https://i.imgur.com/ziSqeSo.png/" width="156" height="28"></a></p>
-<h6><a href="https://store.ramotion.com/product/iphone-x-clay-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar#demo">Get Free Mockup For your project →</a></h6>
 
 </br>
 
