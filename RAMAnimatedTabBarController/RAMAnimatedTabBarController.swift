@@ -104,6 +104,16 @@ open class RAMAnimatedTabBarController: UITabBarController {
     var arrBottomAnchor:[NSLayoutConstraint] = []
     var arrViews: [UIView] = []
     
+    /**
+     Hide UITabBar
+
+     - parameter isHidden: A Boolean indicating whether the UITabBarController is displayed
+     */
+    @available(*, deprecated, message: "Now you can use UITabBar isHidden")
+    open func animationTabBarHidden(_ isHidden: Bool) {
+        tabBar.isHidden = isHidden
+    }
+    
     // MARK: life circle
 
     open override func viewDidLoad() {
@@ -156,12 +166,15 @@ open class RAMAnimatedTabBarController: UITabBarController {
             if let item = tabBar.items?.at(index) as? RAMAnimatedTabBarItem {
                 let iconView = item.iconView?.icon
                 let iconSize = iconView?.image?.size ?? CGSize(width: 30, height: 30)
-                iconView?.frame = CGRect(x: (container.frame.width - iconSize.width) / 2, y: (container.frame.height - iconSize.height) / 2 - 5 - item.yOffSet, width: iconSize.width, height: iconSize.height)
-                
+                let iconX = (container.frame.width - iconSize.width) / 2 + item.titlePositionAdjustment.horizontal
+                let iconY = (container.frame.height - iconSize.height) / 2 - 5 - item.yOffSet + item.titlePositionAdjustment.vertical
+                iconView?.frame = CGRect(x: iconX, y: iconY, width: iconSize.width, height: iconSize.height)
                 
                 let label = item.iconView?.textLabel
                 let labelSize = label?.sizeThatFits(CGSize.zero) ?? CGSize(width: tabBar.frame.size.width / CGFloat(containers.count), height: 20)
-                label?.frame = CGRect(x: (container.frame.width - labelSize.width) / 2, y: (container.frame.height) / 2 + 10 - item.yOffSet, width: labelSize.width, height: labelSize.height)
+                let labelX = (container.frame.width - labelSize.width) / 2 + item.titlePositionAdjustment.horizontal
+                let labelY = (container.frame.height) / 2 + 10 - item.yOffSet + item.titlePositionAdjustment.vertical
+                label?.frame = CGRect(x: labelX, y: labelY, width: labelSize.width, height: labelSize.height)
             }
         }
     }

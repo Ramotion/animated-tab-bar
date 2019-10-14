@@ -26,6 +26,7 @@ import UIKit
 /// UITabBarItem with animation
 open class RAMAnimatedTabBarItem: UITabBarItem {
 
+    @available(*, deprecated, message: "Use titlePositionAdjustment, yOffSet will not available in future versions")
     @IBInspectable open var yOffSet: CGFloat = 0
 
     open override var isEnabled: Bool {
