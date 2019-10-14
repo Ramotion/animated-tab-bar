@@ -337,7 +337,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
             let iconImage = item.image ?? item.iconView?.icon.image
             let icon = UIImageView(image: iconImage?.withRenderingMode(renderMode))
-            icon.translatesAutoresizingMaskIntoConstraints = false
+            //icon.translatesAutoresizingMaskIntoConstraints = false
             icon.tintColor = item.iconColor
             icon.highlightedImage = item.selectedImage?.withRenderingMode(renderMode)
 
@@ -352,17 +352,17 @@ open class RAMAnimatedTabBarController: UITabBarController {
             textLabel.textColor = item.textColor
             textLabel.font =  UIFont.systemFont(ofSize: item.textFontSize)
             textLabel.textAlignment = NSTextAlignment.center
-            textLabel.translatesAutoresizingMaskIntoConstraints = false
+            //textLabel.translatesAutoresizingMaskIntoConstraints = false
 
             container.backgroundColor = (items as [RAMAnimatedTabBarItem])[index].bgDefaultColor
 
             container.addSubview(icon)
             let itemSize = item.image?.size ?? CGSize(width: 30, height: 30)
-            createConstraints(icon, container: container, size: itemSize, yOffset: -5 - item.yOffSet)
+            //createConstraints(icon, container: container, size: itemSize, yOffset: -5 - item.yOffSet)
 
             container.addSubview(textLabel)
             let textLabelWidth = tabBar.frame.size.width / CGFloat(items.count) - 5.0
-            createConstraints(textLabel, container: container, width: textLabelWidth, yOffset: 16 - item.yOffSet, heightRelation: .greaterThanOrEqual)
+            //createConstraints(textLabel, container: container, width: textLabelWidth, yOffset: 16 - item.yOffSet, heightRelation: .greaterThanOrEqual)
 
             if item.isEnabled == false {
                 icon.alpha = 0.5
@@ -437,11 +437,14 @@ open class RAMAnimatedTabBarController: UITabBarController {
 
         var containersDict: [String: UIView] = [:]
         
+        let w = tabBar.bounds.width / CGFloat(items.count)
         for index in 0 ..< items.count {
             let viewContainer = createViewContainer()
             containersDict["container\(index)"] = viewContainer
+            viewContainer.frame = CGRect(x: w * CGFloat(index), y: 0, width: w, height: tabBar.bounds.height)
         }
         
+        /*
         var formatString = "H:|-(0)-[container0]"
         for index in 1 ..< items.count {
             formatString += "-(0)-[container\(index)(==container0)]"
@@ -461,16 +464,16 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                                           metrics: nil,
                                                           views: (containersDict as [String: AnyObject]))
         }
-        view.addConstraints(constranints)
-        
+        tabBar.addConstraints(constranints)
+        */
         return containersDict
     }
 
     fileprivate func createViewContainer() -> UIView {
         let viewContainer = UIView()
-        viewContainer.translatesAutoresizingMaskIntoConstraints = false
+        //viewContainer.translatesAutoresizingMaskIntoConstraints = false
         viewContainer.isExclusiveTouch = true
-        view.addSubview(viewContainer)
+        tabBar.addSubview(viewContainer)
 
         // add gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RAMAnimatedTabBarController.tapHandler(_:)))
@@ -478,6 +481,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
         viewContainer.addGestureRecognizer(tapGesture)
         arrViews.append(viewContainer)
         
+        /*
         // add constrains
         if UIDevice.current.orientation.isLandscape {
             let bottomAnchor = viewContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor)
@@ -497,20 +501,34 @@ open class RAMAnimatedTabBarController: UITabBarController {
                                         multiplier: 1,
                                         constant: 49)
         viewContainer.addConstraint(constH)
-
+        */
         return viewContainer
     }
 
+    open override var selectedViewController: UIViewController? {
+        didSet {
+            guard let vc = selectedViewController,
+                let index = viewControllers?.firstIndex(of: vc) else { return }
+            handleSelection(index: index)
+        }
+    }
+    
     // MARK: actions
-
+    
     @objc open func tapHandler(_ gesture: UIGestureRecognizer) {
 
         guard let items = tabBar.items as? [RAMAnimatedTabBarItem],
             let gestureView = gesture.view else {
             fatalError("items must inherit RAMAnimatedTabBarItem")
         }
-
+        
         let currentIndex = gestureView.tag
+        handleSelection(index: currentIndex)
+    }
+    
+    private func handleSelection(index: Int) {
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else { return }
+        let currentIndex = index
 
         if items[currentIndex].isEnabled == false { return }
 
@@ -521,7 +539,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
             return
         }
 
-        if selectedIndex != currentIndex {
+        if selectedIndex == currentIndex {
             let animationItem: RAMAnimatedTabBarItem = items[currentIndex]
             animationItem.playAnimation()
 
@@ -535,7 +553,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
             let container: UIView = animationItem.iconView!.icon.superview!
             container.backgroundColor = items[currentIndex].bgSelectedColor
 
-            selectedIndex = gestureView.tag
+            selectedIndex = index
 
         } else if selectedIndex == currentIndex {
 
