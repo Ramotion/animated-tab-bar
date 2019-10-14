@@ -167,13 +167,13 @@ open class RAMAnimatedTabBarController: UITabBarController {
                 let iconView = item.iconView?.icon
                 let iconSize = iconView?.image?.size ?? CGSize(width: 30, height: 30)
                 let iconX = (container.frame.width - iconSize.width) / 2 + item.titlePositionAdjustment.horizontal
-                let iconY = (container.frame.height - iconSize.height) / 2 - 5 - item.yOffSet + item.titlePositionAdjustment.vertical
+                let iconY = (container.frame.height - iconSize.height) / 2 + Theme.defaultIconVerticalOffset + item.titlePositionAdjustment.vertical
                 iconView?.frame = CGRect(x: iconX, y: iconY, width: iconSize.width, height: iconSize.height)
                 
                 let label = item.iconView?.textLabel
                 let labelSize = label?.sizeThatFits(CGSize.zero) ?? CGSize(width: tabBar.frame.size.width / CGFloat(containers.count), height: 20)
                 let labelX = (container.frame.width - labelSize.width) / 2 + item.titlePositionAdjustment.horizontal
-                let labelY = (container.frame.height) / 2 + 10 - item.yOffSet + item.titlePositionAdjustment.vertical
+                let labelY = (container.frame.height) / 2 + Theme.defaultTitleVerticalOffset + item.titlePositionAdjustment.vertical
                 label?.frame = CGRect(x: labelX, y: labelY, width: labelSize.width, height: labelSize.height)
             }
         }
@@ -320,5 +320,7 @@ extension RAMAnimatedTabBarController {
 extension RAMAnimatedTabBarController {
     enum Theme {
         public static let tabBarHeight: CGFloat = 49
+        public static let defaultTitleVerticalOffset: CGFloat = 10
+        public static let defaultIconVerticalOffset: CGFloat = -5
     }
 }
