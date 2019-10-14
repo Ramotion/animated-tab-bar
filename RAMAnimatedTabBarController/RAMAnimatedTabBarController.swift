@@ -22,51 +22,6 @@
 
 import UIKit
 
-extension RAMAnimatedTabBarController {
-
-    /**
-     Change selected color for each UITabBarItem
-
-     - parameter textSelectedColor: set new color for text
-     - parameter iconSelectedColor: set new color for icon
-     */
-    open func changeSelectedColor(_ textSelectedColor: UIColor, iconSelectedColor: UIColor) {
-
-        let items = tabBar.items as! [RAMAnimatedTabBarItem]
-        for index in 0 ..< items.count {
-            let item = items[index]
-
-            item.animation.textSelectedColor = textSelectedColor
-            item.animation.iconSelectedColor = iconSelectedColor
-
-            if item == tabBar.selectedItem {
-                item.selectedState()
-            }
-        }
-    }
-
-    /**
-     Selected UITabBarItem with animaton
-
-     - parameter from: Index for unselected animation
-     - parameter to:   Index for selected animation
-     */
-    open func setSelectIndex(from: Int, to: Int) {
-        selectedIndex = to
-        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
-            fatalError("items must inherit RAMAnimatedTabBarItem")
-        }
-
-        let containerFrom = items[from].iconView?.icon.superview
-        containerFrom?.backgroundColor = items[from].bgDefaultColor
-        items[from].deselectAnimation()
-
-        let containerTo = items[to].iconView?.icon.superview
-        containerTo?.backgroundColor = items[to].bgSelectedColor
-        items[to].playAnimation()
-    }
-}
-
 /// UITabBarController with item animations
 open class RAMAnimatedTabBarController: UITabBarController {
     
@@ -195,7 +150,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
         let itemWidth = tabBar.bounds.width / CGFloat(containers.count)
         
         for (index, container) in containers.enumerated() {
-            let frame = CGRect(x: itemWidth * CGFloat(index), y: 0, width: itemWidth, height: tabBar.bounds.height)
+            let frame = CGRect(x: itemWidth * CGFloat(index), y: 0, width: itemWidth, height: Theme.tabBarHeight)
             container.frame = frame
             
             if let item = tabBar.items?.at(index) as? RAMAnimatedTabBarItem {
@@ -299,5 +254,58 @@ open class RAMAnimatedTabBarController: UITabBarController {
             }
         }
         delegate?.tabBarController?(self, didSelect: controller)
+    }
+}
+
+
+extension RAMAnimatedTabBarController {
+
+    /**
+     Change selected color for each UITabBarItem
+
+     - parameter textSelectedColor: set new color for text
+     - parameter iconSelectedColor: set new color for icon
+     */
+    open func changeSelectedColor(_ textSelectedColor: UIColor, iconSelectedColor: UIColor) {
+
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        for index in 0 ..< items.count {
+            let item = items[index]
+
+            item.animation.textSelectedColor = textSelectedColor
+            item.animation.iconSelectedColor = iconSelectedColor
+
+            if item == tabBar.selectedItem {
+                item.selectedState()
+            }
+        }
+    }
+
+    /**
+     Selected UITabBarItem with animaton
+
+     - parameter from: Index for unselected animation
+     - parameter to:   Index for selected animation
+     */
+    open func setSelectIndex(from: Int, to: Int) {
+        selectedIndex = to
+        guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
+            fatalError("items must inherit RAMAnimatedTabBarItem")
+        }
+
+        let containerFrom = items[from].iconView?.icon.superview
+        containerFrom?.backgroundColor = items[from].bgDefaultColor
+        items[from].deselectAnimation()
+
+        let containerTo = items[to].iconView?.icon.superview
+        containerTo?.backgroundColor = items[to].bgSelectedColor
+        items[to].playAnimation()
+    }
+}
+
+
+extension RAMAnimatedTabBarController {
+    enum Theme {
+        public static let tabBarHeight: CGFloat = 49
     }
 }
