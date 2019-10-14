@@ -268,7 +268,7 @@ open class RAMAnimatedTabBarController: UITabBarController {
     var lineLeadingConstraint: NSLayoutConstraint?
     var bottomLine: UIView?
     var arrBottomAnchor:[NSLayoutConstraint] = []
-    var arrViews:[UIView] = []
+    var arrViews: [UIView] = []
     
     // MARK: life circle
 
