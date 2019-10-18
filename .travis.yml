@@ -1,6 +1,6 @@
-osx_image: xcode10.2
+osx_image: xcode11.1
 language: objective-c
-xcode_sdk: iphonesimulator12.1
+xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 11
 
 xcode_project: RAMAnimatedTabBarDemo/RAMAnimatedTabBarDemo.xcodeproj
 xcode_scheme: RAMAnimatedTabBarController
