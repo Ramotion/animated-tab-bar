@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3950EDD82354950E0072BAAD /* RAMAnimatedTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDD72354950E0072BAAD /* RAMAnimatedTabBarItem.swift */; };
+		3950EDD9235496AF0072BAAD /* RAMAnimatedTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDD72354950E0072BAAD /* RAMAnimatedTabBarItem.swift */; };
+		3950EDDC235497650072BAAD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDDB235497650072BAAD /* Collection+Extensions.swift */; };
+		3950EDDD235497910072BAAD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDDB235497650072BAAD /* Collection+Extensions.swift */; };
 		5A1F33BC2126AA3D004B8735 /* AnimatedTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */; };
 		5A5D3FF021B91D0700304986 /* RAMBadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D3FEF21B91D0700304986 /* RAMBadgeTests.swift */; };
 		5ADAB94A209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAB949209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift */; };
@@ -70,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3950EDD72354950E0072BAAD /* RAMAnimatedTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarItem.swift; sourceTree = "<group>"; };
+		3950EDDB235497650072BAAD /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		5A1F33B92126AA3D004B8735 /* AnimatedTabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedTabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarTests.swift; sourceTree = "<group>"; };
 		5A1F33BD2126AA3D004B8735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3950EDDA2354974D0072BAAD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3950EDDB235497650072BAAD /* Collection+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		5A1F33BA2126AA3D004B8735 /* AnimatedTabBarTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,9 +217,11 @@
 		CE4146971A1B94170037F03C /* RAMAnimatedTabBarControlller */ = {
 			isa = PBXGroup;
 			children = (
+				3950EDDA2354974D0072BAAD /* Utilities */,
 				5AC42AE5210AFA110009889F /* BottomLine */,
 				84BC64201C22E41F00B89B79 /* RAMBadge */,
 				CE90A83F1A1C7C14002D8931 /* RAMAnimatedTabBarController.swift */,
+				3950EDD72354950E0072BAAD /* RAMAnimatedTabBarItem.swift */,
 				CE4146981A1B944D0037F03C /* Animations */,
 				CE41469D1A1B944D0037F03C /* RAMItemAnimationProtocol.swift */,
 			);
@@ -434,7 +450,9 @@
 				84D4B7A91DB0D37700EE38C6 /* RAMBadge.swift in Sources */,
 				84D4B7AF1DB0D38B00EE38C6 /* RAMTransitionItemAnimations.swift in Sources */,
 				5ADAB94B209B51E5006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */,
+				3950EDDD235497910072BAAD /* Collection+Extensions.swift in Sources */,
 				84D4B7B01DB0D38F00EE38C6 /* RAMItemAnimationProtocol.swift in Sources */,
+				3950EDD9235496AF0072BAAD /* RAMAnimatedTabBarItem.swift in Sources */,
 				84D4B7AB1DB0D37F00EE38C6 /* RAMFumeAnimation.swift in Sources */,
 				84D4B7AA1DB0D37B00EE38C6 /* RAMAnimatedTabBarController.swift in Sources */,
 				84D4B7AC1DB0D38100EE38C6 /* RAMBounceAnimation.swift in Sources */,
@@ -454,7 +472,9 @@
 				CE90A8431A1C8DD3002D8931 /* RAMRotationAnimation.swift in Sources */,
 				F3E056BE1A2DD57600F33DDA /* RAMFumeAnimation.swift in Sources */,
 				CE41469F1A1B944D0037F03C /* RAMTransitionItemAnimations.swift in Sources */,
+				3950EDDC235497650072BAAD /* Collection+Extensions.swift in Sources */,
 				84BC64221C22E4C800B89B79 /* RAMBadge.swift in Sources */,
+				3950EDD82354950E0072BAAD /* RAMAnimatedTabBarItem.swift in Sources */,
 				CE4146A01A1B944D0037F03C /* RAMItemAnimationProtocol.swift in Sources */,
 				CE4146781A1B923D0037F03C /* AppDelegate.swift in Sources */,
 				CE90A8791A1CE200002D8931 /* RAMBounceAnimation.swift in Sources */,
@@ -552,7 +572,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -581,7 +601,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;

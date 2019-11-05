@@ -24,7 +24,7 @@ import UIKit
 extension RAMAnimatedTabBarController {
     
     func createBottomLine() {
-        guard let currentItem = (containers.filter { $0.value.tag == 0 }).first?.value else { return }
+        guard let currentItem = containers.first else { return }
         
         let container = UIView()
         container.backgroundColor = .clear
@@ -66,7 +66,7 @@ extension RAMAnimatedTabBarController {
     
     func setBottomLinePosition(index: Int, animated: Bool = true) {
         guard let itemsCount = tabBar.items?.count, itemsCount > index,
-        let currentItem = (containers.filter { $0.value.tag == index}).first?.value else { return }
+        let currentItem = containers.at(index) else { return }
         
         lineLeadingConstraint?.isActive = false
         
