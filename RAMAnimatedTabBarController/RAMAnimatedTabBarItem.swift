@@ -41,7 +41,7 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
     @IBInspectable open var textFontSize: CGFloat = 10
 
     /// The color of the UITabBarItem text.
-    @IBInspectable open var textColor: UIColor = UIColor.black
+    @IBInspectable open var textColor: UIColor = #colorLiteral(red: 0.5079551811, green: 0.5472556715, blue: 0.6011400746, alpha: 1)
 
     /// The tint color of the UITabBarItem icon.
     @IBInspectable open var iconColor: UIColor = UIColor.clear // if alpha color is 0 color ignoring
@@ -87,11 +87,11 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
      Set selected state without animation
      */
     open func selectedState() {
-        guard animation != nil && iconView != nil else {
+        guard animation != nil, let iconView = iconView else {
             return
         }
 
-        animation.selectedState(iconView!.icon, textLabel: iconView!.textLabel)
+        animation.selectedState(iconView.icon, textLabel: iconView.textLabel)
     }
     
     /**
