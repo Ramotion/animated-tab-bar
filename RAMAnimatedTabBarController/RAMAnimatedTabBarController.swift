@@ -132,12 +132,11 @@ open class RAMAnimatedTabBarController: UITabBarController {
     
     // MARK: create methods
     private func initializeContainers() {
-        guard let items = tabBar.items, items.count <= 5 else {
-            fatalError("More button not supported")
-        }
-        
         containers.forEach { $0.removeFromSuperview() }
         containers.removeAll()
+        
+        guard let items = tabBar.items else { return }
+        guard items.count <= 5 else { fatalError("More button not supported") }
         
         for index in 0 ..< items.count {
             let viewContainer = UIView()
