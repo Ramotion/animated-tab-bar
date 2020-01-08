@@ -61,10 +61,10 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
     open func playAnimation() {
 
         assert(animation != nil, "add animation in UITabBarItem")
-        guard animation != nil && iconView != nil else {
+        guard animation != nil, let iconView = iconView else {
             return
         }
-        animation.playAnimation(iconView!.icon, textLabel: iconView!.textLabel)
+        animation.playAnimation(iconView.icon, textLabel: iconView.textLabel)
     }
 
     /**

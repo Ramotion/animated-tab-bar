@@ -50,6 +50,8 @@ github "Ramotion/animated-tab-bar"
 
 ```
 
+or [Swift Package Manager](https://swift.org/package-manager/) 
+
 
 ## Usage
 
