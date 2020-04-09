@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QjJ-1j-Kct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QjJ-1j-Kct">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="Y99-CA-jqU">
             <objects>
                 <viewController id="wJE-Q4-t8C" sceneMemberID="viewController">
@@ -30,24 +30,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cbk-oV-z7H"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="drop" id="tS2-0E-St8" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                        <connections>
-                            <outlet property="animation" destination="Lky-Hp-l9U" id="r67-ap-cxK"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="sUA-O8-oQo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zW4-Q6-RN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Lky-Hp-l9U" customClass="RAMFumeAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                            <real key="value" value="0.40000000000000002"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="1349" y="-239"/>
+            <point key="canvasLocation" x="2287.1999999999998" y="-239.73013493253376"/>
         </scene>
-        <!--Item1-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,34 +51,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="AeA-ED-4jL" secondAttribute="centerY" id="Ifi-6x-Ruv"/>
                             <constraint firstItem="8ec-QI-6Cw" firstAttribute="centerX" secondItem="AeA-ED-4jL" secondAttribute="centerX" id="gXX-8c-cGG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ec-QI-6Cw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item1" image="icon_pin" id="lUH-JS-dWf" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                        <connections>
-                            <outlet property="animation" destination="CzN-js-aQV" id="gvH-Rf-Hp8"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="agh-Sq-Z6h"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="CzN-js-aQV" customClass="RAMFlipLeftTransitionItemAnimations" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
-                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="1349" y="479"/>
+            <point key="canvasLocation" x="2287.1999999999998" y="478.11094452773619"/>
         </scene>
-        <!--Item2-->
+        <!--View Controller-->
         <scene sceneID="quI-1J-que">
             <objects>
                 <viewController id="DFF-lT-Wr8" sceneMemberID="viewController">
@@ -111,22 +86,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaI-Rh-DC9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item2" image="icon_user" id="z5N-yh-KHH" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                        <connections>
-                            <outlet property="animation" destination="SMy-mk-LC7" id="MkP-KN-27u"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="dTd-z4-Yk9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Cn-qd-9Vu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="SMy-mk-LC7" customClass="RAMLeftRotationAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="1349" y="1228"/>
+            <point key="canvasLocation" x="4165.6000000000004" y="1227.4362818590705"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="ovl-w5-59e">
@@ -140,18 +104,18 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="eCt-4k-9Vu" kind="relationship" relationship="viewControllers" id="WZh-Xs-WLh"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="d4b-9o-ai8"/>
-                        <segue destination="DFF-lT-Wr8" kind="relationship" relationship="viewControllers" id="ege-ES-0le"/>
-                        <segue destination="Zsy-o9-m6D" kind="relationship" relationship="viewControllers" id="rtT-KT-B5t"/>
-                        <segue destination="wJE-Q4-t8C" kind="relationship" relationship="viewControllers" id="j33-EU-Pj8"/>
+                        <segue destination="yBv-3M-O64" kind="relationship" relationship="viewControllers" id="WZh-Xs-WLh"/>
+                        <segue destination="f4o-D0-hai" kind="relationship" relationship="viewControllers" id="d4b-9o-ai8"/>
+                        <segue destination="uME-Vu-i5i" kind="relationship" relationship="viewControllers" id="ege-ES-0le"/>
+                        <segue destination="Ic4-MD-ery" kind="relationship" relationship="viewControllers" id="rtT-KT-B5t"/>
+                        <segue destination="ePL-ol-mkX" kind="relationship" relationship="viewControllers" id="j33-EU-Pj8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEF-4x-wpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="537" y="479"/>
         </scene>
-        <!--Item4-->
+        <!--View Controller-->
         <scene sceneID="ttZ-oS-sRQ">
             <objects>
                 <viewController id="eCt-4k-9Vu" customClass="ViewController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,27 +157,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kSB-yj-LRJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item4" image="Settings" id="EiX-sv-bUZ" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                        <connections>
-                            <outlet property="animation" destination="BSW-Za-y3b" id="Q93-Wg-KJV"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="QjE-ae-7J0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bq-TO-3KR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="BSW-Za-y3b" customClass="RAMBounceAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                            <real key="value" value="0.80000000000000004"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="-237" y="1228"/>
+            <point key="canvasLocation" x="701.60000000000002" y="1227.4362818590705"/>
         </scene>
-        <!--Item3-->
+        <!--View Controller-->
         <scene sceneID="rxZ-sE-b31">
             <objects>
                 <viewController id="Zsy-o9-m6D" sceneMemberID="viewController">
@@ -235,13 +185,125 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oai-od-5ae"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YqK-nb-Jwu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuQ-Du-YS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2415.1999999999998" y="1227.4362818590705"/>
+        </scene>
+        <!--Item1-->
+        <scene sceneID="xgU-Ga-3Xt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f4o-D0-hai" customClass="NavigationController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item1" image="icon_pin" id="lUH-JS-dWf" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="CzN-js-aQV" id="gvH-Rf-Hp8"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K5d-3M-hcx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="A1w-hW-7M5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61V-zO-x6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="CzN-js-aQV" customClass="RAMFlipLeftTransitionItemAnimations" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1348" y="478.11094452773619"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="bPA-23-ljE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ePL-ol-mkX" customClass="NavigationController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="drop" id="tS2-0E-St8" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="Lky-Hp-l9U" id="r67-ap-cxK"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="34P-nJ-aO0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wJE-Q4-t8C" kind="relationship" relationship="rootViewController" id="Tw5-TM-5B2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ecw-Nx-4K9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Lky-Hp-l9U" customClass="RAMFumeAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                            <real key="value" value="0.40000000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1348" y="-239.73013493253376"/>
+        </scene>
+        <!--Item2-->
+        <scene sceneID="YRE-6c-OxK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uME-Vu-i5i" customClass="NavigationController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item2" image="icon_user" id="z5N-yh-KHH" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="SMy-mk-LC7" id="MkP-KN-27u"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qBg-p0-uEs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DFF-lT-Wr8" kind="relationship" relationship="rootViewController" id="hzx-wq-tyE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXa-R0-yJ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="SMy-mk-LC7" customClass="RAMLeftRotationAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="3226.4000000000001" y="1227.4362818590705"/>
+        </scene>
+        <!--Item3-->
+        <scene sceneID="ffn-x2-ml5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ic4-MD-ery" customClass="NavigationController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item3" image="Tools_00028" id="c38-iL-qNf" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
                         <connections>
                             <outlet property="animation" destination="Ojd-WY-9Yd" id="Ogs-bO-YG5"/>
                         </connections>
                     </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FuQ-Du-YS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zu3-NM-44Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zsy-o9-m6D" kind="relationship" relationship="rootViewController" id="kJO-IY-hJW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5uO-JW-0uS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <customObject id="Ojd-WY-9Yd" customClass="RAMFrameItemAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="imagesPath" value="ToolsAnimation"/>
@@ -252,7 +314,40 @@
                     </userDefinedRuntimeAttributes>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="537" y="1228"/>
+            <point key="canvasLocation" x="1476" y="1227.4362818590705"/>
+        </scene>
+        <!--Item4-->
+        <scene sceneID="M3y-WJ-E74">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yBv-3M-O64" customClass="NavigationController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item4" image="Settings" id="EiX-sv-bUZ" customClass="RAMAnimatedTabBarItem" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="BSW-Za-y3b" id="Q93-Wg-KJV"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kiC-i2-y8m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eCt-4k-9Vu" kind="relationship" relationship="rootViewController" id="Wpf-Wt-0Ti"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzn-dU-kir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="BSW-Za-y3b" customClass="RAMBounceAnimation" customModule="Animated_Tab_Bar" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                            <real key="value" value="0.80000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-237.59999999999999" y="1227.4362818590705"/>
         </scene>
     </scenes>
     <resources>
