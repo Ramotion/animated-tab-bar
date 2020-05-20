@@ -8,4 +8,5 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/Ramotion/animated-tab-bar.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
   s.source_files = "RAMAnimatedTabBarController/*.swift", "RAMAnimatedTabBarController/**/*.swift"
+  s.swift_version = '5.0'
 end
