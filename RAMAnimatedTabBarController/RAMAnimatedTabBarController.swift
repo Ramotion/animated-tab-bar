@@ -157,9 +157,11 @@ open class RAMAnimatedTabBarController: UITabBarController {
     
     private func layoutContainers() {
         let itemWidth = tabBar.bounds.width / CGFloat(containers.count)
+        let isRTL = tabBar.userInterfaceLayoutDirection == .rightToLeft
         
         for (index, container) in containers.enumerated() {
-            let frame = CGRect(x: itemWidth * CGFloat(index), y: 0, width: itemWidth, height: Theme.tabBarHeight)
+            let i = isRTL ? (containers.count - 1 - index) : index
+            let frame = CGRect(x: itemWidth * CGFloat(i), y: 0, width: itemWidth, height: Theme.tabBarHeight)
             container.frame = frame
             
             if let item = tabBar.items?.at(index) as? RAMAnimatedTabBarItem {
@@ -321,5 +323,12 @@ extension RAMAnimatedTabBarController {
         public static let tabBarHeight: CGFloat = 49
         public static let defaultTitleVerticalOffset: CGFloat = 10
         public static let defaultIconVerticalOffset: CGFloat = -5
+    }
+}
+
+
+extension UIView {
+    var userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection {
+        return UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute)
     }
 }
