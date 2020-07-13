@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QjJ-1j-Kct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QjJ-1j-Kct">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="4165.6000000000004" y="1227.4362818590705"/>
         </scene>
-        <!--Animated Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="ovl-w5-59e">
             <objects>
-                <tabBarController storyboardIdentifier="RAMAnimatedTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QjJ-1j-Kct" customClass="RAMAnimatedTabBarController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RAMAnimatedTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QjJ-1j-Kct" customClass="TabBarController" customModule="Animated_Tab_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Xsb-sw-RJ2">

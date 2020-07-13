@@ -11,6 +11,7 @@
 		3950EDD9235496AF0072BAAD /* RAMAnimatedTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDD72354950E0072BAAD /* RAMAnimatedTabBarItem.swift */; };
 		3950EDDC235497650072BAAD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDDB235497650072BAAD /* Collection+Extensions.swift */; };
 		3950EDDD235497910072BAAD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950EDDB235497650072BAAD /* Collection+Extensions.swift */; };
+		39D73C1724BC890D001A09D8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73C1624BC890D001A09D8 /* TabBarController.swift */; };
 		39DB2801243F30FD0086136D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DB2800243F30FD0086136D /* NavigationController.swift */; };
 		39DB2803243F34D60086136D /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DB2802243F34D60086136D /* NextViewController.swift */; };
 		5A1F33BC2126AA3D004B8735 /* AnimatedTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F33BB2126AA3D004B8735 /* AnimatedTabBarTests.swift */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		3950EDD72354950E0072BAAD /* RAMAnimatedTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarItem.swift; sourceTree = "<group>"; };
 		3950EDDB235497650072BAAD /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		39D73C1624BC890D001A09D8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		39DB2800243F30FD0086136D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		39DB2802243F34D60086136D /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		5A1F33B92126AA3D004B8735 /* AnimatedTabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedTabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 				CE4146971A1B94170037F03C /* RAMAnimatedTabBarControlller */,
 				CE4146771A1B923D0037F03C /* AppDelegate.swift */,
 				CE4146791A1B923D0037F03C /* ViewController.swift */,
+				39D73C1624BC890D001A09D8 /* TabBarController.swift */,
 				39DB2800243F30FD0086136D /* NavigationController.swift */,
 				39DB2802243F34D60086136D /* NextViewController.swift */,
 				CE41467B1A1B923D0037F03C /* Main.storyboard */,
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE41469E1A1B944D0037F03C /* RAMFrameItemAnimation.swift in Sources */,
+				39D73C1724BC890D001A09D8 /* TabBarController.swift in Sources */,
 				CE90A8401A1C7C14002D8931 /* RAMAnimatedTabBarController.swift in Sources */,
 				CE41467A1A1B923D0037F03C /* ViewController.swift in Sources */,
 				5ADAB94A209B0FA8006CCD85 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */,

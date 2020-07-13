@@ -13,6 +13,7 @@ final class NavigationController: UINavigationController {
     
     @objc func tapHandler() {
         let vc = NextViewController()
+        vc.hidesBottomBarWhenPushed = true
         self.pushViewController(vc, animated: true)
     }
 }
