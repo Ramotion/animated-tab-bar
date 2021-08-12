@@ -51,7 +51,11 @@ extension RAMAnimatedTabBarController {
         lineHeightConstraint?.isActive = true
         
         // add constraints
-        bottomLine?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        if #available(iOS 11.0, *) {
+            bottomLine?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 2).isActive = true
+        } else {
+            bottomLine?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        }
         bottomLine?.widthAnchor.constraint(equalTo: currentItem.widthAnchor).isActive = true
     }
     
