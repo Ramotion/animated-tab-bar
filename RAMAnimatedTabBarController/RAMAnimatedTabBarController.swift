@@ -206,7 +206,11 @@ open class RAMAnimatedTabBarController: UITabBarController {
             }
             textLabel.backgroundColor = UIColor.clear
             textLabel.textColor = item.textColor
-            textLabel.font =  UIFont.systemFont(ofSize: item.textFontSize)
+            if item.fontName.isEmpty {
+                textLabel.font = UIFont.systemFont(ofSize: item.textFontSize)
+            } else {
+                textLabel.font = UIFont(name: item.fontName, size: item.textFontSize)!
+            }
             textLabel.textAlignment = NSTextAlignment.center
             container.addSubview(textLabel)
             
