@@ -36,9 +36,14 @@ open class RAMFrameItemAnimation: RAMItemAnimation {
     /// path to array of image names from plist file
     @IBInspectable open var imagesPath: String!
 
+    /// Bundle that holds `imagesPath` and the frame images. Defaults to the main
+    /// bundle; set it (e.g. to `Bundle.module`) when the resources ship inside a
+    /// Swift package or framework resource bundle.
+    public static var resourceBundle: Bundle = .main
+
     open override func awakeFromNib() {
 
-        guard let path = Bundle.main.path(forResource: imagesPath, ofType: "plist") else {
+        guard let path = RAMFrameItemAnimation.resourceBundle.path(forResource: imagesPath, ofType: "plist") else {
             fatalError("don't found plist")
         }
 
@@ -50,12 +55,12 @@ open class RAMFrameItemAnimation: RAMItemAnimation {
 
         // selected image
         let selectedImageName = animationImagesName[animationImagesName.endIndex - 1]
-        selectedImage = UIImage(named: selectedImageName)
+        selectedImage = UIImage(named: selectedImageName, in: RAMFrameItemAnimation.resourceBundle, compatibleWith: nil)
     }
 
     func createImagesArray(_ imageNames: Array<String>) {
         for name: String in imageNames {
-            if let image = UIImage(named: name)?.cgImage {
+            if let image = UIImage(named: name, in: RAMFrameItemAnimation.resourceBundle, compatibleWith: nil)?.cgImage {
                 animationImages.append(image)
             }
         }
